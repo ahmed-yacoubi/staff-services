@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">خدمات الموظفين</string>
+    <string name="home">الرئيسية</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="menu">القائمة</string>
+    <string name="schedules">جدول المحاضرات</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="password">كلمة المرور</string>
+    <string name="forget_password">نسيت كلمة المرور؟</string>
+    <string name="retrieve_password">استرجاع كلمة المرور</string>
+    <string name="id_number">رقم الهوية</string>
+    <string name="date_of_birth">تاريخ الميلاد</string>
+</resources>
