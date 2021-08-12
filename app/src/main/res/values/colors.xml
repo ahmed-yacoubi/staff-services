@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="primary">#c6487e</color>
+    <color name="primaryDark">#FF762C59</color>
     <color name="statusBarLight">#C9C9C9</color>
     <color name="statusBarNight">#121212</color>
 </resources>
