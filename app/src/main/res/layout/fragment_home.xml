@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/_16sdp"
+    android:paddingEnd="@dimen/_16sdp"
+    android:paddingTop="@dimen/_8sdp"
+    tools:context=".fragment.HomeFragment">
+
+    <LinearLayout
+        android:id="@+id/homeLinearLayoutDays"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/homeTextViewSun"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:lines="1"
+            android:gravity="center"
+            android:background="@drawable/text_view_background"
+            android:text="@string/sunday"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/homeTextViewMon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:lines="1"
+            android:gravity="center"
+            android:background="@drawable/text_view_background_empty"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:text="@string/monday"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_10ssp"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/homeTextViewTue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:lines="1"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:background="@drawable/text_view_background_empty"
+            android:text="@string/tuesday"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_10ssp"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/homeTextViewWed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:lines="1"
+            android:gravity="center"
+            android:background="@drawable/text_view_background_empty"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:text="@string/wednesday"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_10ssp"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/homeTextViewThu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:lines="1"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:background="@drawable/text_view_background_empty"
+            android:text="@string/thursday"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_10ssp"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/homeCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        app:cardCornerRadius="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeLinearLayoutDays"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/homeRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_no_data"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeLinearLayoutDays"
+        app:layout_constraintVertical_bias="0.207" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="@string/no_lectures_today"
+        android:textSize="@dimen/_14ssp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
