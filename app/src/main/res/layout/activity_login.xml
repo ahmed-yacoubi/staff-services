@@ -45,6 +45,7 @@
             android:inputType="number"
             android:layout_marginTop="@dimen/_32sdp"
             android:paddingStart="@dimen/_16sdp"
+            android:elevation="@dimen/_5sdp"
             android:paddingEnd="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,6 +62,7 @@
             android:paddingStart="@dimen/_16sdp"
             android:paddingEnd="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_12sdp"
+            android:elevation="@dimen/_5sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginEditTextUsername" />
@@ -90,6 +92,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginTextViewForgetPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/loginTextViewForgetPassword"
+            android:elevation="@dimen/_5sdp"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

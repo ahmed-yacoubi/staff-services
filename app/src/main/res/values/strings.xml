@@ -1,42 +1,85 @@
 <resources>
-<string name="app_name">Staff Services</string>
-<string name="home">Home</string>
-<string name="notifications">Notifications</string>
-<string name="menu">Menu</string>
-<string name="schedules">Schedules</string>
-<string name="login">Login</string>
-<string name="username">Username</string>
-<string name="password">Password</string>
-<string name="forget_password">Forget Password?</string>
-<string name="retrieve_password">Retrieve Password</string>
-<string name="id_number">ID Number</string>
-<string name="date_of_birth">Date of Birth</string>
-<string name="sunday">Sun</string>
-<string name="monday">Mon</string>
-<string name="tuesday">Tue</string>
-<string name="wednesday">Wed</string>
-<string name="thursday">Thu</string>
-<string name="sem">First Semester 2020/2021</string>
-<string name="messages">Messages</string>
-<string name="academic_services">Academic Services</string>
-<string name="no_lectures_today">No Lectures Today</string>
-<string name="apologize">Apologize</string>
-<string name="change_date">Change Date</string>
-<string name="change_hill">Change Hill</string>
-<string name="attendance_sheet">Attendance Sheet</string>
-<string name="administrative_services">Administrative Services</string>
-<string name="settings">Settings</string>
-<string name="view_staff">View Staff</string>
-<string name="logout">Logout</string>
-<string name="agenda">Agenda</string>
-<string name="reports">Reports</string>
-<string name="midterm_observation">Midterm Observation</string>
-<string name="final_observation">Final Observation</string>
-<string name="basic_info">Basic Info</string>
-<string name="job_info">Job Info</string>
-<string name="cancel_notifications">Notifications</string>
-<string name="change_language">Change Language</string>
-<string name="change_password">Change Password</string>
-<!--  TODO: Remove or change this placeholder text  -->
-<string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Staff Services</string>
+    <string name="home">Home</string>
+    <string name="notifications">Notifications</string>
+    <string name="menu">Menu</string>
+    <string name="schedules">Schedules</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="retrieve_password">Retrieve Password</string>
+    <string name="id_number">ID Number</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="sunday">Sun</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thu</string>
+    <string name="sem">First Semester 2020/2021</string>
+    <string name="messages">Messages</string>
+    <string name="academic_services">Academic Services</string>
+    <string name="no_lectures_today">No Lectures Today</string>
+    <string name="apologize">Apologize</string>
+    <string name="change_date">Change Date</string>
+    <string name="change_hill">Change Hill</string>
+    <string name="attendance_sheet">Attendance Sheet</string>
+    <string name="administrative_services">Administrative Services</string>
+    <string name="settings">Settings</string>
+    <string name="view_staff">View Staff</string>
+    <string name="logout">Logout</string>
+    <string name="agenda">Agenda</string>
+    <string name="reports">Reports</string>
+    <string name="midterm_observation">Midterm Observation</string>
+    <string name="final_observation">Final Observation</string>
+    <string name="basic_info">Basic Info</string>
+    <string name="job_info">Job Info</string>
+    <string name="cancel_notifications">Notifications</string>
+    <string name="change_language">Change Language</string>
+    <string name="change_password">Change Password</string>
+    <!--  TODO: Remove or change this placeholder text  -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="BeginningOfTheSemester">Beginning of the semester:</string>
+    <string name="EndOfTheSemester">end of the semester</string>
+    <string name="MidtermExamsStart">Midterm exams start:</string>
+    <string name="MidtermExamsEnd">Midterm exams end:</string>
+    <string name="FinalExamsStart">Final exams start:</string>
+    <string name="FinalExamsEnd">Final exams end:</string>
+    <string name="BeginningOfMidtermEntry">Beginning midterm entry:</string>
+    <string name="EndOfMidtermEntry">End of midterm entry:</string>
+    <string name="BeginningOfFinalEntry">Beginning of final entry:</string>
+    <string name="EndOfFinalEntry">End of final entry:</string>
+    <string name="endOfDraw">end of draw:</string>
+    <string name="subject_name">Subject name:</string>
+    <string name="subject_id">Subject id:</string>
+    <string name="DivisionId">Division id:</string>
+    <string name="gender">gender:</string>
+    <string name="Students_number">number of students:</string>
+    <string name="NoOfficeHours">There are no office hours</string>
+    <string name="NoSystamicSubjects">There are no systemic subjects</string>
+    <string name="NoIncompleteSubjects">There are no incomplete subjects</string>
+    <string name="notificationsAndMessages">Notifications and messages</string>
+    <string name="english">English language</string>
+    <string name="arabic">Arabic language</string>
+    <string name="PasswordMustContain">Password must contain lowercase and uppercase letters, numbers and symbols</string>
+    <string name="currentPassword">Current password:</string>
+    <string name="confirmNewPassword">Confirm new password:</string>
+    <string name="newPassword">New password:</string>
+
+
+    <array name="AgendaType">
+        <item>morning system</item>
+        <item>evening system</item>
+        <item>Community College</item>
+        <item>Master\'s System</item>
+    </array>
+
+
+    <array name="ReportsType">
+        <item>Attendance and absence detection</item>
+        <item>Attendance and absence detection</item>
+        <item>Attendance and absence detection</item>
+    </array>
 </resources>
