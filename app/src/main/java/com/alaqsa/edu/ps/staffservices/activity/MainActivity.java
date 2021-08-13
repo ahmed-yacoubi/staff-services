@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.mainFrameLayout, new HomeFragment()).commit();
     }
 
-    BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull @org.jetbrains.annotations.NotNull MenuItem item) {
             Fragment selectedFragment = null;
