@@ -60,7 +60,6 @@
             android:textStyle="bold"
             android:paddingEnd="@dimen/_7sdp"
             android:paddingStart="@dimen/_7sdp"
-
             />
 
         <RadioButton

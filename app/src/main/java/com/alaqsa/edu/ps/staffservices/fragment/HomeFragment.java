@@ -30,6 +30,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
+
     private FragmentHomeBinding binding;
     List<Fragment> fragmentList = new ArrayList<>();
     public SchedulesViewPagerAdapter adapter;
