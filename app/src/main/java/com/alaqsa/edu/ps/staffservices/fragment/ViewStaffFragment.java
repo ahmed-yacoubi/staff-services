@@ -2,15 +2,27 @@ package com.alaqsa.edu.ps.staffservices.fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.alaqsa.edu.ps.staffservices.R;
+import com.alaqsa.edu.ps.staffservices.adapter.NotificationsAdapter;
+import com.alaqsa.edu.ps.staffservices.adapter.ViewStaffAdapter;
+import com.alaqsa.edu.ps.staffservices.databinding.FragmentNotificationsBinding;
+import com.alaqsa.edu.ps.staffservices.databinding.FragmentViewStaffBinding;
+import com.alaqsa.edu.ps.staffservices.model.Test;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +30,12 @@ import java.io.Serializable;
  * create an instance of this fragment.
  */
 public class ViewStaffFragment extends Fragment implements Serializable {
+
+    private FragmentViewStaffBinding binding;
+
+    private ViewStaffAdapter adapter;
+
+    private ArrayList<Test> testArrayList;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,7 +56,7 @@ public class ViewStaffFragment extends Fragment implements Serializable {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ViewStaffFragment.
+     * @return A new instance of fragment NotificationsFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static ViewStaffFragment newInstance(String param1, String param2) {
@@ -63,6 +81,38 @@ public class ViewStaffFragment extends Fragment implements Serializable {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_view_staff, container, false);
+        binding = FragmentViewStaffBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        testArrayList = new ArrayList<>();
+
+        addData();
+
+        adapter = new ViewStaffAdapter(testArrayList, getContext());
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+
+        binding.vstaffRecyclerView.setHasFixedSize(true);
+        binding.vstaffRecyclerView.setLayoutManager(layoutManager);
+        binding.vstaffRecyclerView.setAdapter(adapter);
+
+    }
+
+    private void addData() {
+        for (int i=1; i<=10; i++)
+            testArrayList.add(new Test(i, "Mobile Apps", "101", "WH201",
+                    "10:00-12:00", false, "ALAQSA Reg.", "SID: 2301180724, Mobile Apps Development" +
+                    " 2 = 97"));
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }
