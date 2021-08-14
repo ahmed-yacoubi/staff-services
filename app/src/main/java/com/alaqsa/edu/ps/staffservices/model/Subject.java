@@ -1,36 +1,70 @@
 package com.alaqsa.edu.ps.staffservices.model;
 
 public class Subject {
-    private String subject_name;
-    private String subject_id;
-    private String division;
+
+    private String subjectId;
+    private String subjectName;
     private String gender;
-    private int students;
-    private boolean isExpanded;
+    private String division;
+    private String finalExamDate;
+    private String placeTimeLecture;
+    private String collage;
+    private String department;
 
-    public Subject(String subject_name, String subject_id, String division, String gender, int students, boolean isExpanded) {
-        this.subject_name = subject_name;
-        this.subject_id = subject_id;
-        this.division = division;
+    public Subject() {
+    }
+
+    public Subject(String subjectId, String subjectName, String gender, String division,
+                   String finalExamDate, String placeTimeLecture, String collage, String department) {
+        this.subjectId = subjectId;
+        this.subjectName = subjectName;
         this.gender = gender;
-        this.students = students;
-        this.isExpanded = isExpanded;
+        this.division = division;
+        this.finalExamDate = finalExamDate;
+        this.placeTimeLecture = placeTimeLecture;
+        this.collage = collage;
+        this.department = department;
     }
 
-    public String getSubject_name() {
-        return subject_name;
+    public String getCollage() {
+        return collage;
     }
 
-    public void setSubject_name(String subject_name) {
-        this.subject_name = subject_name;
+    public void setCollage(String collage) {
+        this.collage = collage;
     }
 
-    public String getSubject_id() {
-        return subject_id;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setSubject_id(String subject_id) {
-        this.subject_id = subject_id;
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(String subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getDivision() {
@@ -41,27 +75,19 @@ public class Subject {
         this.division = division;
     }
 
-    public String getGender() {
-        return gender;
+    public String getFinalExamDate() {
+        return finalExamDate;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setFinalExamDate(String finalExamDate) {
+        this.finalExamDate = finalExamDate;
     }
 
-    public int getStudents() {
-        return students;
+    public String getPlaceTimeLecture() {
+        return placeTimeLecture;
     }
 
-    public void setStudents(int students) {
-        this.students = students;
-    }
-
-    public boolean isExpanded() {
-        return isExpanded;
-    }
-
-    public void setExpanded(boolean expanded) {
-        isExpanded = expanded;
+    public void setPlaceTimeLecture(String placeTimeLecture) {
+        this.placeTimeLecture = placeTimeLecture;
     }
 }
