@@ -19,7 +19,7 @@ import com.alaqsa.edu.ps.staffservices.model.Subject;
 import java.util.ArrayList;
 
 
-public class ReportsFragment extends Fragment {
+public class ReportsFragment extends Fragment implements Serializable {
 
   private static ReportsFragment instance;
   private RecyclerView recyclerView;
