@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.alaqsa.edu.ps.staffservices.R;
 
-public class AgendaFragment extends Fragment {
+public class AgendaFragment extends Fragment implements Serializable {
 
    private static AgendaFragment agendaFragment;
 
