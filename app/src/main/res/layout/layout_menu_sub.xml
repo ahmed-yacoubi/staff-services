@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menuLinearLayoutSubItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/_6sdp"
+    android:paddingBottom="@dimen/_6sdp"
+    android:layout_marginBottom="@dimen/_8sdp">
+
+    <ImageView
+        android:id="@+id/menuImageViewSubIcon"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:src="@drawable/ic_agenda" />
+
+    <TextView
+        android:id="@+id/menuTextViewSubTitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:text="Agenda"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_14ssp" />
+</LinearLayout>
