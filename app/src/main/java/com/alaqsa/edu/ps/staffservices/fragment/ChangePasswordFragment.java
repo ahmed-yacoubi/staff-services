@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.alaqsa.edu.ps.staffservices.R;
 
 
-public class ChangePasswordFragment extends Fragment {
+public class ChangePasswordFragment extends Fragment implements Serializable {
     private static ChangePasswordFragment changePasswordFragment;
 
     public ChangePasswordFragment() {
