@@ -5,20 +5,13 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.alaqsa.edu.ps.staffservices.R;
-import com.alaqsa.edu.ps.staffservices.adapter.HomeAdapter;
-import com.alaqsa.edu.ps.staffservices.adapter.NotificationsAdapter;
 import com.alaqsa.edu.ps.staffservices.adapter.SchedulesViewPagerAdapter;
-import com.alaqsa.edu.ps.staffservices.databinding.FragmentHomeBinding;
 import com.alaqsa.edu.ps.staffservices.databinding.FragmentNotificationsBinding;
-import com.alaqsa.edu.ps.staffservices.model.Test;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -32,25 +25,23 @@ public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;
 
-List<Fragment> fragmentList = new ArrayList<>();
+    private List<Fragment> fragmentList;
     public SchedulesViewPagerAdapter adapter;
+
     public NotificationsFragment() {
     }
-
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
-        }
+        fragmentList = new ArrayList<>();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -61,7 +52,6 @@ List<Fragment> fragmentList = new ArrayList<>();
         initViewPager();
 
         initTabLayout();
-
 
 
     }
@@ -94,13 +84,14 @@ List<Fragment> fragmentList = new ArrayList<>();
 
 
     private void initViewPager() {
-        fragmentList.add(DaysFragment.newInstance("notification_msg","notification"));
-        fragmentList.add(DaysFragment.newInstance("notification_msg","msg"));
+        fragmentList.add(ContainerTabFragment.newInstance("notification_msg", "notification"));
+        fragmentList.add(ContainerTabFragment.newInstance("notification_msg", "msg"));
 
         adapter = new SchedulesViewPagerAdapter(getActivity(), fragmentList);
         binding.homeViewPager.setAdapter(adapter);
 
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();

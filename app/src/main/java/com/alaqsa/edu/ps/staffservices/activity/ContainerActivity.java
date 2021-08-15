@@ -12,6 +12,7 @@ import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.databinding.ActivityContainerBinding;
 import com.alaqsa.edu.ps.staffservices.databinding.ActivityMainBinding;
 import com.alaqsa.edu.ps.staffservices.fragment.AgendaFragment;
+import com.alaqsa.edu.ps.staffservices.fragment.AttendanceSheetFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.BasicInfoFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.ChangePasswordFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.EditBasicInfoFragment;
@@ -78,6 +79,8 @@ public class ContainerActivity extends AppCompatActivity {
                 case "EditBasicInfoFragment":
                     fragment = new EditBasicInfoFragment();
                     break;
+                case "AttendanceSheetFragment":
+                    fragment = new AttendanceSheetFragment();
 
 
             }

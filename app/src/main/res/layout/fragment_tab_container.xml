@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ContainerTabFragment">
+
+     <androidx.cardview.widget.CardView
+         android:id="@+id/schCardView"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_marginTop="@dimen/_16sdp"
+         android:layout_marginBottom="@dimen/_16sdp"
+         >
+
+          <androidx.recyclerview.widget.RecyclerView
+              android:id="@+id/schRecyclerView"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:visibility="gone"
+
+             />
+
+          <RelativeLayout
+              android:id="@+id/reportsFragment_layout"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:visibility="visible">
+
+               <ImageView
+                   android:id="@+id/reportsFragment_iv"
+                   android:layout_width="match_parent"
+                   android:layout_height="@dimen/_200sdp"
+                   android:layout_marginStart="@dimen/_25sdp"
+                   android:layout_marginTop="@dimen/_25sdp"
+                   android:layout_marginEnd="@dimen/_25sdp"
+                   android:src="@drawable/dont_exist" />
+
+               <TextView
+                   android:id="@+id/reportsFragment_tv_dontexist"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@id/reportsFragment_iv"
+                   android:layout_centerHorizontal="true"
+                   android:layout_marginTop="@dimen/_10sdp"
+                   android:layout_marginBottom="@dimen/_50sdp"
+                   android:text="@string/NoOfficeHours"
+                   android:textColor="@color/primary"
+                   android:textSize="@dimen/_17ssp" />
+
+          </RelativeLayout>
+
+
+     </androidx.cardview.widget.CardView>
+
+</FrameLayout>

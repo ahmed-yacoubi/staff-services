@@ -2,6 +2,7 @@ package com.alaqsa.edu.ps.staffservices.fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,23 +14,26 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.alaqsa.edu.ps.staffservices.R;
+import com.alaqsa.edu.ps.staffservices.adapter.SchedulesViewPagerAdapter;
 import com.alaqsa.edu.ps.staffservices.adapter.SubjectAdapter;
+import com.alaqsa.edu.ps.staffservices.databinding.FragmentReportsBinding;
 import com.alaqsa.edu.ps.staffservices.model.Subject;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ReportsFragment extends Fragment {
 
     private static ReportsFragment instance;
-    private RecyclerView recyclerView;
-    private ArrayList<Subject> subjects;
-    private SubjectAdapter subjectAdapter;
-    private RecyclerView.LayoutManager layoutManager;
-    RelativeLayout relativeLayout;
-    TextView tv_dontexist;
 
+    private FragmentReportsBinding binding;
+
+    private List<Fragment> fragmentList;
+    public SchedulesViewPagerAdapter adapter;
 
     public ReportsFragment() {
         // Required empty public constructor
@@ -46,47 +50,64 @@ public class ReportsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        fragmentList = new ArrayList<>();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_reports, container, false);
-        bind(root);
-        configureRecyclerview();
-        if (subjects.size() == 0) {
-            recyclerView.setVisibility(View.GONE);
-            relativeLayout.setVisibility(View.VISIBLE);
-            tv_dontexist.setText(R.string.NoOfficeHours);
-        }
-        return root;
+        binding = FragmentReportsBinding.inflate(inflater, container, false);
+
+
+        initViewPager();
+
+        initTabLayout();
+        return binding.getRoot();
     }
 
-    private void bind(View root) {
+    private void initTabLayout() {
 
 
+        TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(binding.homeTapLayout, binding.homeViewPager, new TabLayoutMediator.TabConfigurationStrategy() {
+
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                switch (position) {
+                    case 0:
+                        tab.setText("الساعات النظامية");
+
+                        break;
+                    case 1:
+                        tab.setText("الساعات المكتبية");
+                        break;
+                    case 2:
+                        tab.setText("مساقات الغير مكتمل");
+                        break;
 
 
-//        recyclerView = root.findViewById(R.id.reportsFragment_recyclerview);
-//
-//        relativeLayout = root.findViewById(R.id.reportsFragment_layout);
-//        tv_dontexist = root.findViewById(R.id.reportsFragment_tv_dontexist);
+                }
+
+            }
+        });
+        tabLayoutMediator.attach();
+
     }
 
-    private void configureRecyclerview() {
-        subjects = new ArrayList<>();
-//        subjects.add(new Subject("Computer Architecture","ITCS548","105","male",20,false));
-//        subjects.add(new Subject("Computer Architecture","ITCS548","105","male",20,false));
-//        subjects.add(new Subject("Computer Architecture","ITCS548","105","male",20,false));
-//        subjects.add(new Subject("Computer Architecture","ITCS548","105","male",20,false));
-        subjectAdapter = new SubjectAdapter(subjects, R.layout.layout_subject);
-        layoutManager = new LinearLayoutManager(getContext());
 
-        recyclerView.setAdapter(subjectAdapter);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-        subjectAdapter.notifyDataSetChanged();
+    private void initViewPager() {
+        fragmentList.add(ContainerTabFragment.newInstance("report", "regularHours"));
+        fragmentList.add(ContainerTabFragment.newInstance("report", "officeHours"));
+        fragmentList.add(ContainerTabFragment.newInstance("report", "incompleteCourses"));
+
+        adapter = new SchedulesViewPagerAdapter(getActivity(), fragmentList);
+        binding.homeViewPager.setAdapter(adapter);
+
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+
 }

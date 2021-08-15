@@ -1,5 +1,8 @@
 package com.alaqsa.edu.ps.staffservices.adapter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alaqsa.edu.ps.staffservices.R;
+import com.alaqsa.edu.ps.staffservices.activity.ContainerActivity;
 import com.alaqsa.edu.ps.staffservices.databinding.LayoutHomeBinding;
 import com.alaqsa.edu.ps.staffservices.model.Test;
 
@@ -67,7 +71,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("fragment", new AttendanceSheetFragment());
+                bundle.putSerializable("fragment",  "AttendanceSheetFragment");
                 context.startActivity(new Intent(context, ContainerActivity.class)
                         .putExtra("bundle", bundle));
             }

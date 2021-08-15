@@ -1,24 +1,17 @@
 package com.alaqsa.edu.ps.staffservices.fragment;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.alaqsa.edu.ps.staffservices.R;
-import com.alaqsa.edu.ps.staffservices.adapter.HomeAdapter;
 import com.alaqsa.edu.ps.staffservices.adapter.SchedulesViewPagerAdapter;
 import com.alaqsa.edu.ps.staffservices.databinding.FragmentHomeBinding;
-import com.alaqsa.edu.ps.staffservices.model.Test;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -103,11 +96,11 @@ public class HomeFragment extends Fragment {
 
 
     private void initViewPager() {
-        fragmentList.add(DaysFragment.newInstance("home", "sunday"));
-        fragmentList.add(DaysFragment.newInstance("home", "monday"));
-        fragmentList.add(DaysFragment.newInstance("home", "tuesday"));
-        fragmentList.add(DaysFragment.newInstance("home", "wednesday"));
-        fragmentList.add(DaysFragment.newInstance("home", "thursday"));
+        fragmentList.add(ContainerTabFragment.newInstance("home", "sunday"));
+        fragmentList.add(ContainerTabFragment.newInstance("home", "monday"));
+        fragmentList.add(ContainerTabFragment.newInstance("home", "tuesday"));
+        fragmentList.add(ContainerTabFragment.newInstance("home", "wednesday"));
+        fragmentList.add(ContainerTabFragment.newInstance("home", "thursday"));
         adapter = new SchedulesViewPagerAdapter(getActivity(), fragmentList);
         binding.homeViewPager.setAdapter(adapter);
 

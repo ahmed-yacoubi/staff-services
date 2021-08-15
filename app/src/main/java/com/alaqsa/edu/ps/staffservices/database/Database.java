@@ -17,31 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-//    implementation 'com.toptoche.searchablespinner:searchablespinnerlibrary:1.3.1'
-
-//  <com.toptoche.searchablespinnerlibrary.SearchableSpinner
-//                android:id="@+id/spinner_save"
-//                android:layout_width="wrap_content"
-//                android:layout_height="match_parent"
-//                android:layout_weight="1"
-//                />
-
-//    ArrayAdapter<String> adapter_save = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, sorasName);
-//        spinner_saves.setAdapter(adapter_save);
-//
-//        spinner_saves.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                final ArrayList<String> save_from = new ArrayList<>();
-//                final ArrayList<String> save_to = new ArrayList<>();
-//                text_save = soras.get(i).getName_sora();
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> adapterView) {
-//            }
-//        });
-
 public class Database extends SQLiteOpenHelper {
     private static Database Instance = null;
     SQLiteDatabase sqLiteDatabase;

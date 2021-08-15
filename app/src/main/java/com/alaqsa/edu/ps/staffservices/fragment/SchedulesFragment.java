@@ -5,8 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +13,6 @@ import android.view.ViewGroup;
 
 import com.alaqsa.edu.ps.staffservices.adapter.SchedulesViewPagerAdapter;
 import com.alaqsa.edu.ps.staffservices.databinding.FragmentSchedulesBinding;
-import com.alaqsa.edu.ps.staffservices.model.Test;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -129,11 +126,11 @@ public class SchedulesFragment extends Fragment implements Serializable {
 
 
     private void initViewPager() {
-        fragmentList.add(DaysFragment.newInstance("schedules", "sunday"));
-        fragmentList.add(DaysFragment.newInstance("schedules", "monday"));
-        fragmentList.add(DaysFragment.newInstance("schedules", "tuesday"));
-        fragmentList.add(DaysFragment.newInstance("schedules", "wednesday"));
-        fragmentList.add(DaysFragment.newInstance("schedules", "thursday"));
+        fragmentList.add(ContainerTabFragment.newInstance("schedules", "sunday"));
+        fragmentList.add(ContainerTabFragment.newInstance("schedules", "monday"));
+        fragmentList.add(ContainerTabFragment.newInstance("schedules", "tuesday"));
+        fragmentList.add(ContainerTabFragment.newInstance("schedules", "wednesday"));
+        fragmentList.add(ContainerTabFragment.newInstance("schedules", "thursday"));
         adapter = new SchedulesViewPagerAdapter(getActivity(), fragmentList);
         binding.homeViewPager.setAdapter(adapter);
 

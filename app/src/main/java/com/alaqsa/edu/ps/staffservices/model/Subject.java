@@ -28,6 +28,14 @@ public class Subject implements Serializable {
         this.collage = collage;
         this.department = department;
     }
+    public Subject(String subject_name, String subject_id, String division, String gender, int students, boolean isExpanded) {
+        this.subject_name = subject_name;
+        this.subject_id = subject_id;
+        this.division = division;
+        this.gender = gender;
+        this.students = students;
+        this.isExpanded = isExpanded;
+    }
 
     public Subject(String subject_id, String subject_name, String gender, String division, String finalExamDate, String placeTimeLecture, String collage, String department, int students, boolean isExpanded) {
         this.subject_id = subject_id;
