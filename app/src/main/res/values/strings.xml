@@ -97,6 +97,12 @@
     <string name="university_email">University Email</string>
     <string name="personal_email">Personal Email</string>
     <string name="save_edits">Save Edits</string>
+    <string name="course_name">Course Name:</string>
+    <string name="course_no">Course No:</string>
+    <string name="class_no">Class No:</string>
+    <string name="date_">Date:</string>
+    <string name="student_name">Student Name</string>
+    <string name="attend">Attend.</string>
 
 
     <array name="AgendaType">
