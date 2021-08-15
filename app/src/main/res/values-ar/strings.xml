@@ -66,15 +66,36 @@
     <string name="NoSystamicSubjects">لا يوجد مساقات نظامية</string>
     <string name="NoIncompleteSubjects">لا يوجد مساقات غير مكتمل</string>
     <string name="notificationsAndMessages">الاشعارات والرسائل</string>
-
-
-
-
-
-
-
-
-
+    
+    <string name="court">الديوان</string>
+    <string name="university">الجامعة</string>
+    <string name="positions">المناصب</string>
+    <string name="job_name_and_place">المسمى الوظيفي والمكان</string>
+    <string name="job_name">المسمى الوظيفي:</string>
+    <string name="job_place">مكان العمل:</string>
+    <string name="course">المساق</string>
+    <string name="date">التاريخ</string>
+    <string name="period">الفترة</string>
+    <string name="hill">القاعة</string>
+    <string name="name">الاسم:</string>
+    <string name="faculty">الكلية:</string>
+    <string name="department">القسم:</string>
+    <string name="email">البريد الإلكتروني:</string>
+    <string name="mobile_no">رقم الهاتف:</string>
+    <string name="search">بحث...</string>
+    <string name="citizenship">المواطنة</string>
+    <string name="gender">الجنس</string>
+    <string name="name_in_english">الاسم باللغة الإنجليزية</string>
+    <string name="name_and_identification">الاسم والتعريف</string>
+    <string name="address">العنوان</string>
+    <string name="province">المحافظة</string>
+    <string name="city">المدينة</string>
+    <string name="neighborhood">الحي</string>
+    <string name="street">الشارع</string>
+    <string name="contact">الاتصال</string>
+    <string name="university_email">البريد الإلكتروني الجامعي</string>
+    <string name="personal_email">البريد اللإلكتروني الشخصي</string>
+    <string name="save_edits">حفظ التعديلات</string>
 
     <array name="AgendaType">
         <item>نظام الصباحي</item>

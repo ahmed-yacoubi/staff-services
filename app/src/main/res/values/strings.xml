@@ -67,6 +67,37 @@
     <string name="currentPassword">Current password:</string>
     <string name="confirmNewPassword">Confirm new password:</string>
     <string name="newPassword">New password:</string>
+    
+    
+    <string name="court">Court</string>
+    <string name="university">University</string>
+    <string name="positions">Positions</string>
+    <string name="job_name_and_place">Job Name And Place</string>
+    <string name="job_name">Job Name:</string>
+    <string name="job_place">Job Place:</string>
+    <string name="course">Course</string>
+    <string name="date">Date</string>
+    <string name="period">Period</string>
+    <string name="hill">Hill</string>
+    <string name="name">Name:</string>
+    <string name="faculty">Faculty:</string>
+    <string name="department">Department:</string>
+    <string name="email">Email:</string>
+    <string name="mobile_no">Mobile No:</string>
+    <string name="search">Search...</string>
+    <string name="citizenship">Citizenship</string>
+    <string name="gender">Gender</string>
+    <string name="name_in_english">Name in English</string>
+    <string name="name_and_identification">Name And Identification</string>
+    <string name="address">Address</string>
+    <string name="province">Province</string>
+    <string name="city">City</string>
+    <string name="neighborhood">Neighborhood</string>
+    <string name="street">Street</string>
+    <string name="contact">Contact</string>
+    <string name="university_email">University Email</string>
+    <string name="personal_email">Personal Email</string>
+    <string name="save_edits">Save Edits</string>
 
 
     <array name="AgendaType">

@@ -14,9 +14,9 @@ import android.view.ViewGroup;
 
 import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.adapter.NotificationsAdapter;
-import com.alaqsa.edu.ps.staffservices.adapter.ViewStaffAdapter;
+import com.alaqsa.edu.ps.staffservices.adapter.ObservationAdapter;
+import com.alaqsa.edu.ps.staffservices.databinding.FragmentMidtermObservationBinding;
 import com.alaqsa.edu.ps.staffservices.databinding.FragmentNotificationsBinding;
-import com.alaqsa.edu.ps.staffservices.databinding.FragmentViewStaffBinding;
 import com.alaqsa.edu.ps.staffservices.model.Test;
 
 import org.jetbrains.annotations.NotNull;
@@ -26,14 +26,14 @@ import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ViewStaffFragment#newInstance} factory method to
+ * Use the {@link MidtermObservationFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ViewStaffFragment extends Fragment implements Serializable {
+public class MidtermObservationFragment extends Fragment implements Serializable {
 
-    private FragmentViewStaffBinding binding;
+    private FragmentMidtermObservationBinding binding;
 
-    private ViewStaffAdapter adapter;
+    private ObservationAdapter adapter;
 
     private ArrayList<Test> testArrayList;
 
@@ -46,7 +46,7 @@ public class ViewStaffFragment extends Fragment implements Serializable {
     private String mParam1;
     private String mParam2;
 
-    public ViewStaffFragment() {
+    public MidtermObservationFragment() {
         // Required empty public constructor
     }
 
@@ -56,11 +56,11 @@ public class ViewStaffFragment extends Fragment implements Serializable {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment NotificationsFragment.
+     * @return A new instance of fragment MidtermObservationFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ViewStaffFragment newInstance(String param1, String param2) {
-        ViewStaffFragment fragment = new ViewStaffFragment();
+    public static MidtermObservationFragment newInstance(String param1, String param2) {
+        MidtermObservationFragment fragment = new MidtermObservationFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -81,7 +81,7 @@ public class ViewStaffFragment extends Fragment implements Serializable {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentViewStaffBinding.inflate(inflater, container, false);
+        binding = FragmentMidtermObservationBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -93,18 +93,18 @@ public class ViewStaffFragment extends Fragment implements Serializable {
 
         addData();
 
-        adapter = new ViewStaffAdapter(testArrayList, getContext());
+        adapter = new ObservationAdapter(testArrayList);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
 
-        binding.vstaffRecyclerView.setHasFixedSize(true);
-        binding.vstaffRecyclerView.setLayoutManager(layoutManager);
-        binding.vstaffRecyclerView.setAdapter(adapter);
+        binding.mobsRecyclerView.setHasFixedSize(true);
+        binding.mobsRecyclerView.setLayoutManager(layoutManager);
+        binding.mobsRecyclerView.setAdapter(adapter);
 
     }
 
     private void addData() {
-        for (int i=1; i<=10; i++)
+        for (int i=1; i<=5; i++)
             testArrayList.add(new Test(i, "Mobile Apps", "101", "WH201",
                     "10:00-12:00", false, "ALAQSA Reg.", "SID: 2301180724, Mobile Apps Development" +
                     " 2 = 97"));

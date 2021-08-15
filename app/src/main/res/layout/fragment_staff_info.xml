@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".fragment.StaffInfoFragment">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_16sdp">
+
+    <ImageView
+        android:id="@+id/staffInfoImageViewPerson"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_person" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/staffInfoImageViewPerson">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_12sdp">
+
+            <TextView
+                android:id="@+id/staffInfoTextViewName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/staffInfoTextViewNameV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="Lecturer"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/staffInfoTextViewFac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/faculty"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/staffInfoTextViewFacV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="AlAqsa University"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/staffInfoTextViewDep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/department"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/staffInfoTextViewDepV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="AlAqsa University"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/staffInfoTextViewEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/email"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/staffInfoTextViewEmailV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="AlAqsa University"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/staffInfoTextMob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/mobile_no"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/staffInfoTextViewMobV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="AlAqsa University"
+                android:textSize="@dimen/_12ssp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
