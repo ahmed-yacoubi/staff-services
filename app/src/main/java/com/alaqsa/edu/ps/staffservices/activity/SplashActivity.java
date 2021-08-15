@@ -12,6 +12,7 @@ import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.activity.LoginActivity;
 import com.alaqsa.edu.ps.staffservices.activity.MainActivity;
 import com.alaqsa.edu.ps.staffservices.databinding.ActivitySplashBinding;
+import com.alaqsa.edu.ps.staffservices.temp.TemporaryData;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -31,6 +32,9 @@ public class SplashActivity extends AppCompatActivity {
 
         // Declare an imageView to show the animation.
         anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+
+//        TemporaryData temporaryData =new TemporaryData(this);
+//        temporaryData.dataGeneration();
 
         // Create the animation.
         anim.setAnimationListener(new Animation.AnimationListener() {
