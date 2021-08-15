@@ -11,18 +11,18 @@ public class Utils {
         public static final String DB_NAME = "dbname";
         public static final int VERSION = 1;
 
-//****************************************  table_college   *******************************************
+        //****************************************  table_college   *******************************************
         public static final String TB_COLLEGE = "table_college";
         public static final String COLLEGE_ID = "college_id";
         public static final String COLLEGE_NAME = "college_name";
 
-//****************************************  table_department   *******************************************
+        //****************************************  table_department   *******************************************
         public static final String TB_DEPARTMENT = "table_department";
         public static final String DEPARTMENT_ID = "department_id";
         public static final String DEPARTMENT_NAME = "department_name";
         public static final String DEPARTMENT_COLLEGE_ID = "department_college_id";
 
-//****************************************  table_employee   *******************************************
+        //****************************************  table_employee   *******************************************
         public static final String TB_EMPLOYEE = "table_employee";
         public static final String EMPLOYEE_COLLEGE_EMAIL = " employee_college_email";
         public static final String EMPLOYEE_NAME = "employee_name";
@@ -35,8 +35,10 @@ public class Utils {
         public static final String EMPLOYEE_PHONE_NO = "employee_phone_no";
         public static final String EMPLOYEE_JOP_TITLE = "employee_jop_title";
         public static final String EMPLOYEE_PASSWORD = "employee_password";
+        public static final String EMPLOYEE_COLLAGE_NAME = "employee_collageName";
+        public static final String EMPLOYEE_DEPARTMENT_NAME = "employee_departmentName";
 
-//**************************************** table_student    *******************************************
+        //**************************************** table_student    *******************************************
         public static final String TB_STUDENT = "table_student";
         public static final String STUDENT_ID = "student_id";
         public static final String STUDENT_NAME = "student_name";
@@ -51,7 +53,7 @@ public class Utils {
         public static final String STUDENT_SCHOOL_RATE = "student_school_rate";
 
 
-//****************************************  subject_table   *******************************************
+        //****************************************  subject_table   *******************************************
         public static final String TB_SUBJECT = "subject_table";
         public static final String SUBJECT_ID = "subject_id";
         public static final String SUBJECT_NAME = "subject_name";
@@ -62,7 +64,7 @@ public class Utils {
         public static final String SUBJECT_COLLEGE = "subject_college";
         public static final String SUBJECT_DEPARTMENT = "subject_department";
 
-//**************************************** subject_register_table    *******************************************
+        //**************************************** subject_register_table    *******************************************
         public static final String TB_SUBJECT_REGISTER = "subject_register_table";
         public static final String SUB_REGISTER_STUDENT_ID = "subject_register_student_id";
         public static final String SUB_REGISTER_SUBJECT_ID = "subject_register_subject_id";

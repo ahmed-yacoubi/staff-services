@@ -12,18 +12,8 @@ public class Employee {
     private String phoneNo;
     private String jobTitle;
     private String password;
-
-//    college_email
-//name
-//employee_college_id
-//department_id
-//specialize
-//img
-//city
-//personal_email
-//phone
-//jop_title
-
+    private String collageName;
+    private String departmentName;
 
     public Employee() {
     }
@@ -41,7 +31,7 @@ public class Employee {
         this.jobTitle = jobTitle;
     }
 
-    public Employee(String collegeEmail, String name, String collegeId, String departmentId, String specialization, String img, String city, String personalEmail, String phoneNo, String jobTitle, String password) {
+    public Employee(String collegeEmail, String name, String collegeId, String departmentId, String specialization, String img, String city, String personalEmail, String phoneNo, String jobTitle, String password, String collageName, String departmentName) {
         this.collegeEmail = collegeEmail;
         this.name = name;
         this.collegeId = collegeId;
@@ -53,6 +43,24 @@ public class Employee {
         this.phoneNo = phoneNo;
         this.jobTitle = jobTitle;
         this.password = password;
+        this.collageName = collageName;
+        this.departmentName = departmentName;
+    }
+
+    public String getCollageName() {
+        return collageName;
+    }
+
+    public void setCollageName(String collageName) {
+        this.collageName = collageName;
+    }
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
 
     public String getCollegeId() {

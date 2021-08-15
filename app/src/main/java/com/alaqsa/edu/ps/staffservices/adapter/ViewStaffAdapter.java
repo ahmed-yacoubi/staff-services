@@ -15,19 +15,21 @@ import com.alaqsa.edu.ps.staffservices.databinding.LayoutNotificationBinding;
 import com.alaqsa.edu.ps.staffservices.databinding.LayoutStaffBinding;
 import com.alaqsa.edu.ps.staffservices.fragment.StaffInfoFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.ViewStaffFragment;
+import com.alaqsa.edu.ps.staffservices.model.Employee;
 import com.alaqsa.edu.ps.staffservices.model.Test;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ViewStaffAdapter extends RecyclerView.Adapter<ViewStaffAdapter.StaffViewHolder> {
 
-    private ArrayList<Test> testArrayList;
+    private List<Employee> list;
     private Context context;
 
-    public ViewStaffAdapter(ArrayList<Test> testArrayList, Context context) {
-        this.testArrayList = testArrayList;
+    public ViewStaffAdapter(List<Employee> list, Context context) {
+        this.list = list;
         this.context = context;
     }
 
@@ -40,9 +42,9 @@ public class ViewStaffAdapter extends RecyclerView.Adapter<ViewStaffAdapter.Staf
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull ViewStaffAdapter.StaffViewHolder holder, int position) {
-        Test test = testArrayList.get(position);
-        holder.binding.vstaffTextViewName.setText(test.getTitle());
-        holder.binding.vstaffTextViewFaculty.setText(test.getCourse());
+        holder.binding.vstaffTextViewName.setText(list.get(position).getName());
+        holder.binding.vstaffTextViewFaculty.setText(list.get(position).getCollageName());
+        holder.binding.tvDepartment.setText(list.get(position).getDepartmentName());
 
         holder.binding.vstaffCardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +59,7 @@ public class ViewStaffAdapter extends RecyclerView.Adapter<ViewStaffAdapter.Staf
 
     @Override
     public int getItemCount() {
-        return testArrayList.size();
+        return list.size();
     }
 
     class StaffViewHolder extends RecyclerView.ViewHolder {

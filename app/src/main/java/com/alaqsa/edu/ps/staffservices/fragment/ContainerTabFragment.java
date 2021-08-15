@@ -34,16 +34,14 @@ public class ContainerTabFragment extends Fragment implements Serializable {
     private static final String ARG_DATA = "data";
     private static final String ARG_TYPE = "type";
     private FragmentTabContainerBinding binding;
-
     private String mData;
     private String mType;
     private HomeAdapter adapter;
     private SchedulesAdapter schedulesAdapter;
     private ArrayList<Test> testArrayList;
     private NotificationsAdapter notificationsAdapter;
-    RecyclerView.LayoutManager layoutManager;
-
-
+    private RecyclerView.LayoutManager layoutManager;
+    private String textView;
     private ArrayList<Subject> subjects;
     private SubjectAdapter subjectAdapter;
 
@@ -93,7 +91,7 @@ public class ContainerTabFragment extends Fragment implements Serializable {
                     binding.reportsFragmentIv.setVisibility(View.VISIBLE);
                     binding.reportsFragmentTvDontexist.setVisibility(View.VISIBLE);
                     binding.reportsFragmentLayout.setVisibility(View.VISIBLE);
-                    binding.reportsFragmentTvDontexist.setText("لا يوجد محاضرات لهذا اليوم ");
+                    binding.reportsFragmentTvDontexist.setText(R.string.subject_id);
 
                 } else {
 
@@ -199,7 +197,7 @@ public class ContainerTabFragment extends Fragment implements Serializable {
 
     private void initHome() {
 
-        adapter = new HomeAdapter(testArrayList,getContext());
+        adapter = new HomeAdapter(testArrayList, getContext());
 
 
         binding.schRecyclerView.setHasFixedSize(true);

@@ -34,68 +34,59 @@ public class Database extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
 
-        String createCollegeTable = "create table  " + TB_COLLEGE + "  ( " + COLLEGE_ID + " TEXT PRIMARY KEY  , "
-                + COLLEGE_NAME + " TEXT  )";
+            String createCollegeTable = "create table  " + TB_COLLEGE + "  ( " + COLLEGE_ID + " TEXT PRIMARY KEY  , "
+                    + COLLEGE_NAME + " TEXT  )";
 
-        String createDepartmentTable = "create table  " + TB_DEPARTMENT + "  ( " + DEPARTMENT_ID + " TEXT , "
-                + DEPARTMENT_NAME + " TEXT , " + DEPARTMENT_COLLEGE_ID + " TEXT " +
-                " , PRIMARY KEY (" + DEPARTMENT_ID + " , " + DEPARTMENT_COLLEGE_ID + ")" + ")";
-
-
-//         بدنا ID لل موظف ؟؟
-        String createEmployeeTable = "create table  " + TB_EMPLOYEE + "  ( " + EMPLOYEE_COLLEGE_EMAIL + " TEXT PRIMARY KEY  , "
-                + EMPLOYEE_NAME + " TEXT , " + EMPLOYEE_COLLEGE_ID + " TEXT , " + EMPLOYEE_DEPARTMENT_ID + " TEXT , "
-                + EMPLOYEE_SPECIALIZE + " TEXT , " + EMPLOYEE_IMG + " TEXT , " + EMPLOYEE_CITY + " TEXT ,"
-                + EMPLOYEE_PERSONAL_EMAIL + "  TEXT , " + EMPLOYEE_PHONE_NO + " TEXT , " + EMPLOYEE_JOP_TITLE + " TEXT ,"
-                + EMPLOYEE_PASSWORD + " TEXT )";
+            String createDepartmentTable = "create table  " + TB_DEPARTMENT + "  ( " + DEPARTMENT_ID + " TEXT , "
+                    + DEPARTMENT_NAME + " TEXT , " + DEPARTMENT_COLLEGE_ID + " TEXT " +
+                    " , PRIMARY KEY (" + DEPARTMENT_ID + " , " + DEPARTMENT_COLLEGE_ID + ")" + ")";
 
 
-        String createStudent_infoTable = "create table  " + TB_STUDENT + "  ( " + STUDENT_ID + " INTEGER PRIMARY KEY  , "
-                + STUDENT_NAME + " TEXT , " + STUDENT_COLLEGE + " TEXT , " + STUDENT_DEPARTMENT + " TEXT , "
-                + STUDENT_PHONE + " TEXT , " + STUDENT_ADDRESS + " TEXT , " + STUDENT_CITY + " TEXT ,"
-                + STUDENT_LEVEL + "  INTEGER , " + STUDENT_ACHIEVEMENT_HOURS + " INTEGER , " + STUDENT_GPA + " REAL ,"
-                + STUDENT_SCHOOL_RATE + " REAL )";
+    //         بدنا ID لل موظف ؟؟
+            String createEmployeeTable = "create table  " + TB_EMPLOYEE + "  ( " + EMPLOYEE_COLLEGE_EMAIL + " TEXT PRIMARY KEY  , "
+                    + EMPLOYEE_NAME + " TEXT , " + EMPLOYEE_COLLEGE_ID + " TEXT , " + EMPLOYEE_DEPARTMENT_ID + " TEXT , "
+                    + EMPLOYEE_SPECIALIZE + " TEXT , " + EMPLOYEE_IMG + " TEXT , " + EMPLOYEE_CITY + " TEXT ,"
+                    + EMPLOYEE_PERSONAL_EMAIL + "  TEXT , "
+                    + EMPLOYEE_COLLAGE_NAME + "  TEXT , "
+                    + EMPLOYEE_DEPARTMENT_NAME + "  TEXT , " + EMPLOYEE_PHONE_NO + " TEXT , " + EMPLOYEE_JOP_TITLE + " TEXT ,"
+                    + EMPLOYEE_PASSWORD + " TEXT )";
+
+    //                String jop_title = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLAGE_NAME));
+    //                String jop_title = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DEPARTMENT_NAME));
+            String createStudent_infoTable = "create table  " + TB_STUDENT + "  ( " + STUDENT_ID + " INTEGER PRIMARY KEY  , "
+                    + STUDENT_NAME + " TEXT , " + STUDENT_COLLEGE + " TEXT , " + STUDENT_DEPARTMENT + " TEXT , "
+                    + STUDENT_PHONE + " TEXT , " + STUDENT_ADDRESS + " TEXT , " + STUDENT_CITY + " TEXT ,"
+                    + STUDENT_LEVEL + "  INTEGER , " + STUDENT_ACHIEVEMENT_HOURS + " INTEGER , " + STUDENT_GPA + " REAL ,"
+                    + STUDENT_SCHOOL_RATE + " REAL )";
 
 
-//        ليش محطوط ال GENDER
-        String createSubjectTable = "create table  " + TB_SUBJECT + "  ( " + SUBJECT_ID + " TEXT PRIMARY KEY  , "
-                + SUBJECT_NAME + " TEXT , " + SUBJECT_GENDER + " TEXT , "
-                + SUBJECT_DIVISION + " TEXT , " + SUBJECT_FINALEXAM_DATE + " TEXT , " + SUBJECT_PLACE_TIME + " TEXT ,"
-                + SUBJECT_COLLEGE + "  TEXT , " + SUBJECT_DEPARTMENT + " TEXT )";
+    //        ليش محطوط ال GENDER
+            String createSubjectTable = "create table  " + TB_SUBJECT + "  ( " + SUBJECT_ID + " TEXT PRIMARY KEY  , "
+                    + SUBJECT_NAME + " TEXT , " + SUBJECT_GENDER + " TEXT , "
+                    + SUBJECT_DIVISION + " TEXT , " + SUBJECT_FINALEXAM_DATE + " TEXT , " + SUBJECT_PLACE_TIME + " TEXT ,"
+                    + SUBJECT_COLLEGE + "  TEXT , " + SUBJECT_DEPARTMENT + " TEXT )";
 
 
-        String createRegisterSubjectTable = "create table  " + TB_SUBJECT_REGISTER + "  ( " + SUB_REGISTER_STUDENT_ID + " INTEGER , "
-                + SUB_REGISTER_SUBJECT_ID + " TEXT , " + SUB_REGISTER_DIVISION + " TEXT , " +
-                SUB_REGISTER_MID_MARK + " REAL ," + SUB_REGISTER_FINAL_MARK + " REAL , " +
-                SUB_REGISTER_WORK_MARK + " REAL ," + SUB_REGISTER_TOTAL_MARK + " REAL " +
-                " , FOREIGN KEY( " + SUB_REGISTER_STUDENT_ID + " ) REFERENCES " + TB_STUDENT + " ( " + STUDENT_ID + ")" +
-                " , FOREIGN KEY( " + SUB_REGISTER_SUBJECT_ID + " ) REFERENCES " + TB_SUBJECT + " ( " + SUBJECT_ID + ")" +
-                " , FOREIGN KEY( " + SUB_REGISTER_DIVISION + " ) REFERENCES " + TB_SUBJECT + " ( " + SUBJECT_DIVISION + ")" +
-                " , PRIMARY KEY( " + SUB_REGISTER_STUDENT_ID + " , " + SUB_REGISTER_SUBJECT_ID + " , " + SUB_REGISTER_DIVISION + ")" + ")";
-//        String createRegisterSubjectTable = "CREATE TABLE \"subject_register_table\" (\n" +
-//                "\t\"subject_register_student_id\"\tINTEGER,\n" +
-//                "\t\"subject_register_subject_id\"\tTEXT,\n" +
-//                "\t\"subject_register_division\"\tTEXT,\n" +
-//                "\t\"midMark\"\tREAL,\n" +
-//                "\t\"finalMark\"\tREAL,\n" +
-//                "\t\"workMark\"\tREAL,\n" +
-//                "\t\"totalMark\"\tREAL,\n" +
-//                "\tPRIMARY KEY(\"subject_register_student_id\",\"subject_register_subject_id\",\"subject_register_subject_id\"),\n" +
-//                "\tFOREIGN KEY(\"subject_register_subject_id\") REFERENCES \"subject_table\"(\"subject_id\"),\n" +
-//                "\tFOREIGN KEY(\"subject_register_division\") REFERENCES \"subject_table\"(\"subject_division\"),\n" +
-//                "\tFOREIGN KEY(\"subject_register_student_id\") REFERENCES \"table_student\"(\"student_id\")\n" +
-//                ");";
-        sqLiteDatabase.execSQL(createCollegeTable);
-        sqLiteDatabase.execSQL(createDepartmentTable);
-        sqLiteDatabase.execSQL(createEmployeeTable);
-        sqLiteDatabase.execSQL(createStudent_infoTable);
-        sqLiteDatabase.execSQL(createSubjectTable);
-        sqLiteDatabase.execSQL(createRegisterSubjectTable);
+            String createRegisterSubjectTable = "create table  " + TB_SUBJECT_REGISTER + "  ( " + SUB_REGISTER_STUDENT_ID + " INTEGER , "
+                    + SUB_REGISTER_SUBJECT_ID + " TEXT , " + SUB_REGISTER_DIVISION + " TEXT , " +
+                    SUB_REGISTER_MID_MARK + " REAL ," + SUB_REGISTER_FINAL_MARK + " REAL , " +
+                    SUB_REGISTER_WORK_MARK + " REAL ," + SUB_REGISTER_TOTAL_MARK + " REAL " +
+                    " , FOREIGN KEY( " + SUB_REGISTER_STUDENT_ID + " ) REFERENCES " + TB_STUDENT + " ( " + STUDENT_ID + ")" +
+                    " , FOREIGN KEY( " + SUB_REGISTER_SUBJECT_ID + " ) REFERENCES " + TB_SUBJECT + " ( " + SUBJECT_ID + ")" +
+                    " , FOREIGN KEY( " + SUB_REGISTER_DIVISION + " ) REFERENCES " + TB_SUBJECT + " ( " + SUBJECT_DIVISION + ")" +
+                    " , PRIMARY KEY( " + SUB_REGISTER_STUDENT_ID + " , " + SUB_REGISTER_SUBJECT_ID + " , " + SUB_REGISTER_DIVISION + ")" + ")";
 
-    }
+            sqLiteDatabase.execSQL(createCollegeTable);
+            sqLiteDatabase.execSQL(createDepartmentTable);
+            sqLiteDatabase.execSQL(createEmployeeTable);
+            sqLiteDatabase.execSQL(createStudent_infoTable);
+            sqLiteDatabase.execSQL(createSubjectTable);
+            sqLiteDatabase.execSQL(createRegisterSubjectTable);
+
+        }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
@@ -263,11 +254,11 @@ public class Database extends SQLiteOpenHelper {
         return departments;
     }
 
-    public List<Employee> getEmployeeByCollege(String college_id) {
+
+    public List<Employee> getLastEmployees() {
         ArrayList<Employee> employees = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
-        String[] arg = {college_id};
-        Cursor cursor = db.rawQuery("select * from " + TB_EMPLOYEE + " where " + EMPLOYEE_COLLEGE_ID + " = ?", arg);
+        Cursor cursor = db.rawQuery("select * from " + TB_EMPLOYEE, null);
 
         if (cursor.moveToFirst()) {
             do {
@@ -281,10 +272,13 @@ public class Database extends SQLiteOpenHelper {
                 String personal_email = cursor.getString(cursor.getColumnIndex(EMPLOYEE_PERSONAL_EMAIL));
                 String phone = cursor.getString(cursor.getColumnIndex(EMPLOYEE_PHONE_NO));
                 String jop_title = cursor.getString(cursor.getColumnIndex(EMPLOYEE_JOP_TITLE));
+                String departmentName = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLAGE_NAME));
+                String collageName = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DEPARTMENT_NAME));
 
                 Employee employee = new Employee(college_email, name, employee_college_id, department_id, specialize,
                         img, city, personal_email, phone, jop_title);
-
+                employee.setCollageName(collageName);
+                employee.setDepartmentName(departmentName);
                 employees.add(employee);
             } while (cursor.moveToNext());
             cursor.close();
@@ -292,34 +286,6 @@ public class Database extends SQLiteOpenHelper {
         return employees;
     }
 
-    public List<Employee> getEmployeeByDepartment(String department_id) {
-        ArrayList<Employee> employees = new ArrayList<>();
-        SQLiteDatabase db = getReadableDatabase();
-        String[] arg = {department_id};
-        Cursor cursor = db.rawQuery("select * from " + TB_EMPLOYEE + " where " + EMPLOYEE_DEPARTMENT_ID + " = ?", arg);
-
-        if (cursor.moveToFirst()) {
-            do {
-                String college_email = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLEGE_EMAIL));
-                String name = cursor.getString(cursor.getColumnIndex(EMPLOYEE_NAME));
-                String employee_college_id = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLEGE_ID));
-                String depart_id = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DEPARTMENT_ID));
-                String specialize = cursor.getString(cursor.getColumnIndex(EMPLOYEE_SPECIALIZE));
-                String img = cursor.getString(cursor.getColumnIndex(EMPLOYEE_IMG));
-                String city = cursor.getString(cursor.getColumnIndex(EMPLOYEE_CITY));
-                String personal_email = cursor.getString(cursor.getColumnIndex(EMPLOYEE_PERSONAL_EMAIL));
-                String phone = cursor.getString(cursor.getColumnIndex(EMPLOYEE_PHONE_NO));
-                String jop_title = cursor.getString(cursor.getColumnIndex(EMPLOYEE_JOP_TITLE));
-
-                Employee employee = new Employee(college_email, name, employee_college_id, depart_id, specialize,
-                        img, city, personal_email, phone, jop_title);
-
-                employees.add(employee);
-            } while (cursor.moveToNext());
-            cursor.close();
-        }
-        return employees;
-    }
 
     public StudentInfo getStudentById(int id) {
         StudentInfo studentInfo = new StudentInfo();
@@ -469,7 +435,7 @@ public class Database extends SQLiteOpenHelper {
 //   JOIN table_student , subject_table
 //    ON  subject_register_table.subject_register_student_id = table_student.student_id  and subject_register_table.subject_register_subject_id  = subject_table.subject_id ;
 
-        Cursor cursor = db.rawQuery("select " + STUDENT_NAME + SUBJECT_NAME   + " from " + TB_SUBJECT_REGISTER + " where "
+        Cursor cursor = db.rawQuery("select " + STUDENT_NAME + SUBJECT_NAME + " from " + TB_SUBJECT_REGISTER + " where "
                 + SUB_REGISTER_SUBJECT_ID + " =? and " + SUB_REGISTER_DIVISION + " =? ", arg);
 
         if (cursor.moveToFirst()) {

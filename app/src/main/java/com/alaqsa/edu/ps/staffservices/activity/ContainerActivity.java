@@ -82,7 +82,6 @@ public class ContainerActivity extends AppCompatActivity {
                 case "AttendanceSheetFragment":
                     fragment = new AttendanceSheetFragment();
 
-
             }
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
