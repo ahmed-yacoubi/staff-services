@@ -44,6 +44,7 @@
     <string name="arabic">اللغة العربية</string>
     <string name="PasswordMustContain">يجب ان تحتوي كلمة المرور على حروف صغيرة وكبيرة وارقام ورموز</string>
 
+    <string name="hello_blank_fragment">هلا وغلا وسلة حلا</string>
 
 
     <string name="BeginningOfTheSemester">بداية الفصل الدراسي:</string>
@@ -60,7 +61,6 @@
     <string name="subject_name">اسم المساق:</string>
     <string name="subject_id">رقم المساق:</string>
     <string name="DivisionId">رقم الشعبة:</string>
-    <string name="gender">الجنس:</string>
     <string name="Students_number">عدد الطلاب:</string>
     <string name="NoOfficeHours">لا يوجد ساعات مكتبية</string>
     <string name="NoSystamicSubjects">لا يوجد مساقات نظامية</string>
@@ -96,6 +96,9 @@
     <string name="university_email">البريد الإلكتروني الجامعي</string>
     <string name="personal_email">البريد اللإلكتروني الشخصي</string>
     <string name="save_edits">حفظ التعديلات</string>
+    <string name="currentPassword">كلمة المرور الحالية : </string>
+    <string name="confirmNewPassword">تأكيد كلمة المرور</string>
+    <string name="newPassword">كلمة المرور الجديدة :</string>
 
     <array name="AgendaType">
         <item>نظام الصباحي</item>

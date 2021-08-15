@@ -1,8 +1,9 @@
 package com.alaqsa.edu.ps.staffservices.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class MenuItem {
+public class MenuItem  implements Serializable {
     private int icon;
     private String title;
     private boolean isExpanded;

@@ -1,6 +1,9 @@
 package com.alaqsa.edu.ps.staffservices.model;
 
-public class SubMenuItem {
+import java.io.Serializable;
+
+public class SubMenuItem  implements Serializable
+{
     private int icon;
     private String title;
 

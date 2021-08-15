@@ -1,8 +1,10 @@
 package com.alaqsa.edu.ps.staffservices.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Test {
+public class Test implements Serializable
+{
     private int id;
     private String course;
     private String classs;
