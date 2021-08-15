@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/_16sdp"
+    android:paddingEnd="@dimen/_16sdp"
+    android:paddingTop="@dimen/_16sdp"
+    tools:context=".fragment.AttendanceSheetFragment">
+
+    <TextView
+        android:id="@+id/attTextViewCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/course_name"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/attTextViewCourseV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:text="Mobile Apps Dev"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toEndOf="@+id/attTextViewCourse"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/attTextViewCourseNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="@string/course_no"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attTextViewCourse" />
+
+    <TextView
+        android:id="@+id/attTextViewCourseNoV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:text="CSIT 1201"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toEndOf="@+id/attTextViewCourseNo"
+        app:layout_constraintTop_toBottomOf="@+id/attTextViewCourseV" />
+
+    <TextView
+        android:id="@+id/attTextViewClassNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:text="@string/class_no"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/attTextViewCourseNoV"
+        app:layout_constraintTop_toBottomOf="@+id/attTextViewCourse" />
+
+    <TextView
+        android:id="@+id/attTextViewClassNoV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:text="101"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toEndOf="@+id/attTextViewClassNo"
+        app:layout_constraintTop_toBottomOf="@+id/attTextViewCourseV" />
+
+    <TextView
+        android:id="@+id/attTextViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="@string/date_"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attTextViewCourseNo" />
+
+    <TextView
+        android:id="@+id/attTextViewDateV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="8/15/2021"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toEndOf="@+id/attTextViewDate"
+        app:layout_constraintTop_toBottomOf="@+id/attTextViewCourseNoV" />
+
+    <LinearLayout
+        android:id="@+id/attSheetLinearLayoutSem"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/observation_background"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attTextViewDateV">
+
+        <TextView
+            android:id="@+id/attSheetTextViewId"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:gravity="center"
+            android:text="#"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:id="@+id/attSheetTextViewName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="@string/student_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:id="@+id/attSheetTextViewAtt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_weight=".7"
+            android:gravity="center"
+            android:text="@string/attend"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/attSheetCardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:cardCornerRadius="0dp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        app:layout_constraintBottom_toTopOf="@+id/attSheetButtonSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attSheetLinearLayoutSem">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/attSheetRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/attSheetButtonSave"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:background="@drawable/text_view_background"
+        android:text="@string/save_edits"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
