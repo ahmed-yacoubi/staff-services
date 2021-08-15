@@ -85,7 +85,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
             public void onClick(View v) {
                 if (position == 2) {
                     Bundle bundle = new Bundle();
-                    bundle.putSerializable("fragment", new ViewStaffFragment());
+                    bundle.putString("fragment", "ViewStaffFragment");
                     context.startActivity(new Intent(context, ContainerActivity.class)
                             .putExtra("bundle", bundle));
                 }

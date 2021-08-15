@@ -31,9 +31,12 @@
                 android:layout_weight="9"
                 app:tabGravity="center"
                 app:tabIndicator="@drawable/tabindicator"
+                app:tabBackground="@drawable/tab_backround"
                 app:tabIndicatorGravity="stretch"
                 app:tabMode="scrollable"
-                app:tabSelectedTextColor="@color/white" />
+                app:tabSelectedTextColor="@color/white"
+
+                />
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/homeViewPager"

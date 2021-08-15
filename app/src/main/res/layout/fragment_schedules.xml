@@ -53,91 +53,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/schLinearLayoutSem">
 
-        <TextView
-            android:id="@+id/schTextViewSun"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/text_view_background"
-            android:gravity="center"
-            android:lines="1"
-            android:text="@string/sunday"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_10ssp" />
-
-        <TextView
-            android:id="@+id/schTextViewMon"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:layout_weight="1"
-            android:background="@drawable/text_view_background_empty"
-            android:gravity="center"
-            android:lines="1"
-            android:text="@string/monday"
-            android:textAllCaps="false"
-            android:textColor="@color/primary"
-            android:textSize="@dimen/_10ssp" />
-
-        <TextView
-            android:id="@+id/schTextViewTue"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/text_view_background_empty"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:gravity="center"
-            android:lines="1"
-            android:text="@string/tuesday"
-            android:textAllCaps="false"
-            android:textColor="@color/primary"
-            android:textSize="@dimen/_10ssp" />
-
-        <TextView
-            android:id="@+id/schTextViewWed"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:layout_weight="1"
-            android:background="@drawable/text_view_background_empty"
-            android:gravity="center"
-            android:lines="1"
-            android:text="@string/wednesday"
-            android:textAllCaps="false"
-            android:textColor="@color/primary"
-            android:textSize="@dimen/_10ssp" />
-
-        <TextView
-            android:id="@+id/schTextViewThu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/text_view_background_empty"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:gravity="center"
-            android:lines="1"
-            android:text="@string/thursday"
-            android:textAllCaps="false"
-            android:textColor="@color/primary"
-            android:textSize="@dimen/_10ssp" />
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/schCardView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/_16sdp"
-        android:layout_marginBottom="@dimen/_16sdp"
-        app:cardCornerRadius="@dimen/_16sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/schLinearLayoutDays">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/schRecyclerView"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/homeCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_65sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        app:cardCornerRadius="@dimen/_16sdp">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/homeTapLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_weight="9"
+                app:tabGravity="center"
+                app:tabIndicator="@drawable/tabindicator"
+                app:tabBackground="@drawable/tab_backround"
+
+                app:tabIndicatorGravity="stretch"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="@color/white"
+
+                />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/homeViewPager"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

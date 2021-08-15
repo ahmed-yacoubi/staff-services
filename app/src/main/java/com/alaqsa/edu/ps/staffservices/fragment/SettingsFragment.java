@@ -10,7 +10,9 @@ import android.view.ViewGroup;
 
 import com.alaqsa.edu.ps.staffservices.R;
 
-public class SettingsFragment extends Fragment {
+import java.io.Serializable;
+
+public class SettingsFragment extends Fragment implements Serializable {
 
     private static SettingsFragment settingsFragment;
 

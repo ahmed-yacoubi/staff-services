@@ -73,6 +73,7 @@ public class HomeFragment extends Fragment {
                 switch (position) {
                     case 0:
                         tab.setText("الاحد");
+
                         break;
                     case 1:
                         tab.setText("الاثنين");
@@ -102,11 +103,11 @@ public class HomeFragment extends Fragment {
 
 
     private void initViewPager() {
-        fragmentList.add(DaysFragment.newInstance("sunday"));
-        fragmentList.add(DaysFragment.newInstance("monday"));
-        fragmentList.add(DaysFragment.newInstance("tuesday"));
-        fragmentList.add(DaysFragment.newInstance("wednesday"));
-        fragmentList.add(DaysFragment.newInstance("thursday"));
+        fragmentList.add(DaysFragment.newInstance("home", "sunday"));
+        fragmentList.add(DaysFragment.newInstance("home", "monday"));
+        fragmentList.add(DaysFragment.newInstance("home", "tuesday"));
+        fragmentList.add(DaysFragment.newInstance("home", "wednesday"));
+        fragmentList.add(DaysFragment.newInstance("home", "thursday"));
         adapter = new SchedulesViewPagerAdapter(getActivity(), fragmentList);
         binding.homeViewPager.setAdapter(adapter);
 

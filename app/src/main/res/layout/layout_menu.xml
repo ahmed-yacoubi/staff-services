@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/menuCardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_8sdp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="@dimen/_10sdp">
 
     <LinearLayout
@@ -46,7 +46,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_8sdp"
-                android:layout_marginEnd="@dimen/_16sdp"                android:src="@drawable/ic_arrow_down"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:src="@drawable/ic_arrow_down"
                 android:visibility="visible" />
         </LinearLayout>
 
@@ -54,12 +55,12 @@
             android:id="@+id/menuRecyclerViewSub"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginBottom="@dimen/_8sdp"
             android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/_16sdp"
-            android:nestedScrollingEnabled="false"/>
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:nestedScrollingEnabled="false"
+            android:visibility="gone" />
     </LinearLayout>
 
 

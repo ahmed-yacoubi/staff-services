@@ -12,26 +12,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.alaqsa.edu.ps.staffservices.R;
-import com.alaqsa.edu.ps.staffservices.adapter.HomeAdapter;
-import com.alaqsa.edu.ps.staffservices.adapter.SchedulesAdapter;
 
+import com.alaqsa.edu.ps.staffservices.adapter.SchedulesViewPagerAdapter;
 import com.alaqsa.edu.ps.staffservices.databinding.FragmentSchedulesBinding;
 import com.alaqsa.edu.ps.staffservices.model.Test;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class SchedulesFragment extends Fragment implements Serializable {
 
     private FragmentSchedulesBinding binding;
-
-    private SchedulesAdapter adapter;
-
-    private ArrayList<Test> testArrayList;
+    List<Fragment> fragmentList = new ArrayList<>();
+    public SchedulesViewPagerAdapter adapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,6 +64,9 @@ public class SchedulesFragment extends Fragment implements Serializable {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentSchedulesBinding.inflate(inflater, container, false);
+        initViewPager();
+        initTabLayout();
+
         return binding.getRoot();
     }
 
@@ -72,25 +74,69 @@ public class SchedulesFragment extends Fragment implements Serializable {
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        testArrayList = new ArrayList<>();
+//        testArrayList = new ArrayList<>();
 
-        addData();
-
-        adapter = new SchedulesAdapter(testArrayList);
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-
-        binding.schRecyclerView.setHasFixedSize(true);
-        binding.schRecyclerView.setLayoutManager(layoutManager);
-        binding.schRecyclerView.setAdapter(adapter);
+//        addData();
+//
+//        adapter = new SchedulesAdapter(testArrayList);
+//
 
     }
 
-    private void addData() {
-        for (int i = 1; i <= 5; i++)
-            testArrayList.add(new Test(i, "Mobile Apps", "101", "WH201",
-                    "10:00-12:00", false, "ALAQSA Reg.", "SID: 2301180724, Mobile Apps Development" +
-                    " 2 = 97"));
+//    private void addData() {
+//        for (int i = 1; i <= 5; i++)
+//            testArrayList.add(new Test(i, "Mobile Apps", "101", "WH201",
+//                    "10:00-12:00", false, "ALAQSA Reg.", "SID: 2301180724, Mobile Apps Development" +
+//                    " 2 = 97"));
+//    }
+    private void initTabLayout() {
+
+
+        TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(binding.homeTapLayout, binding.homeViewPager, new TabLayoutMediator.TabConfigurationStrategy() {
+
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                switch (position) {
+                    case 0:
+                        tab.setText("الاحد");
+
+                        break;
+                    case 1:
+                        tab.setText("الاثنين");
+                        break;
+
+                    case 2:
+
+                        tab.setText("الثلاثاء");
+
+                        break;
+                    case 3:
+                        tab.setText("الاربعاء");
+
+                        break;
+                    case 4:
+                        tab.setText("الخميس");
+
+                        break;
+
+                }
+
+            }
+        });
+        tabLayoutMediator.attach();
+
+    }
+
+
+    private void initViewPager() {
+        fragmentList.add(DaysFragment.newInstance("schedules", "sunday"));
+        fragmentList.add(DaysFragment.newInstance("schedules", "monday"));
+        fragmentList.add(DaysFragment.newInstance("schedules", "tuesday"));
+        fragmentList.add(DaysFragment.newInstance("schedules", "wednesday"));
+        fragmentList.add(DaysFragment.newInstance("schedules", "thursday"));
+        adapter = new SchedulesViewPagerAdapter(getActivity(), fragmentList);
+        binding.homeViewPager.setAdapter(adapter);
+
     }
 
     @Override
@@ -98,4 +144,6 @@ public class SchedulesFragment extends Fragment implements Serializable {
         super.onDestroyView();
         binding = null;
     }
+
+
 }

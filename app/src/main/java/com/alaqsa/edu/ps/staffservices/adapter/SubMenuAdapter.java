@@ -14,11 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.activity.ContainerActivity;
 import com.alaqsa.edu.ps.staffservices.databinding.LayoutMenuSubBinding;
-import com.alaqsa.edu.ps.staffservices.fragment.BasicInfoFragment;
-import com.alaqsa.edu.ps.staffservices.fragment.FinalObservationFragment;
-import com.alaqsa.edu.ps.staffservices.fragment.JobInfoFragment;
-import com.alaqsa.edu.ps.staffservices.fragment.MidtermObservationFragment;
-import com.alaqsa.edu.ps.staffservices.fragment.SchedulesFragment;
+
 import com.alaqsa.edu.ps.staffservices.model.SubMenuItem;
 
 import org.jetbrains.annotations.NotNull;
@@ -54,27 +50,35 @@ public class SubMenuAdapter extends RecyclerView.Adapter<SubMenuAdapter.SubMenuV
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 switch (subMenuItem.getIcon()) {
-                    case R.drawable.ic_agenda: bundle.putSerializable("fragment", new AgendaFragment());
+                    case R.drawable.ic_agenda:
+                        bundle.putString("fragment", "AgendaFragment");
                         break;
-                    case R.drawable.ic_schedules2: bundle.putSerializable("fragment", new SchedulesFragment());
+                    case R.drawable.ic_schedules2:
+                        bundle.putString("fragment", "SchedulesFragment");
                         break;
-                    case R.drawable.ic_reports: bundle.putSerializable("fragment", new ReportsFragment());
+                    case R.drawable.ic_reports:
+                        bundle.putString("fragment", "ReportsFragment");
                         break;
-                    case R.drawable.ic_observation: bundle.putSerializable("fragment", new MidtermObservationFragment());
+                    case R.drawable.ic_observation:
+                        bundle.putString("fragment", "MidtermObservationFragment");
                         break;
-                    case R.drawable.ic_observation2: bundle.putSerializable("fragment", new FinalObservationFragment());
+                    case R.drawable.ic_observation2:
+                        bundle.putString("fragment", "FinalObservationFragment");
                         break;
-                    case R.drawable.ic_basic_info: bundle.putSerializable("fragment", new BasicInfoFragment());
+                    case R.drawable.ic_basic_info:
+                        bundle.putString("fragment", "BasicInfoFragment");
                         break;
-                    case R.drawable.ic_job_info: bundle.putSerializable("fragment", new JobInfoFragment());
+                    case R.drawable.ic_job_info:
+                        bundle.putString("fragment", "JobInfoFragment");
                         break;
                     //case R.drawable.ic_cancel_notifications:
-                        // show dialog
-                        //break;
+                    // show dialog
+                    //break;
                     //case R.drawable.ic_change_language:
-                        // show dialog
-                        //break;
-                    case R.drawable.ic_change_password: bundle.putSerializable("fragment", new ChangePasswordFragment());
+                    // show dialog
+                    //break;
+                    case R.drawable.ic_change_password:
+                        bundle.putString("fragment",  "ChangePasswordFragment");
                         break;
                 }
                 context.startActivity(new Intent(context, ContainerActivity.class)

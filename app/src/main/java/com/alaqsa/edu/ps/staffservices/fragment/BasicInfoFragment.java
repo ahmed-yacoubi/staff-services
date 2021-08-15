@@ -84,7 +84,7 @@ public class BasicInfoFragment extends Fragment implements Serializable {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("fragment", new EditBasicInfoFragment());
+                bundle.putString("fragment", "EditBasicInfoFragment");
                 startActivity(new Intent(getContext(), ContainerActivity.class)
                         .putExtra("bundle", bundle));
             }

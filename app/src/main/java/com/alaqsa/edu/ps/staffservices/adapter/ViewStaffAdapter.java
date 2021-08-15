@@ -48,7 +48,7 @@ public class ViewStaffAdapter extends RecyclerView.Adapter<ViewStaffAdapter.Staf
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("fragment", new StaffInfoFragment());
+                bundle.putString("fragment", "StaffInfoFragment");
                 context.startActivity(new Intent(context, ContainerActivity.class)
                         .putExtra("bundle", bundle));
             }

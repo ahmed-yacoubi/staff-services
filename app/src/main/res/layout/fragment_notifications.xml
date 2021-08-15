@@ -5,58 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingStart="@dimen/_16sdp"
-    android:paddingEnd="@dimen/_16sdp"
     android:paddingTop="@dimen/_8sdp"
+    android:paddingEnd="@dimen/_16sdp"
     tools:context=".fragment.NotificationsFragment">
 
-    <LinearLayout
-        android:id="@+id/notiLinearLayoutTitle"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/homeCardView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_32sdp"
-        android:layout_marginTop="@dimen/_16sdp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/notiTextViewNotifications"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginEnd="@dimen/_4sdp"
-            android:background="@drawable/button_background"
-            android:gravity="center"
-            android:lines="1"
-            android:text="@string/notifications"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_13ssp" />
-
-        <TextView
-            android:id="@+id/notiTextViewMessages"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:background="@drawable/edit_text_background"
-            android:gravity="center"
-            android:lines="1"
-            android:text="@string/messages"
-            android:textColor="@color/primary"
-            android:textAllCaps="false"
-            android:textSize="@dimen/_13ssp" />
-
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/notiRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="@dimen/_16sdp"
         android:layout_marginBottom="@dimen/_16sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notiLinearLayoutTitle" />
+        app:cardCornerRadius="@dimen/_16sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/homeTapLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_weight="9"
+                app:tabGravity="fill"
+                app:tabIndicatorGravity="stretch"
+                app:tabIndicator="@drawable/tabindicator_msg"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/white"
+                android:background="@drawable/tabindicator_msg_backround"
+                />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/homeViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
