@@ -18,9 +18,11 @@ import java.util.ArrayList;
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder> {
 
     private ArrayList<Test> testArrayList;
+    private Context context;
 
-    public HomeAdapter(ArrayList<Test> testArrayList) {
+    public HomeAdapter(ArrayList<Test> testArrayList, Context context) {
         this.testArrayList = testArrayList;
+        this.context = context;
     }
 
     @NonNull
@@ -58,6 +60,16 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
                 }
                 notifyDataSetChanged();
                 notifyItemChanged(position);
+            }
+        });
+        
+        holder.binding.homeTextViewAttendance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("fragment", new AttendanceSheetFragment());
+                context.startActivity(new Intent(context, ContainerActivity.class)
+                        .putExtra("bundle", bundle));
             }
         });
     }
