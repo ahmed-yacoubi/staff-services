@@ -96,9 +96,17 @@
     <string name="university_email">البريد الإلكتروني الجامعي</string>
     <string name="personal_email">البريد اللإلكتروني الشخصي</string>
     <string name="save_edits">حفظ التعديلات</string>
+    <string name="course_name">اسم المساق:</string>
+    <string name="course_no">رقم المساق:</string>
+    <string name="class_no">رقم الشعبة:</string>
+    <string name="date_">التاريخ:</string>
+    <string name="student_name">اسم الطالب</string>
+    <string name="attend">الحضور</string>
+    
     <string name="currentPassword">كلمة المرور الحالية : </string>
     <string name="confirmNewPassword">تأكيد كلمة المرور</string>
     <string name="newPassword">كلمة المرور الجديدة :</string>
+    
 
     <array name="AgendaType">
         <item>نظام الصباحي</item>
