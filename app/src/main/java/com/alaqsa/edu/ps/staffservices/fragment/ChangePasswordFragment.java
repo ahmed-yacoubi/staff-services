@@ -13,7 +13,7 @@ import com.alaqsa.edu.ps.staffservices.R;
 import java.io.Serializable;
 
 
-public class ChangePasswordFragment extends Fragment implements Serializable {
+public class ChangePasswordFragment extends Fragment  {
     private static ChangePasswordFragment changePasswordFragment;
 
     public ChangePasswordFragment() {

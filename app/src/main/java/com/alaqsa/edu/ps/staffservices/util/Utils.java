@@ -74,5 +74,12 @@ public class Utils {
         public static final String SUB_REGISTER_WORK_MARK = "subject_register_work_mark";
         public static final String SUB_REGISTER_TOTAL_MARK = "subject_register_total_mark";
 
+        //**************************************** Agenda_table    *******************************************
+        public static final String TB_AGENDA = "agenda_table";
+        public static final String AGENDA_BEG_SEMESTER = "agenda_beginning_semester";
+        public static final String AGENDA_END_SEMESTER = "agenda_end_semester";
+        public static final String AGENDA_START_FINAL_EXAM = "agenda_start_final_exam";
+        public static final String AGENDA_STARTMIDTERM = "agenda_start_midterm";
+
     }
 }

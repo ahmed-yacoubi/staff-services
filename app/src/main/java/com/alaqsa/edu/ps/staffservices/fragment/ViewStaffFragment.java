@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ViewStaffFragment extends Fragment implements Serializable {
+public class ViewStaffFragment extends Fragment  {
 
     private FragmentViewStaffBinding binding;
 

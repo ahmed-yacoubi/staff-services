@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SchedulesFragment extends Fragment implements Serializable {
+public class SchedulesFragment extends Fragment  {
 
     private FragmentSchedulesBinding binding;
     List<Fragment> fragmentList = new ArrayList<>();

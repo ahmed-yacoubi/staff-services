@@ -34,59 +34,65 @@ public class Database extends SQLiteOpenHelper {
     }
 
     @Override
-        public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
 
-            String createCollegeTable = "create table  " + TB_COLLEGE + "  ( " + COLLEGE_ID + " TEXT PRIMARY KEY  , "
-                    + COLLEGE_NAME + " TEXT  )";
+        String createCollegeTable = "create table  " + TB_COLLEGE + "  ( " + COLLEGE_ID + " TEXT PRIMARY KEY  , "
+                + COLLEGE_NAME + " TEXT  )";
 
-            String createDepartmentTable = "create table  " + TB_DEPARTMENT + "  ( " + DEPARTMENT_ID + " TEXT , "
-                    + DEPARTMENT_NAME + " TEXT , " + DEPARTMENT_COLLEGE_ID + " TEXT " +
-                    " , PRIMARY KEY (" + DEPARTMENT_ID + " , " + DEPARTMENT_COLLEGE_ID + ")" + ")";
-
-
-    //         بدنا ID لل موظف ؟؟
-            String createEmployeeTable = "create table  " + TB_EMPLOYEE + "  ( " + EMPLOYEE_COLLEGE_EMAIL + " TEXT PRIMARY KEY  , "
-                    + EMPLOYEE_NAME + " TEXT , " + EMPLOYEE_COLLEGE_ID + " TEXT , " + EMPLOYEE_DEPARTMENT_ID + " TEXT , "
-                    + EMPLOYEE_SPECIALIZE + " TEXT , " + EMPLOYEE_IMG + " TEXT , " + EMPLOYEE_CITY + " TEXT ,"
-                    + EMPLOYEE_PERSONAL_EMAIL + "  TEXT , "
-                    + EMPLOYEE_COLLAGE_NAME + "  TEXT , "
-                    + EMPLOYEE_DEPARTMENT_NAME + "  TEXT , " + EMPLOYEE_PHONE_NO + " TEXT , " + EMPLOYEE_JOP_TITLE + " TEXT ,"
-                    + EMPLOYEE_PASSWORD + " TEXT )";
-
-    //                String jop_title = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLAGE_NAME));
-    //                String jop_title = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DEPARTMENT_NAME));
-            String createStudent_infoTable = "create table  " + TB_STUDENT + "  ( " + STUDENT_ID + " INTEGER PRIMARY KEY  , "
-                    + STUDENT_NAME + " TEXT , " + STUDENT_COLLEGE + " TEXT , " + STUDENT_DEPARTMENT + " TEXT , "
-                    + STUDENT_PHONE + " TEXT , " + STUDENT_ADDRESS + " TEXT , " + STUDENT_CITY + " TEXT ,"
-                    + STUDENT_LEVEL + "  INTEGER , " + STUDENT_ACHIEVEMENT_HOURS + " INTEGER , " + STUDENT_GPA + " REAL ,"
-                    + STUDENT_SCHOOL_RATE + " REAL )";
+        String createDepartmentTable = "create table  " + TB_DEPARTMENT + "  ( " + DEPARTMENT_ID + " TEXT , "
+                + DEPARTMENT_NAME + " TEXT , " + DEPARTMENT_COLLEGE_ID + " TEXT " +
+                " , PRIMARY KEY (" + DEPARTMENT_ID + " , " + DEPARTMENT_COLLEGE_ID + ")" + ")";
 
 
-    //        ليش محطوط ال GENDER
-            String createSubjectTable = "create table  " + TB_SUBJECT + "  ( " + SUBJECT_ID + " TEXT PRIMARY KEY  , "
-                    + SUBJECT_NAME + " TEXT , " + SUBJECT_GENDER + " TEXT , "
-                    + SUBJECT_DIVISION + " TEXT , " + SUBJECT_FINALEXAM_DATE + " TEXT , " + SUBJECT_PLACE_TIME + " TEXT ,"
-                    + SUBJECT_COLLEGE + "  TEXT , " + SUBJECT_DEPARTMENT + " TEXT )";
+        //         بدنا ID لل موظف ؟؟
+        String createEmployeeTable = "create table  " + TB_EMPLOYEE + "  ( " + EMPLOYEE_COLLEGE_EMAIL + " TEXT PRIMARY KEY  , "
+                + EMPLOYEE_NAME + " TEXT , " + EMPLOYEE_COLLEGE_ID + " TEXT , " + EMPLOYEE_DEPARTMENT_ID + " TEXT , "
+                + EMPLOYEE_SPECIALIZE + " TEXT , " + EMPLOYEE_IMG + " TEXT , " + EMPLOYEE_CITY + " TEXT ,"
+                + EMPLOYEE_PERSONAL_EMAIL + "  TEXT , "
+                + EMPLOYEE_COLLAGE_NAME + "  TEXT , "
+                + EMPLOYEE_DEPARTMENT_NAME + "  TEXT , " + EMPLOYEE_PHONE_NO + " TEXT , " + EMPLOYEE_JOP_TITLE + " TEXT ,"
+                + EMPLOYEE_PASSWORD + " TEXT )";
+
+        //                String jop_title = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLAGE_NAME));
+        //                String jop_title = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DEPARTMENT_NAME));
+        String createStudent_infoTable = "create table  " + TB_STUDENT + "  ( " + STUDENT_ID + " INTEGER PRIMARY KEY  , "
+                + STUDENT_NAME + " TEXT , " + STUDENT_COLLEGE + " TEXT , " + STUDENT_DEPARTMENT + " TEXT , "
+                + STUDENT_PHONE + " TEXT , " + STUDENT_ADDRESS + " TEXT , " + STUDENT_CITY + " TEXT ,"
+                + STUDENT_LEVEL + "  INTEGER , " + STUDENT_ACHIEVEMENT_HOURS + " INTEGER , " + STUDENT_GPA + " REAL ,"
+                + STUDENT_SCHOOL_RATE + " REAL )";
 
 
-            String createRegisterSubjectTable = "create table  " + TB_SUBJECT_REGISTER + "  ( " + SUB_REGISTER_STUDENT_ID + " INTEGER , "
-                    + SUB_REGISTER_SUBJECT_ID + " TEXT , " + SUB_REGISTER_DIVISION + " TEXT , " +
-                    SUB_REGISTER_MID_MARK + " REAL ," + SUB_REGISTER_FINAL_MARK + " REAL , " +
-                    SUB_REGISTER_WORK_MARK + " REAL ," + SUB_REGISTER_TOTAL_MARK + " REAL " +
-                    " , FOREIGN KEY( " + SUB_REGISTER_STUDENT_ID + " ) REFERENCES " + TB_STUDENT + " ( " + STUDENT_ID + ")" +
-                    " , FOREIGN KEY( " + SUB_REGISTER_SUBJECT_ID + " ) REFERENCES " + TB_SUBJECT + " ( " + SUBJECT_ID + ")" +
-                    " , FOREIGN KEY( " + SUB_REGISTER_DIVISION + " ) REFERENCES " + TB_SUBJECT + " ( " + SUBJECT_DIVISION + ")" +
-                    " , PRIMARY KEY( " + SUB_REGISTER_STUDENT_ID + " , " + SUB_REGISTER_SUBJECT_ID + " , " + SUB_REGISTER_DIVISION + ")" + ")";
+        //        ليش محطوط ال GENDER
+        String createSubjectTable = "create table  " + TB_SUBJECT + "  ( " + SUBJECT_ID + " TEXT PRIMARY KEY  , "
+                + SUBJECT_NAME + " TEXT , " + SUBJECT_GENDER + " TEXT , "
+                + SUBJECT_DIVISION + " TEXT , " + SUBJECT_FINALEXAM_DATE + " TEXT , " + SUBJECT_PLACE_TIME + " TEXT ,"
+                + SUBJECT_COLLEGE + "  TEXT , " + SUBJECT_DEPARTMENT + " TEXT )";
 
-            sqLiteDatabase.execSQL(createCollegeTable);
-            sqLiteDatabase.execSQL(createDepartmentTable);
-            sqLiteDatabase.execSQL(createEmployeeTable);
-            sqLiteDatabase.execSQL(createStudent_infoTable);
-            sqLiteDatabase.execSQL(createSubjectTable);
-            sqLiteDatabase.execSQL(createRegisterSubjectTable);
 
-        }
+        String createRegisterSubjectTable = "create table  " + TB_SUBJECT_REGISTER + "  ( " + SUB_REGISTER_STUDENT_ID + " INTEGER , "
+                + SUB_REGISTER_SUBJECT_ID + " TEXT , " + SUB_REGISTER_DIVISION + " TEXT , " +
+                SUB_REGISTER_MID_MARK + " REAL ," + SUB_REGISTER_FINAL_MARK + " REAL , " +
+                SUB_REGISTER_WORK_MARK + " REAL ," + SUB_REGISTER_TOTAL_MARK + " REAL " +
+                " , FOREIGN KEY( " + SUB_REGISTER_STUDENT_ID + " ) REFERENCES " + TB_STUDENT + " ( " + STUDENT_ID + ")" +
+                " , FOREIGN KEY( " + SUB_REGISTER_SUBJECT_ID + " ) REFERENCES " + TB_SUBJECT + " ( " + SUBJECT_ID + ")" +
+                " , FOREIGN KEY( " + SUB_REGISTER_DIVISION + " ) REFERENCES " + TB_SUBJECT + " ( " + SUBJECT_DIVISION + ")" +
+                " , PRIMARY KEY( " + SUB_REGISTER_STUDENT_ID + " , " + SUB_REGISTER_SUBJECT_ID + " , " + SUB_REGISTER_DIVISION + ")" + ")";
+
+
+        String createAgendaTable = "create table  " + TB_AGENDA + "  ( " + AGENDA_BEG_SEMESTER + " TEXT , "
+                + AGENDA_END_SEMESTER + " TEXT , " + AGENDA_START_FINAL_EXAM + " TEXT ,"
+                + AGENDA_STARTMIDTERM + " TEXT )";
+
+        sqLiteDatabase.execSQL(createCollegeTable);
+        sqLiteDatabase.execSQL(createDepartmentTable);
+        sqLiteDatabase.execSQL(createEmployeeTable);
+        sqLiteDatabase.execSQL(createStudent_infoTable);
+        sqLiteDatabase.execSQL(createSubjectTable);
+        sqLiteDatabase.execSQL(createRegisterSubjectTable);
+        sqLiteDatabase.execSQL(createAgendaTable);
+
+    }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
@@ -208,9 +214,24 @@ public class Database extends SQLiteOpenHelper {
             return true;
     }
 
+    public Boolean insert_agenda(Agenda agenda) {
+        SQLiteDatabase query = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(AGENDA_BEG_SEMESTER, agenda.getBeginning_semester());
+        contentValues.put(AGENDA_END_SEMESTER, agenda.getEnd_semester());
+        contentValues.put(AGENDA_START_FINAL_EXAM, agenda.getStart_final_exam());
+        contentValues.put(AGENDA_STARTMIDTERM, agenda.getStart_midterm());
+
+        long result = query.insert(TB_AGENDA, null, contentValues);
+        if (result == -1)
+            return false;
+        else
+            return true;
+    }
+
 
 //****************************************  GET   *******************************************
-
 
     public ArrayList<College> getColleges() {
         ArrayList<College> colleges = new ArrayList<>();
@@ -254,7 +275,6 @@ public class Database extends SQLiteOpenHelper {
         return departments;
     }
 
-
     public List<Employee> getLastEmployees() {
         ArrayList<Employee> employees = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
@@ -285,7 +305,6 @@ public class Database extends SQLiteOpenHelper {
         }
         return employees;
     }
-
 
     public StudentInfo getStudentById(int id) {
         StudentInfo studentInfo = new StudentInfo();
@@ -447,5 +466,47 @@ public class Database extends SQLiteOpenHelper {
             cursor.close();
         }
         return marksDetections;
+    }
+
+    public ArrayList<Agenda> getAgenda() {
+        ArrayList<Agenda> agendaArrayList = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TB_AGENDA, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+//                id
+                String beginning_semester = cursor.getString(cursor.getColumnIndex(AGENDA_BEG_SEMESTER));
+                String end_semester = cursor.getString(cursor.getColumnIndex(AGENDA_END_SEMESTER));
+                String start_final_exam = cursor.getString(cursor.getColumnIndex(AGENDA_START_FINAL_EXAM));
+                String start_midterm = cursor.getString(cursor.getColumnIndex(AGENDA_STARTMIDTERM));
+
+                Agenda agenda = new Agenda(beginning_semester, end_semester, start_final_exam, start_midterm);
+
+                agendaArrayList.add(agenda);
+            } while (cursor.moveToNext());
+            cursor.close();
+        }
+        return agendaArrayList;
+    }
+
+
+//****************************************  Delete Table   *******************************************
+
+
+    public void delete_tableSubject() {
+        sqLiteDatabase.execSQL("drop Table if exists " + TB_SUBJECT);
+//        sqLiteDatabase.execSQL("delete from " + TB_SUBJECT);
+    }
+
+    public void delete_tableStudent() {
+        sqLiteDatabase.execSQL("drop Table if exists " + TB_STUDENT);
+//        sqLiteDatabase.execSQL("delete from " + TB_STUDENT);
+    }
+
+
+    public void delete_tableSubjectRegister() {
+        sqLiteDatabase.execSQL("drop Table if exists " + TB_SUBJECT_REGISTER);
+//        sqLiteDatabase.execSQL("delete from " + TB_SUBJECT_REGISTER);
     }
 }

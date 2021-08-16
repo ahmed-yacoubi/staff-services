@@ -12,7 +12,7 @@ import com.alaqsa.edu.ps.staffservices.R;
 
 import java.io.Serializable;
 
-public class AgendaFragment extends Fragment implements Serializable {
+public class AgendaFragment extends Fragment  {
 
    private static AgendaFragment agendaFragment;
 

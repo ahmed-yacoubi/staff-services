@@ -12,6 +12,7 @@ import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.activity.LoginActivity;
 import com.alaqsa.edu.ps.staffservices.activity.MainActivity;
 import com.alaqsa.edu.ps.staffservices.databinding.ActivitySplashBinding;
+import com.alaqsa.edu.ps.staffservices.service.MyService;
 import com.alaqsa.edu.ps.staffservices.temp.TemporaryData;
 
 public class SplashActivity extends AppCompatActivity {
@@ -29,6 +30,9 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
+
+        Intent serviceIntent = new Intent(getBaseContext(), MyService.class);
+        startService(serviceIntent);
 
         // Declare an imageView to show the animation.
         anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);

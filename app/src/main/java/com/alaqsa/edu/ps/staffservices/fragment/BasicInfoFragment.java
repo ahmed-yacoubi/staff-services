@@ -25,7 +25,7 @@ import java.io.Serializable;
  * Use the {@link BasicInfoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BasicInfoFragment extends Fragment implements Serializable {
+public class BasicInfoFragment extends Fragment  {
 
     private FragmentBasicInfoBinding binding;
 

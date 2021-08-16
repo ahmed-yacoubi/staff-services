@@ -27,7 +27,7 @@ import java.util.ArrayList;
  * Use the {@link FinalObservationFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FinalObservationFragment extends Fragment implements Serializable {
+public class FinalObservationFragment extends Fragment  {
 
     private FragmentFinalObservationBinding binding;
 

@@ -29,7 +29,7 @@ import java.util.ArrayList;
  * Use the {@link MidtermObservationFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MidtermObservationFragment extends Fragment implements Serializable {
+public class MidtermObservationFragment extends Fragment  {
 
     private FragmentMidtermObservationBinding binding;
 
