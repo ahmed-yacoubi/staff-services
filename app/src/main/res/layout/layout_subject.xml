@@ -36,7 +36,7 @@
                     android:gravity="center_vertical"
                     android:lines="1"
                     android:text="@string/subject_name"
-                    android:textColor="@color/primary"
+                    android:textColor="@color/primaryDark"
                     android:textSize="@dimen/_14ssp" />
 
                 <TextView
@@ -98,7 +98,7 @@
                         android:gravity="center_vertical"
                         android:lines="1"
                         android:text="@string/subject_id"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_14ssp" />
 
                     <TextView
@@ -131,7 +131,7 @@
                         android:gravity="center_vertical"
                         android:lines="1"
                         android:text="@string/DivisionId"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_14ssp" />
 
                     <TextView
@@ -165,7 +165,7 @@
                         android:gravity="center_vertical"
                         android:lines="1"
                         android:text="@string/gender"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_14ssp" />
 
                     <TextView
@@ -199,7 +199,7 @@
                         android:gravity="center_vertical"
                         android:lines="1"
                         android:text="@string/Students_number"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_14ssp" />
 
                     <TextView

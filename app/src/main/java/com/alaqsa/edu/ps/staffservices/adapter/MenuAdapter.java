@@ -1,5 +1,6 @@
 package com.alaqsa.edu.ps.staffservices.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -43,7 +44,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull @NotNull MenuAdapter.MenuViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull @NotNull MenuAdapter.MenuViewHolder holder, @SuppressLint("RecyclerView") int position) {
         MenuItem menuItem = menuItems.get(position);
         holder.binding.menuImageViewIcon.setImageResource(menuItem.getIcon());
         holder.binding.menuTextViewTitle.setText(menuItem.getTitle());
@@ -90,9 +91,16 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
                             .putExtra("bundle", bundle));
                 }
 
+                if (position == 3) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("fragment", "SettingsFragment");
+                    context.startActivity(new Intent(context, ContainerActivity.class)
+                            .putExtra("bundle", bundle));
+                }
                 if (position == 4) {
                     Toast.makeText(context, "Logout", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
     }

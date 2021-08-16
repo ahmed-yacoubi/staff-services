@@ -54,12 +54,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
                 if (test.isExpanded()) {
                     holder.binding.homeLinearLayoutOpe.setVisibility(View.GONE);
                     holder.binding.homeTextViewAttendance.setVisibility(View.GONE);
-                    holder.binding.homeImageViewArrow.setImageResource(R.drawable.ic_arrow_down);
+                    holder.binding.homeImageViewArrow.setImageResource(R.drawable.ic_arrow_down_black);
                     test.setExpanded(false);
                 } else {
                     holder.binding.homeLinearLayoutOpe.setVisibility(View.VISIBLE);
                     holder.binding.homeTextViewAttendance.setVisibility(View.VISIBLE);
-                    holder.binding.homeImageViewArrow.setImageResource(R.drawable.ic_arrow_up);
+                    holder.binding.homeImageViewArrow.setImageResource(R.drawable.ic_arrow_black);
                     test.setExpanded(true);
                 }
                 notifyDataSetChanged();

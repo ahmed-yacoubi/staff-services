@@ -8,22 +8,22 @@
         android:pathData="M0,0h23v25h-23z"/>
     <path
         android:pathData="M6.919,11.758L5.604,11.758a0.729,0.729 0,0 0,0 1.441h1.315a0.729,0.729 0,0 0,0 -1.441Z"
-        android:fillColor="@color/primary"/>
+        android:fillColor="@color/primaryDark"/>
     <path
         android:pathData="M6.919,14.831L5.604,14.831a0.729,0.729 0,0 0,0 1.441h1.315a0.729,0.729 0,0 0,0 -1.441Z"
-        android:fillColor="@color/primary"/>
+        android:fillColor="@color/primaryDark"/>
     <path
         android:pathData="M6.919,17.905L5.604,17.905a0.729,0.729 0,0 0,0 1.441h1.315a0.729,0.729 0,0 0,0 -1.441Z"
-        android:fillColor="@color/primary"/>
+        android:fillColor="@color/primaryDark"/>
     <path
         android:pathData="M12.18,11.758h-1.315a0.729,0.729 0,0 0,0 1.441h1.315a0.729,0.729 0,0 0,0 -1.441Z"
-        android:fillColor="@color/primary"/>
+        android:fillColor="@color/primaryDark"/>
     <path
         android:pathData="M12.18,14.831h-1.315a0.729,0.729 0,0 0,0 1.441h1.315a0.729,0.729 0,0 0,0 -1.441Z"
-        android:fillColor="@color/primary"/>
+        android:fillColor="@color/primaryDark"/>
     <path
         android:pathData="M12.18,17.905h-1.315a0.729,0.729 0,0 0,0 1.441h1.315a0.729,0.729 0,0 0,0 -1.441Z"
-        android:fillColor="@color/primary"/>
+        android:fillColor="@color/primaryDark"/>
     <path
         android:pathData="M17.441,11.758h-1.315a0.729,0.729 0,0 0,0 1.441h1.315a0.729,0.729 0,0 0,0 -1.441Z"
         android:fillColor="@color/primary"/>
@@ -35,6 +35,6 @@
         android:fillColor="@color/primary"/>
     <path
         android:pathData="M20.195,2.921h-1.48v-1.2a0.624,0.624 0,1 0,-1.233 0v1.2L12.139,2.921v-1.2a0.675,0.675 0,0 0,-0.617 -0.72,0.675 0.675,0 0,0 -0.617,0.72v1.2L5.562,2.921v-1.2A0.675,0.675 0,0 0,4.946 1a0.675,0.675 0,0 0,-0.617 0.72v1.2L2.85,2.92A2.026,2.026 0,0 0,1 5.082L1,21.027a2.026,2.026 0,0 0,1.85 2.161L20.195,23.188a2.026,2.026 0,0 0,1.85 -2.161L22.045,5.082A2.026,2.026 0,0 0,20.195 2.921ZM2.233,5.082a0.675,0.675 0,0 1,0.617 -0.72h1.48v1.2a0.675,0.675 0,0 0,0.617 0.72,0.675 0.675,0 0,0 0.617,-0.72v-1.2L10.906,4.362v1.2a0.675,0.675 0,0 0,0.617 0.72,0.675 0.675,0 0,0 0.617,-0.72v-1.2h5.343v1.2a0.624,0.624 0,1 0,1.233 0v-1.2h1.48a0.675,0.675 0,0 1,0.617 0.72v2.834L2.233,7.916ZM20.195,21.747L2.85,21.747a0.675,0.675 0,0 1,-0.617 -0.72L2.233,9.357L20.811,9.357v11.67A0.675,0.675 0,0 1,20.195 21.747Z"
-        android:fillColor="@color/primary"/>
+        android:fillColor="@color/primaryDark"/>
   </group>
 </vector>

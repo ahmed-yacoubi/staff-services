@@ -61,5 +61,5 @@
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_8sdp"
-        android:background="@color/primary"/>
+        android:background="@color/primaryDark"/>
 </LinearLayout>

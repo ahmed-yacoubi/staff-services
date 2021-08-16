@@ -34,7 +34,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/name_and_identification"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_16ssp"
                         android:textStyle="bold" />
 
@@ -44,7 +44,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/name_in_english"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_14ssp" />
 
                     <EditText
@@ -83,7 +83,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/address"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_16ssp"
                         android:textStyle="bold" />
 
@@ -93,7 +93,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_16sdp"
                         android:text="@string/province"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_14ssp" />
 
                     <EditText
@@ -113,7 +113,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/city"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_14ssp" />
 
                     <EditText
@@ -133,7 +133,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/neighborhood"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_14ssp" />
 
                     <EditText
@@ -153,7 +153,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/street"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_14ssp" />
 
                     <EditText
@@ -192,7 +192,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/contact"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_16ssp"
                         android:textStyle="bold" />
 
@@ -202,7 +202,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/personal_email"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_14ssp" />
 
                     <EditText
@@ -222,7 +222,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/mobile_no"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_14ssp" />
 
                     <EditText

@@ -34,16 +34,6 @@
             android:text="Student Name"
             android:textSize="@dimen/_12ssp" />
 
-        <Switch
-            android:id="@+id/attSwitch"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="@dimen/_4sdp"
-            android:layout_weight=".7"
-            android:gravity="center"
-            android:text="Yes"
-            android:textSize="@dimen/_12ssp"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     </LinearLayout>
 
@@ -54,5 +44,5 @@
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_8sdp"
-        android:background="@color/primary"/>
+        android:background="@color/primaryDark"/>
 </LinearLayout>

@@ -46,7 +46,7 @@
                    android:layout_marginTop="@dimen/_10sdp"
                    android:layout_marginBottom="@dimen/_50sdp"
                    android:text="@string/NoOfficeHours"
-                   android:textColor="@color/primary"
+                   android:textColor="@color/primaryDark"
                    android:textSize="@dimen/_17ssp" />
 
           </RelativeLayout>

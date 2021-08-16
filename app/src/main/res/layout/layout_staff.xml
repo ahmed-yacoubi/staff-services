@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" د.خالد شرف "
-                android:textColor="@color/primary"
+                android:textColor="@color/primaryDark"
                 android:textSize="@dimen/_18ssp"
                 android:textStyle="bold" />
 
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_6sdp"
                 android:text="كلية الحاسبات وتكنولوجيا المعلومات"
-                android:textColor="@color/primary"
+                android:textColor="@color/primaryDark"
                 android:textSize="@dimen/_12ssp" />
 
             <TextView
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_6sdp"
                 android:text="تكنولوجيا الشبكات والهواتف النقالة"
-                android:textColor="@color/primary"
+                android:textColor="@color/primaryDark"
                 android:textSize="@dimen/_12ssp" />
 
         </LinearLayout>

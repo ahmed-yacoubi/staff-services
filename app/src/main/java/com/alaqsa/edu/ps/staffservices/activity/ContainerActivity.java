@@ -24,6 +24,7 @@ import com.alaqsa.edu.ps.staffservices.fragment.MidtermObservationFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.NotificationsFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.ReportsFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.SchedulesFragment;
+import com.alaqsa.edu.ps.staffservices.fragment.SettingsFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.StaffInfoFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.ViewStaffFragment;
 
@@ -81,7 +82,10 @@ public class ContainerActivity extends AppCompatActivity {
                     break;
                 case "AttendanceSheetFragment":
                     fragment = new AttendanceSheetFragment();
-
+                    break;
+                case "SettingsFragment":
+                    fragment = new SettingsFragment();
+                    break;
             }
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

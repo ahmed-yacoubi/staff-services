@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight=".1"
-            android:src="@drawable/ic_arrow_down" />
+            android:src="@drawable/ic_arrow_down_black" />
     </LinearLayout>
 
     <LinearLayout
@@ -144,5 +144,5 @@
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_8sdp"
-        android:background="@color/primary"/>
+        android:background="@color/primaryDark"/>
 </LinearLayout>

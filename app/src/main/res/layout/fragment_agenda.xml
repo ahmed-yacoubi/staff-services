@@ -84,7 +84,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/BeginningOfTheSemester"
                         android:textSize="@dimen/_13ssp"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
                         />
@@ -129,7 +129,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/EndOfTheSemester"
                         android:textSize="@dimen/_13ssp"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
                         />
@@ -173,7 +173,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/MidtermExamsStart"
                         android:textSize="@dimen/_13ssp"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
                         />
@@ -216,7 +216,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/MidtermExamsEnd"
                         android:textSize="@dimen/_13ssp"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
                         />
@@ -262,7 +262,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/FinalExamsStart"
                         android:textSize="@dimen/_13ssp"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
                         />
@@ -305,7 +305,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/FinalExamsEnd"
                         android:textSize="@dimen/_13ssp"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
                         />
@@ -349,7 +349,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/BeginningOfMidtermEntry"
                         android:textSize="@dimen/_13ssp"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
                         />
@@ -392,7 +392,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/EndOfMidtermEntry"
                         android:textSize="@dimen/_13ssp"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
                         />
@@ -437,7 +437,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/BeginningOfFinalEntry"
                         android:textSize="@dimen/_13ssp"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
                         />
@@ -482,7 +482,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/EndOfFinalEntry"
                         android:textSize="@dimen/_13ssp"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
                         />
@@ -528,7 +528,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/endOfDraw"
                         android:textSize="@dimen/_13ssp"
-                        android:textColor="@color/primary"
+                        android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
                         />

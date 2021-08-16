@@ -112,6 +112,13 @@
         <item>Master\'s System</item>
     </array>
 
+    <array name="testHistory">
+        <item>2020/02/02</item>
+        <item>2020/02/02</item>
+        <item>2020/02/02</item>
+
+    </array>
+
 
     <array name="ReportsType">
         <item>Attendance and absence detection</item>

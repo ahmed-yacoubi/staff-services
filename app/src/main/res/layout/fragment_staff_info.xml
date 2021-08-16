@@ -43,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/name"
-                android:textColor="@color/primary"
+                android:textColor="@color/primaryDark"
                 android:textSize="@dimen/_14ssp" />
 
             <TextView
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12sdp"
                 android:text="@string/faculty"
-                android:textColor="@color/primary"
+                android:textColor="@color/primaryDark"
                 android:textSize="@dimen/_14ssp" />
 
             <TextView
@@ -77,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12sdp"
                 android:text="@string/department"
-                android:textColor="@color/primary"
+                android:textColor="@color/primaryDark"
                 android:textSize="@dimen/_14ssp" />
 
             <TextView
@@ -94,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12sdp"
                 android:text="@string/email"
-                android:textColor="@color/primary"
+                android:textColor="@color/primaryDark"
                 android:textSize="@dimen/_14ssp" />
 
             <TextView
@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12sdp"
                 android:text="@string/mobile_no"
-                android:textColor="@color/primary"
+                android:textColor="@color/primaryDark"
                 android:textSize="@dimen/_14ssp" />
 
             <TextView
