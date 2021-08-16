@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 
 import com.alaqsa.edu.ps.staffservices.database.Database;
+import com.alaqsa.edu.ps.staffservices.model.Agenda;
 import com.alaqsa.edu.ps.staffservices.model.College;
 import com.alaqsa.edu.ps.staffservices.model.Department;
 import com.alaqsa.edu.ps.staffservices.model.Employee;
@@ -48,6 +49,9 @@ public class TemporaryData {
         }
         registrationSubjectStudent(database.getSubject(), database.getAllStudents());
 
+        for (Agenda agenda : setAgenda()){
+            database.insert_agenda(agenda);
+        }
     }
 
 
@@ -166,9 +170,28 @@ public class TemporaryData {
         }
     }
 
-    private void regStudent(int studentId, String subjectId, String division) {// this method in database
-        // stdId  subId
-        //  2      3
+
+    private List<Agenda> setAgenda() {
+        List<Agenda> list = new ArrayList<>();
+        for (int i = 1; i <= 4; i++) {
+            Agenda agenda = new Agenda();
+            agenda.setName_agenda("System\t" + i);
+            int m = i;
+            agenda.setBeginning_semester("2020/" + m + "/15");
+            agenda.setEnd_semester("2021/" + m * 2 + "/20");
+            agenda.setStart_final_exam("2021/" + m * 2 + "/" + 20 + i);
+            agenda.setEnd_final_exam("2021/" + m * 2 + "/" + 20 + i);
+            agenda.setStart_midterm("2020/" + m*2 + "/15");
+            agenda.setEnd_midterm("2020/" + m *2 + "/"+15+i);
+            agenda.setEntry_start_midterm("un enable");
+            agenda.setEntry_start_final_exam("un enable");
+            agenda.setEntry_end_midterm("un enable");
+            agenda.setEntry_end_final_exam("un enable");
+            agenda.setEnd_draw("un enable");
+            list.add(agenda);
+        }
+        return list;
     }
+
 
 }

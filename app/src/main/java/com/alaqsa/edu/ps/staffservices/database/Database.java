@@ -62,13 +62,11 @@ public class Database extends SQLiteOpenHelper {
                 + STUDENT_LEVEL + "  INTEGER , " + STUDENT_ACHIEVEMENT_HOURS + " INTEGER , " + STUDENT_GPA + " REAL ,"
                 + STUDENT_SCHOOL_RATE + " REAL )";
 
-
         //        ليش محطوط ال GENDER
         String createSubjectTable = "create table  " + TB_SUBJECT + "  ( " + SUBJECT_ID + " TEXT PRIMARY KEY  , "
                 + SUBJECT_NAME + " TEXT , " + SUBJECT_GENDER + " TEXT , "
                 + SUBJECT_DIVISION + " TEXT , " + SUBJECT_FINALEXAM_DATE + " TEXT , " + SUBJECT_PLACE_TIME + " TEXT ,"
                 + SUBJECT_COLLEGE + "  TEXT , " + SUBJECT_DEPARTMENT + " TEXT )";
-
 
         String createRegisterSubjectTable = "create table  " + TB_SUBJECT_REGISTER + "  ( " + SUB_REGISTER_STUDENT_ID + " INTEGER , "
                 + SUB_REGISTER_SUBJECT_ID + " TEXT , " + SUB_REGISTER_DIVISION + " TEXT , " +
@@ -79,10 +77,13 @@ public class Database extends SQLiteOpenHelper {
                 " , FOREIGN KEY( " + SUB_REGISTER_DIVISION + " ) REFERENCES " + TB_SUBJECT + " ( " + SUBJECT_DIVISION + ")" +
                 " , PRIMARY KEY( " + SUB_REGISTER_STUDENT_ID + " , " + SUB_REGISTER_SUBJECT_ID + " , " + SUB_REGISTER_DIVISION + ")" + ")";
 
-
-        String createAgendaTable = "create table  " + TB_AGENDA + "  ( " + AGENDA_BEG_SEMESTER + " TEXT , "
-                + AGENDA_END_SEMESTER + " TEXT , " + AGENDA_START_FINAL_EXAM + " TEXT ,"
-                + AGENDA_STARTMIDTERM + " TEXT )";
+        String createAgendaTable = "create table  " + TB_AGENDA + "  ( " +
+                AGENDA_BEG_SEMESTER + " TEXT , " + AGENDA_END_SEMESTER + " TEXT , " +
+                AGENDA_START_FINAL_EXAM + " TEXT ," + AGENDA_END_FINAL_EXAM + " TEXT ," +
+                AGENDA_START_MIDTERM + " TEXT ," + AGENDA_END_MIDTERM + " TEXT ," +
+                AGENDA_ENTRY_START_MIDTERM + " TEXT ," + AGENDA_ENTRY_END_MIDTERM + " TEXT ," +
+                AGENDA_ENTRY_START_FINAL_EXAM + " TEXT ," + AGENDA_ENTRY_END_FINAL_EXAM + " TEXT ," +
+                AGENDA_END_DRAW + " TEXT )";
 
         sqLiteDatabase.execSQL(createCollegeTable);
         sqLiteDatabase.execSQL(createDepartmentTable);
@@ -218,10 +219,19 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase query = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
+        contentValues.put(AGENDA_NAME, agenda.getName_agenda());
         contentValues.put(AGENDA_BEG_SEMESTER, agenda.getBeginning_semester());
         contentValues.put(AGENDA_END_SEMESTER, agenda.getEnd_semester());
         contentValues.put(AGENDA_START_FINAL_EXAM, agenda.getStart_final_exam());
-        contentValues.put(AGENDA_STARTMIDTERM, agenda.getStart_midterm());
+        contentValues.put(AGENDA_START_MIDTERM, agenda.getStart_midterm());
+
+        contentValues.put(AGENDA_END_FINAL_EXAM, agenda.getEnd_final_exam());
+        contentValues.put(AGENDA_END_MIDTERM, agenda.getEnd_midterm());
+        contentValues.put(AGENDA_ENTRY_START_MIDTERM, agenda.getEntry_start_midterm());
+        contentValues.put(AGENDA_ENTRY_END_MIDTERM, agenda.getEntry_end_midterm());
+        contentValues.put(AGENDA_ENTRY_START_FINAL_EXAM, agenda.getEntry_start_final_exam());
+        contentValues.put(AGENDA_ENTRY_END_FINAL_EXAM, agenda.getEntry_end_final_exam());
+        contentValues.put(AGENDA_END_DRAW, agenda.getEnd_draw());
 
         long result = query.insert(TB_AGENDA, null, contentValues);
         if (result == -1)
@@ -475,13 +485,23 @@ public class Database extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-//                id
+                String name_agenda = cursor.getString(cursor.getColumnIndex(AGENDA_NAME));
                 String beginning_semester = cursor.getString(cursor.getColumnIndex(AGENDA_BEG_SEMESTER));
                 String end_semester = cursor.getString(cursor.getColumnIndex(AGENDA_END_SEMESTER));
                 String start_final_exam = cursor.getString(cursor.getColumnIndex(AGENDA_START_FINAL_EXAM));
-                String start_midterm = cursor.getString(cursor.getColumnIndex(AGENDA_STARTMIDTERM));
+                String start_midterm = cursor.getString(cursor.getColumnIndex(AGENDA_START_MIDTERM));
+                String end_final_exam = cursor.getString(cursor.getColumnIndex(AGENDA_END_FINAL_EXAM));
+                String end_midterm = cursor.getString(cursor.getColumnIndex(AGENDA_END_MIDTERM));
+                String entry_start_midterm = cursor.getString(cursor.getColumnIndex(AGENDA_ENTRY_START_MIDTERM));
+                String entry_end_midterm = cursor.getString(cursor.getColumnIndex(AGENDA_ENTRY_END_MIDTERM));
+                String entry_start_final_exam = cursor.getString(cursor.getColumnIndex(AGENDA_ENTRY_START_FINAL_EXAM));
+                String entry_end_final_exam = cursor.getString(cursor.getColumnIndex(AGENDA_ENTRY_END_FINAL_EXAM));
+                String end_draw = cursor.getString(cursor.getColumnIndex(AGENDA_END_DRAW));
 
-                Agenda agenda = new Agenda(beginning_semester, end_semester, start_final_exam, start_midterm);
+                Agenda agenda = new Agenda(name_agenda,
+                        beginning_semester, end_semester, start_final_exam, end_final_exam, start_midterm,
+                        end_midterm,   entry_start_midterm,  entry_end_midterm,
+                        entry_start_final_exam,  entry_end_final_exam,  end_draw) ;
 
                 agendaArrayList.add(agenda);
             } while (cursor.moveToNext());

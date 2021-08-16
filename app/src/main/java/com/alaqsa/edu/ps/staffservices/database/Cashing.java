@@ -19,8 +19,8 @@ public class Cashing {
     private static Cashing Instance = null;
     static Database database;
 
-    private Cashing(Context activity) {
-        this.activity = (Activity) activity;
+    private Cashing(Activity activity) {
+        this.activity =  activity;
     }
 
     public static Cashing getInstance(Activity activity) {
@@ -32,7 +32,7 @@ public class Cashing {
     }
 
 
-//**************************************** insert Data Not Change      *******************************************
+//**************************************** get data and insert Data Not Change      *******************************************
 
     public  void insertDataNotChange(){
 
@@ -65,7 +65,7 @@ public class Cashing {
 
 
 
-//**************************************** insert Data  Change      *******************************************
+//**************************************** get data and  insert Data  Change      *******************************************
 
     public void insertDataChange(){
         database.delete_tableSubject();
@@ -82,11 +82,8 @@ public class Cashing {
 //        database.insert_register_subject()
     }
 
-
-
-
-//     كل ما يعمل Get لهدول التنتين بدو يروح يحذف كل جدول تسجيل المواد TB_SUBJECT_REGISTER
-//     ويعمل تسجيل الهم من اول وجديد عشان يمكن يكون في طالب سحب المادة أو سجل مادة
+//     كل ما يعمل Get لهدول التنتين بدو يروح يحذف  جدول تسجيل المواد TB_SUBJECT_REGISTER
+//     ويعمل تسجيل الهم من اول وجديد .عشان يمكن يكون في طالب سحب المادة أو سجل مادة
 //    هيو معمول فوق في داله insertDataChange
     private List<StudentInfo> getStudentsInfo(){
         ArrayList<StudentInfo> infoArrayList=new ArrayList<>();
@@ -97,8 +94,6 @@ public class Cashing {
         ArrayList<Subject>arrayList=new ArrayList<>();
         return arrayList;
     }
-
-
 
 //    private List<Employee> getEmployees(){
 //        ArrayList<Employee>employeeArrayList=new ArrayList<>();
