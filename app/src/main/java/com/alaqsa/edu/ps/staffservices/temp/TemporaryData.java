@@ -23,10 +23,11 @@ public class TemporaryData {
 
     public TemporaryData(Activity activity) {
         this.activity = activity;
+        database = Database.getInstance(activity);
+
     }
 
     public void dataGeneration() {
-        database = Database.getInstance(activity);
 
         for (College college : setCollages()) {
             database.insert_college(college);

@@ -117,6 +117,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
             }
     }
 
+
     class HomeViewHolder extends RecyclerView.ViewHolder {
 
         private LayoutHomeBinding binding;

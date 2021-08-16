@@ -241,7 +241,11 @@ public class Database extends SQLiteOpenHelper {
     }
 
 
-//****************************************  GET   *******************************************
+    //****************************************  GET   *******************************************
+    public ArrayList<Object> getTableSchedules(String season) {
+
+        return new ArrayList<>();
+    }
 
     public ArrayList<College> getColleges() {
         ArrayList<College> colleges = new ArrayList<>();
@@ -500,8 +504,8 @@ public class Database extends SQLiteOpenHelper {
 
                 Agenda agenda = new Agenda(name_agenda,
                         beginning_semester, end_semester, start_final_exam, end_final_exam, start_midterm,
-                        end_midterm,   entry_start_midterm,  entry_end_midterm,
-                        entry_start_final_exam,  entry_end_final_exam,  end_draw) ;
+                        end_midterm, entry_start_midterm, entry_end_midterm,
+                        entry_start_final_exam, entry_end_final_exam, end_draw);
 
                 agendaArrayList.add(agenda);
             } while (cursor.moveToNext());

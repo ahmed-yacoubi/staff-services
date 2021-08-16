@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alaqsa.edu.ps.staffservices.adapter.AttendanceAdapter;
 import com.alaqsa.edu.ps.staffservices.adapter.ObservationAdapter;
+import com.alaqsa.edu.ps.staffservices.database.Database;
 import com.alaqsa.edu.ps.staffservices.databinding.FragmentAttendanceSheetBinding;
 import com.alaqsa.edu.ps.staffservices.databinding.FragmentMidtermObservationBinding;
 import com.alaqsa.edu.ps.staffservices.model.Test;
@@ -22,57 +23,27 @@ import org.jetbrains.annotations.NotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AttendanceSheetFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class AttendanceSheetFragment extends Fragment implements Serializable {
 
     private FragmentAttendanceSheetBinding binding;
 
     private AttendanceAdapter adapter;
-
+    private Database database;
     private ArrayList<Test> testArrayList;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public AttendanceSheetFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MidtermObservationFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AttendanceSheetFragment newInstance(String param1, String param2) {
-        AttendanceSheetFragment fragment = new AttendanceSheetFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
@@ -91,19 +62,18 @@ public class AttendanceSheetFragment extends Fragment implements Serializable {
 
         addData();
 
-        adapter = new AttendanceAdapter(testArrayList);
+        adapter = new AttendanceAdapter(testArrayList,getActivity());
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
 
         binding.attSheetRecyclerView.setHasFixedSize(true);
         binding.attSheetRecyclerView.setLayoutManager(layoutManager);
         binding.attSheetRecyclerView.setAdapter(adapter);
-
-    }
+     }
 
     private void addData() {
-        for (int i=1; i<=5; i++)
-            testArrayList.add(new Test(i, "Mobile Apps", "101", "WH201",
+        for (int i = 1; i <= 5; i++)
+            testArrayList.add(new Test(i, "احمد اليعقوبي ", "101", "WH201",
                     "10:00-12:00", false, "ALAQSA Reg.", "SID: 2301180724, Mobile Apps Development" +
                     " 2 = 97"));
     }

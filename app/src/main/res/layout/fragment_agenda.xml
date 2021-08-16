@@ -1,70 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.AgendaFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".fragment.AgendaFragment">
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Second Semester 2020/2021"
-        android:textSize="@dimen/_16ssp"
-        android:textColor="@color/black"
         android:layout_marginStart="@dimen/_15sdp"
-        android:layout_marginEnd="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_30sdp"
-        android:textStyle="bold"
+        android:layout_marginEnd="@dimen/_15sdp"
         android:fontFamily="sans-serif-condensed-light"
-        />
-
+        android:text="Second Semester 2020/2021"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16ssp"
+        android:textStyle="bold" />
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_15sdp"
-        android:layout_marginEnd="@dimen/_15sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
         android:layout_gravity="center_horizontal"
-        app:cardCornerRadius="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:elevation="@dimen/_5sdp"
-        >
+        app:cardCornerRadius="@dimen/_20sdp">
+
         <Spinner
+            android:id="@+id/Agenda_Spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
             android:entries="@array/AgendaType"
             android:padding="@dimen/_10sdp"
-            android:id="@+id/Agenda_Spinner"
-            android:layout_margin="@dimen/_5sdp"
-            android:popupElevation="@dimen/_10sdp"
             android:popupBackground="@drawable/text_view_background_empty"
-            />
+            android:popupElevation="@dimen/_10sdp" />
     </androidx.cardview.widget.CardView>
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_gravity="center_horizontal"
-                app:cardCornerRadius="@dimen/_20sdp"
                 android:elevation="@dimen/_5sdp"
-                >
+                app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -74,74 +73,70 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_schedules2"
                         android:layout_marginStart="@dimen/_5sdp"
-                        />
+                        android:src="@drawable/ic_schedules2" />
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="@string/BeginningOfTheSemester"
-                        android:textSize="@dimen/_13ssp"
                         android:textColor="@color/primaryDark"
-                        android:textStyle="bold"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        />
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="09/08/2021"
-                        android:textSize="@dimen/_11ssp"
-                        android:textColor="@color/black"
-                        android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_semesterStart"
-                        />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_gravity="center_horizontal"
-                app:cardCornerRadius="@dimen/_20sdp"
-                android:elevation="@dimen/_5sdp"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/_10sdp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_schedules2"
-                        android:layout_marginStart="@dimen/_5sdp"
-                        />
-
-                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/EndOfTheSemester"
-                        android:textSize="@dimen/_13ssp"
-                        android:textColor="@color/primaryDark"
-                        android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:text="09/08/2021"
-                        android:textSize="@dimen/_11ssp"
                         android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:elevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_20sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:src="@drawable/ic_schedules2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/EndOfTheSemester"
+                        android:textColor="@color/primaryDark"
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
                         android:id="@+id/Agenda_tv_semesterEnd"
-                        />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="09/08/2021"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -150,42 +145,42 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_gravity="center_horizontal"
-                app:cardCornerRadius="@dimen/_20sdp"
                 android:elevation="@dimen/_5sdp"
-                >
+                app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:padding="@dimen/_10sdp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_schedules2"
                         android:layout_marginStart="@dimen/_5sdp"
-                        />
+                        android:src="@drawable/ic_schedules2" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="@string/MidtermExamsStart"
-                        android:textSize="@dimen/_13ssp"
                         android:textColor="@color/primaryDark"
-                        android:textStyle="bold"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        />
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="undefined"
-                        android:textSize="@dimen/_11ssp"
-                        android:textColor="@color/black"
-                        android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_midtermStart"
-                        />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="undefined"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -193,88 +188,86 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_gravity="center_horizontal"
-                app:cardCornerRadius="@dimen/_20sdp"
                 android:elevation="@dimen/_5sdp"
-                >
+                app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:padding="@dimen/_10sdp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_schedules2"
                         android:layout_marginStart="@dimen/_5sdp"
-                        />
+                        android:src="@drawable/ic_schedules2" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="@string/MidtermExamsEnd"
-                        android:textSize="@dimen/_13ssp"
                         android:textColor="@color/primaryDark"
-                        android:textStyle="bold"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        />
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="undefined"
-                        android:textSize="@dimen/_11ssp"
-                        android:textColor="@color/black"
-                        android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_midtermEnd"
-                        />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="undefined"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
 
-
-
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_gravity="center_horizontal"
-                app:cardCornerRadius="@dimen/_20sdp"
                 android:elevation="@dimen/_5sdp"
-                >
+                app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:padding="@dimen/_10sdp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_schedules2"
                         android:layout_marginStart="@dimen/_5sdp"
-                        />
+                        android:src="@drawable/ic_schedules2" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="@string/FinalExamsStart"
-                        android:textSize="@dimen/_13ssp"
                         android:textColor="@color/primaryDark"
-                        android:textStyle="bold"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        />
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="undefined"
-                        android:textSize="@dimen/_11ssp"
-                        android:textColor="@color/black"
-                        android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_FinalStart"
-                        />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="undefined"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -282,42 +275,42 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_gravity="center_horizontal"
-                app:cardCornerRadius="@dimen/_20sdp"
                 android:elevation="@dimen/_5sdp"
-                >
+                app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:padding="@dimen/_10sdp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_schedules2"
                         android:layout_marginStart="@dimen/_5sdp"
-                        />
+                        android:src="@drawable/ic_schedules2" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="@string/FinalExamsEnd"
-                        android:textSize="@dimen/_13ssp"
                         android:textColor="@color/primaryDark"
-                        android:textStyle="bold"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        />
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="undefined"
-                        android:textSize="@dimen/_11ssp"
-                        android:textColor="@color/black"
-                        android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_FinalEnd"
-                        />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="undefined"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -326,42 +319,42 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_gravity="center_horizontal"
-                app:cardCornerRadius="@dimen/_20sdp"
                 android:elevation="@dimen/_5sdp"
-                >
+                app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:padding="@dimen/_10sdp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_schedules2"
                         android:layout_marginStart="@dimen/_5sdp"
-                        />
+                        android:src="@drawable/ic_schedules2" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="@string/BeginningOfMidtermEntry"
-                        android:textSize="@dimen/_13ssp"
                         android:textColor="@color/primaryDark"
-                        android:textStyle="bold"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        />
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="undefined"
-                        android:textSize="@dimen/_11ssp"
-                        android:textColor="@color/black"
-                        android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_midtermEntryStart"
-                        />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="undefined"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -369,87 +362,86 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_gravity="center_horizontal"
-                app:cardCornerRadius="@dimen/_20sdp"
                 android:elevation="@dimen/_5sdp"
-                >
+                app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:padding="@dimen/_10sdp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_schedules2"
                         android:layout_marginStart="@dimen/_5sdp"
-                        />
+                        android:src="@drawable/ic_schedules2" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="@string/EndOfMidtermEntry"
-                        android:textSize="@dimen/_13ssp"
                         android:textColor="@color/primaryDark"
-                        android:textStyle="bold"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        />
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="undefined"
-                        android:textSize="@dimen/_11ssp"
-                        android:textColor="@color/black"
-                        android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_midtermEntryEnd"
-                        />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="undefined"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
 
-
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_gravity="center_horizontal"
-                app:cardCornerRadius="@dimen/_20sdp"
                 android:elevation="@dimen/_5sdp"
-                >
+                app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:padding="@dimen/_10sdp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_schedules2"
                         android:layout_marginStart="@dimen/_5sdp"
-                        />
+                        android:src="@drawable/ic_schedules2" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="@string/BeginningOfFinalEntry"
-                        android:textSize="@dimen/_13ssp"
                         android:textColor="@color/primaryDark"
-                        android:textStyle="bold"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        />
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="undefined"
-                        android:textSize="@dimen/_11ssp"
-                        android:textColor="@color/black"
-                        android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_finalEntryStart"
-                        />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="undefined"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -457,13 +449,13 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_gravity="center_horizontal"
-                app:cardCornerRadius="@dimen/_20sdp"
                 android:elevation="@dimen/_5sdp"
-                >
+                app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -473,28 +465,26 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_schedules2"
                         android:layout_marginStart="@dimen/_5sdp"
-                        />
+                        android:src="@drawable/ic_schedules2" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="@string/EndOfFinalEntry"
-                        android:textSize="@dimen/_13ssp"
                         android:textColor="@color/primaryDark"
-                        android:textStyle="bold"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        />
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+
                     <TextView
+                        android:id="@+id/Agenda_tv_finalEntryEnd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="undefined"
-                        android:textSize="@dimen/_11ssp"
-                        android:textColor="@color/black"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:id="@+id/Agenda_tv_finalEntryEnd"
-                        />
+                        android:text="undefined"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -502,13 +492,13 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_gravity="center_horizontal"
-                app:cardCornerRadius="@dimen/_20sdp"
                 android:elevation="@dimen/_5sdp"
-                >
+                app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -518,35 +508,32 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_schedules2"
                         android:layout_marginStart="@dimen/_5sdp"
-                        />
+                        android:src="@drawable/ic_schedules2" />
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:text="@string/endOfDraw"
-                        android:textSize="@dimen/_13ssp"
                         android:textColor="@color/primaryDark"
-                        android:textStyle="bold"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        />
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+
                     <TextView
+                        android:id="@+id/Agenda_tv_endOfDraw"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="undefined"
-                        android:textSize="@dimen/_11ssp"
-                        android:textColor="@color/black"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:id="@+id/Agenda_tv_endOfDraw"
-                        />
+                        android:text="undefined"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
-
 
 
 </LinearLayout>
