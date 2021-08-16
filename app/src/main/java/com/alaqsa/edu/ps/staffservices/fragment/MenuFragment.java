@@ -118,4 +118,11 @@ public class MenuFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        adapter.closeTabs();
+    }
 }

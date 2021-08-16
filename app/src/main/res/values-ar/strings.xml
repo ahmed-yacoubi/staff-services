@@ -24,7 +24,7 @@
     <string name="academic_services">الخدمات الأكادمية</string>
     <string name="no_lectures_today">لا يوجد محاضرات لهذا اليوم</string>
     <string name="apologize">أعتذر</string>
-    <string name="change_date">تغيير الموعد</string>
+    <string name="change_date">تغيير</string>
     <string name="change_hill">تغيير القاعة</string>
     <string name="attendance_sheet">كشف الحضور</string>
     <string name="administrative_services">الخدمات الإدارية</string>
@@ -106,7 +106,8 @@
     <string name="currentPassword">كلمة المرور الحالية : </string>
     <string name="confirmNewPassword">تأكيد كلمة المرور</string>
     <string name="newPassword">كلمة المرور الجديدة :</string>
-    
+    <string name="addMeet">إضافة لقاء</string>
+
 
     <array name="AgendaType">
         <item>نظام الصباحي</item>

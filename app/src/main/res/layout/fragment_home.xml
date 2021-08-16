@@ -29,9 +29,9 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:layout_weight="9"
+                app:tabBackground="@drawable/tab_backround"
                 app:tabGravity="center"
                 app:tabIndicator="@drawable/tabindicator"
-                app:tabBackground="@drawable/tab_backround"
                 app:tabIndicatorGravity="stretch"
                 app:tabMode="scrollable"
                 app:tabSelectedTextColor="@color/white"
@@ -41,8 +41,8 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/homeViewPager"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
 
         </LinearLayout>

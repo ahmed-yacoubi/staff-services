@@ -206,6 +206,7 @@ public class ContainerTabFragment extends Fragment implements Serializable {
 
     }
 
+
     private void initNotificationMessage() {
 
         notificationsAdapter = new NotificationsAdapter(testArrayList);
@@ -232,6 +233,27 @@ public class ContainerTabFragment extends Fragment implements Serializable {
         binding.schRecyclerView.setHasFixedSize(true);
         binding.schRecyclerView.setLayoutManager(layoutManager);
         binding.schRecyclerView.setAdapter(schedulesAdapter);
+
+    }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        try {
+            if (adapter != null)
+                adapter.closeTabs();
+
+        } catch (Exception e) {
+
+        }
+        try {
+            if (subjectAdapter != null)
+                subjectAdapter.closeTabs();
+
+        } catch (Exception e) {
+
+        }
 
     }
 }

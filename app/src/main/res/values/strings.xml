@@ -21,7 +21,7 @@
     <string name="academic_services">Academic Services</string>
     <string name="no_lectures_today">No Lectures Today</string>
     <string name="apologize">Apologize</string>
-    <string name="change_date">Change Date</string>
+    <string name="change_date">change</string>
     <string name="change_hill">Change Hill</string>
     <string name="attendance_sheet">Attendance Sheet</string>
     <string name="administrative_services">Administrative Services</string>
@@ -103,6 +103,7 @@
     <string name="date_">Date:</string>
     <string name="student_name">Student Name</string>
     <string name="attend">Attend.</string>
+    <string name="addMeet">add meet</string>
 
 
     <array name="AgendaType">

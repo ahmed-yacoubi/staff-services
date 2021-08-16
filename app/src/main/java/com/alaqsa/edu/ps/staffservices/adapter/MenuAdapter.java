@@ -25,15 +25,19 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
 
     private final ArrayList<MenuItem> menuItems;
     private final Context context;
+    private List<MenuAdapter.MenuViewHolder> holders;
 
     public MenuAdapter(ArrayList<MenuItem> menuItems, Context context) {
         this.menuItems = menuItems;
         this.context = context;
+        this.holders = new ArrayList<>();
+
     }
 
     @NonNull
@@ -48,9 +52,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         MenuItem menuItem = menuItems.get(position);
         holder.binding.menuImageViewIcon.setImageResource(menuItem.getIcon());
         holder.binding.menuTextViewTitle.setText(menuItem.getTitle());
-
+        if (holders.size() != menuItems.size())
+            holders.add(holder);
         if (menuItem.getSubMenuItems() != null) {
-            holder.binding.menuImageViewArrow.setVisibility(View.VISIBLE);
 
             SubMenuAdapter adapter = new SubMenuAdapter(menuItem.getSubMenuItems(), context);
 
@@ -64,45 +68,70 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
             holder.binding.menuRecyclerViewSub.setVisibility(View.GONE);
         }
 
-        holder.binding.menuImageViewArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (menuItem.isExpanded()) {
-                    holder.binding.menuRecyclerViewSub.setVisibility(View.GONE);
-                    holder.binding.menuImageViewArrow.setImageResource(R.drawable.ic_arrow_down);
-                    menuItem.setExpanded(false);
-                } else {
-                    holder.binding.menuRecyclerViewSub.setVisibility(View.VISIBLE);
-                    holder.binding.menuImageViewArrow.setImageResource(R.drawable.ic_arrow_up);
-                    menuItem.setExpanded(true);
-                }
-                notifyDataSetChanged();
-                notifyItemChanged(position);
-            }
-        });
 
         holder.binding.menuLinearLayoutItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 if (position == 2) {
                     Bundle bundle = new Bundle();
                     bundle.putString("fragment", "ViewStaffFragment");
                     context.startActivity(new Intent(context, ContainerActivity.class)
                             .putExtra("bundle", bundle));
-                }
-
-                if (position == 3) {
+                } else if (position == 3) {
                     Bundle bundle = new Bundle();
                     bundle.putString("fragment", "SettingsFragment");
                     context.startActivity(new Intent(context, ContainerActivity.class)
                             .putExtra("bundle", bundle));
-                }
-                if (position == 4) {
+                } else if (position == 4) {
                     Toast.makeText(context, "Logout", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (holder.binding.menuImageViewArrowUp.getVisibility() == View.VISIBLE) {
+
+                        closeTabs();
+
+
+                    } else {
+
+                        openOneTab(position);
+                    }
+                    notifyDataSetChanged();
+
                 }
 
             }
         });
+    }
+
+    private void openOneTab(int currentTab) {
+
+
+        for (int i = 0; i < holders.size(); i++) {
+            if (currentTab != i) {
+                holders.get(i).binding.menuRecyclerViewSub.setVisibility(View.GONE);
+                holders.get(i).binding.menuImageViewArrowUp.setVisibility(View.GONE);
+
+            } else {
+                holders.get(i).binding.menuRecyclerViewSub.setVisibility(View.VISIBLE);
+                holders.get(i).binding.menuImageViewArrow.setVisibility(View.GONE);
+                holders.get(i).binding.menuImageViewArrowUp.setVisibility(View.VISIBLE);
+
+            }
+            notifyDataSetChanged();
+        }
+
+    }
+
+    public void closeTabs() {
+
+        for (int i = 0; i < holders.size(); i++) {
+            if (i != 2 && i != 4 && i != 3) {
+                holders.get(i).binding.menuRecyclerViewSub.setVisibility(View.GONE);
+                holders.get(i).binding.menuImageViewArrow.setVisibility(View.VISIBLE);
+                holders.get(i).binding.menuImageViewArrowUp.setVisibility(View.GONE);
+            }
+        }
     }
 
     @Override
