@@ -107,7 +107,7 @@ public class AttendanceSheetFragment extends Fragment implements Serializable {
 
         addData();
 
-        adapter = new AttendanceAdapter(testArrayList);
+        adapter = new AttendanceAdapter(testArrayList,getContext().getApplicationContext());
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
 
