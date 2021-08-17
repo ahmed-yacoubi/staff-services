@@ -31,6 +31,7 @@ public class SplashActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
 
+
         Intent serviceIntent = new Intent(getBaseContext(), MyService.class);
         startService(serviceIntent);
 
@@ -50,7 +51,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // MainActivity.class is the activity to go after showing the splash screen.
-                if (sharedPreferences.getBoolean("shared_prefs", false))
+                if (sharedPreferences.getBoolean("shared_prefs", true))
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 else startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }

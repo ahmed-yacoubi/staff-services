@@ -5,6 +5,9 @@ public class Utils {
     public static class SharedPref {
         public static final String SHARED_PREF_NAME = "main";
         public static final String TEMP_DATA = "tempData";
+        public static final String STORAGE_DAY = "day_story";
+
+
     }
 
     public static class Database {
@@ -76,10 +79,20 @@ public class Utils {
 
         //**************************************** Agenda_table    *******************************************
         public static final String TB_AGENDA = "agenda_table";
+        public static final String AGENDA_NAME = "agenda_name";
         public static final String AGENDA_BEG_SEMESTER = "agenda_beginning_semester";
         public static final String AGENDA_END_SEMESTER = "agenda_end_semester";
+        public static final String AGENDA_START_MIDTERM = "agenda_start_midterm";
+        public static final String AGENDA_END_MIDTERM = "agenda_end_midterm";
         public static final String AGENDA_START_FINAL_EXAM = "agenda_start_final_exam";
-        public static final String AGENDA_STARTMIDTERM = "agenda_start_midterm";
+        public static final String AGENDA_END_FINAL_EXAM = "agenda_end_final_exam";
+
+        public static final String AGENDA_ENTRY_START_MIDTERM = "agenda_entry_start_midterm";
+        public static final String AGENDA_ENTRY_END_MIDTERM = "agenda_entry_end_midterm";
+        public static final String AGENDA_ENTRY_START_FINAL_EXAM = "agenda_entry_start_final_exam";
+        public static final String AGENDA_ENTRY_END_FINAL_EXAM = "agenda_entry_end_final_exam";
+        public static final String AGENDA_END_DRAW = "agenda_end_draw";
+
 
     }
 }

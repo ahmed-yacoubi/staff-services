@@ -38,7 +38,7 @@ public class SchedulesAdapter extends RecyclerView.Adapter<SchedulesAdapter.Sche
         holder.binding.schTextViewClass.setText(test.getClasss());
         holder.binding.schTextViewHill.setText(test.getHill());
         holder.binding.schTextViewTime.setText(test.getTime());
-
+        holder.getOldPosition();
         if (position == testArrayList.size() - 1)
             holder.binding.schView.setVisibility(View.GONE);
         else holder.binding.schView.setVisibility(View.VISIBLE);
