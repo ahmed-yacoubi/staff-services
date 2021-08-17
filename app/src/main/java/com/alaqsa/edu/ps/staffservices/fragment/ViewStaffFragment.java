@@ -1,5 +1,6 @@
 package com.alaqsa.edu.ps.staffservices.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -37,6 +38,22 @@ public class ViewStaffFragment extends Fragment  {
     private Database database;
     private List<Employee> list;
 
+    public interface onViewStaffEventListener {
+        void viewStaffEvent();
+    }
+
+    onViewStaffEventListener viewStaffEventListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            viewStaffEventListener = (onViewStaffEventListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+        }
+    }
+
 
     public ViewStaffFragment() {
         // Required empty public constructor
@@ -46,6 +63,9 @@ public class ViewStaffFragment extends Fragment  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        viewStaffEventListener.viewStaffEvent();
+
         database = Database.getInstance(getActivity());
         if (CheckInternet.isConnected()) {
             list = database.getLastEmployees();

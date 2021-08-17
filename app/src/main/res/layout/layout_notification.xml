@@ -3,9 +3,14 @@
     android:id="@+id/notiCardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_4sdp"
+    android:layout_marginStart="@dimen/_7sdp"
+    android:layout_marginEnd="@dimen/_7sdp"
+    android:layout_marginTop="@dimen/_7sdp"
+    android:layout_marginBottom="@dimen/_7sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="@dimen/_16sdp">
+    app:cardCornerRadius="@dimen/_16sdp"
+    app:cardElevation="@dimen/_10sdp"
+    >
 
     <LinearLayout
         android:id="@+id/notiLinearLayoutItem"
@@ -21,7 +26,9 @@
             android:text="AlAQSA-Reg."
             android:textColor="@color/primaryDark"
             android:textSize="@dimen/_14ssp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:fontFamily="@font/cairo_bold"
+            />
 
         <TextView
             android:id="@+id/notiTextViewText"
@@ -30,7 +37,9 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:text="SID: 2301180724, Mobile Apps Development 2 = 97"
             android:textColor="@color/primaryDark"
-            android:textSize="@dimen/_12ssp"/>
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/cairo_regular"
+            />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -18,7 +18,9 @@
         android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/cairo_bold"
+        />
 
     <TextView
         android:id="@+id/attTextViewCourseV"
@@ -28,7 +30,9 @@
         android:text="Mobile Apps Dev"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintStart_toEndOf="@+id/attTextViewCourse"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/cairo_regular"
+        />
 
     <TextView
         android:id="@+id/attTextViewCourseNo"
@@ -39,6 +43,7 @@
         android:textColor="@color/primaryDark"
         android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
+        android:fontFamily="@font/cairo_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/attTextViewCourse" />
 
@@ -50,6 +55,7 @@
         android:layout_marginTop="@dimen/_8sdp"
         android:text="CSIT 1201"
         android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/cairo_regular"
         app:layout_constraintStart_toEndOf="@+id/attTextViewCourseNo"
         app:layout_constraintTop_toBottomOf="@+id/attTextViewCourseV" />
 
@@ -63,6 +69,7 @@
         android:textColor="@color/primaryDark"
         android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
+        android:fontFamily="@font/cairo_bold"
         app:layout_constraintStart_toEndOf="@+id/attTextViewCourseNoV"
         app:layout_constraintTop_toBottomOf="@+id/attTextViewCourse" />
 
@@ -74,6 +81,7 @@
         android:layout_marginTop="@dimen/_8sdp"
         android:text="101"
         android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/cairo_regular"
         app:layout_constraintStart_toEndOf="@+id/attTextViewClassNo"
         app:layout_constraintTop_toBottomOf="@+id/attTextViewCourseV" />
 
@@ -86,6 +94,7 @@
         android:textColor="@color/primaryDark"
         android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
+        android:fontFamily="@font/cairo_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/attTextViewCourseNo" />
 
@@ -98,6 +107,7 @@
         android:layout_marginTop="@dimen/_8sdp"
         android:entries="@array/testHistory"
         android:padding="@dimen/_10sdp"
+        android:fontFamily="@font/cairo_regular"
         android:popupBackground="@drawable/text_view_background_empty"
         android:popupElevation="@dimen/_10sdp"
         android:textSize="@dimen/_14ssp"
@@ -123,7 +133,9 @@
             android:gravity="center"
             android:text="#"
             android:textColor="@color/white"
-            android:textSize="@dimen/_12ssp" />
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/cairo_bold"
+            />
 
         <TextView
             android:id="@+id/attSheetTextViewName"
@@ -135,7 +147,9 @@
             android:gravity="center_vertical"
             android:text="@string/student_name"
             android:textColor="@color/white"
-            android:textSize="@dimen/_12ssp" />
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/cairo_bold"
+            />
 
         <TextView
             android:id="@+id/attSheetTextViewAtt"
@@ -146,7 +160,9 @@
             android:gravity="center"
             android:text="@string/attend"
             android:textColor="@color/white"
-            android:textSize="@dimen/_12ssp" />
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/cairo_bold"
+            />
 
     </LinearLayout>
 
@@ -177,5 +193,7 @@
         android:textSize="@dimen/_12sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/cairo_bold"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

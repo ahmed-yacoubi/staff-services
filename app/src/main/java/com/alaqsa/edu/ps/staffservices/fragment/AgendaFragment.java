@@ -1,5 +1,6 @@
 package com.alaqsa.edu.ps.staffservices.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,6 +16,22 @@ import java.io.Serializable;
 public class AgendaFragment extends Fragment  {
 
    private static AgendaFragment agendaFragment;
+
+    public interface onAgendaEventListener {
+        void agendaEvent();
+    }
+
+    onAgendaEventListener agendaEventListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            agendaEventListener = (onAgendaEventListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+        }
+    }
 
 
     public AgendaFragment() {
@@ -33,7 +50,7 @@ public class AgendaFragment extends Fragment  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        agendaEventListener.agendaEvent();
     }
 
     @Override

@@ -2,18 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/item_home"
-        android:icon="@drawable/ic_home"
-        android:title="@string/home" />
+        android:icon="@drawable/bnv_home_selector"
+        android:title=""
+
+        />
     <item
         android:id="@+id/item_schedules"
-        android:icon="@drawable/ic_schedules"
-        android:title="@string/schedules"/>
+        android:icon="@drawable/bnv_schedules_selector"
+        android:title=""
+
+        />
     <item
         android:id="@+id/item_notifications"
-        android:icon="@drawable/ic_notifications"
-        android:title="@string/notifications"/>
+        android:icon="@drawable/bnv_notifications_selector"
+        android:title=""/>
     <item
         android:id="@+id/item_menu"
-        android:icon="@drawable/ic_menu"
-        android:title="@string/menu"/>
+        android:icon="@drawable/bnv_list_selector"
+        android:title=""/>
 </menu>

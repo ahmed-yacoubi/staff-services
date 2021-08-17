@@ -36,7 +36,9 @@
                     android:lines="1"
                     android:text="@string/subject_name"
                     android:textColor="@color/primaryDark"
-                    android:textSize="@dimen/_14ssp" />
+                    android:textSize="@dimen/_14ssp"
+                    android:fontFamily="@font/cairo_bold"
+                    />
 
                 <TextView
                     android:id="@+id/SubjectLayout_tv_subjectname"
@@ -51,7 +53,9 @@
                     android:text="Mobile app programming 1"
                     android:textColor="@color/black"
                     android:textDirection="locale"
-                    android:textSize="@dimen/_12ssp" />
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/cairo_regular"
+                    />
 
                 <ImageView
                     android:id="@+id/SubjectLayout_iv_ArrowDown"
@@ -70,6 +74,8 @@
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:src="@drawable/ic_arrow_up"
                     android:visibility="gone" />
+
+
             </LinearLayout>
 
 
@@ -96,7 +102,9 @@
                         android:lines="1"
                         android:text="@string/subject_id"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/SubjectLayout_tv_subjectid"
@@ -108,7 +116,9 @@
                         android:lines="1"
                         android:text="ITCS3317"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                 </LinearLayout>
 
@@ -128,7 +138,9 @@
                         android:lines="1"
                         android:text="@string/DivisionId"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/SubjectLayout_tv_DivisionId"
@@ -140,7 +152,9 @@
                         android:lines="1"
                         android:text="101"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                 </LinearLayout>
 
@@ -161,7 +175,9 @@
                         android:lines="1"
                         android:text="@string/gender"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/SubjectLayout_tv_gender"
@@ -173,7 +189,9 @@
                         android:lines="1"
                         android:text="Male"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                 </LinearLayout>
 
@@ -194,7 +212,9 @@
                         android:lines="1"
                         android:text="@string/Students_number"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/SubjectLayout_tv_StudentsNum"
@@ -206,7 +226,9 @@
                         android:lines="1"
                         android:text="35"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
 
                 </LinearLayout>
@@ -239,7 +261,9 @@
                             android:entries="@array/ReportsType"
                             android:padding="@dimen/_10sdp"
                             android:popupBackground="@drawable/text_view_background_empty"
-                            android:popupElevation="@dimen/_10sdp" />
+                            android:popupElevation="@dimen/_10sdp"
+                            android:fontFamily="@font/cairo_bold"
+                            />
                     </androidx.cardview.widget.CardView>
 
                     <ImageView

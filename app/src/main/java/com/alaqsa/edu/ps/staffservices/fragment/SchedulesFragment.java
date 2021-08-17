@@ -1,5 +1,6 @@
 package com.alaqsa.edu.ps.staffservices.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -29,31 +30,38 @@ public class SchedulesFragment extends Fragment  {
     List<Fragment> fragmentList = new ArrayList<>();
     public SchedulesViewPagerAdapter adapter;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+
+    public interface onSchedulesEventListener {
+        void schedulesEvent();
+    }
+
+    SchedulesFragment.onSchedulesEventListener schedulesEventListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            schedulesEventListener = (SchedulesFragment.onSchedulesEventListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+        }
+    }
+
 
     public SchedulesFragment() {
         // Required empty public constructor
     }
 
 
-    public static SchedulesFragment newInstance(String param1, String param2) {
+    public static SchedulesFragment newInstance() {
         SchedulesFragment fragment = new SchedulesFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
-        }
+        schedulesEventListener.schedulesEvent();
     }
 
     @Override

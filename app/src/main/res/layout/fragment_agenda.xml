@@ -18,7 +18,7 @@
         android:layout_marginEnd="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_30sdp"
         android:textStyle="bold"
-        android:fontFamily="sans-serif-condensed-light"
+        android:fontFamily="@font/cairo_bold"
         />
 
 
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/AgendaType"
-            android:padding="@dimen/_10sdp"
+            android:padding="@dimen/_7sdp"
             android:id="@+id/Agenda_Spinner"
             android:layout_margin="@dimen/_5sdp"
             android:popupElevation="@dimen/_10sdp"
@@ -83,10 +83,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/BeginningOfTheSemester"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_12ssp"
                         android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_bold"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -94,6 +95,7 @@
                         android:text="09/08/2021"
                         android:textSize="@dimen/_11ssp"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/cairo_regular"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_semesterStart"
                         />
@@ -128,10 +130,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/EndOfTheSemester"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_12ssp"
                         android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_bold"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -139,6 +142,7 @@
                         android:text="09/08/2021"
                         android:textSize="@dimen/_11ssp"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/cairo_regular"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_semesterEnd"
                         />
@@ -172,10 +176,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/MidtermExamsStart"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_12ssp"
                         android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_bold"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -183,6 +188,7 @@
                         android:text="undefined"
                         android:textSize="@dimen/_11ssp"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/cairo_regular"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_midtermStart"
                         />
@@ -215,17 +221,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/MidtermExamsEnd"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_12ssp"
                         android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
-                        />
+                        android:fontFamily="@font/cairo_bold" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="undefined"
                         android:textSize="@dimen/_11ssp"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/cairo_regular"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_midtermEnd"
                         />
@@ -261,16 +268,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/FinalExamsStart"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_12ssp"
                         android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_bold"
                         />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="undefined"
                         android:textSize="@dimen/_11ssp"
+                        android:fontFamily="@font/cairo_regular"
                         android:textColor="@color/black"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_FinalStart"
@@ -304,10 +313,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/FinalExamsEnd"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_12ssp"
                         android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_bold"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -315,6 +325,7 @@
                         android:text="undefined"
                         android:textSize="@dimen/_11ssp"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/cairo_regular"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_FinalEnd"
                         />
@@ -348,10 +359,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/BeginningOfMidtermEntry"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_12ssp"
                         android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_bold"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -360,6 +372,7 @@
                         android:textSize="@dimen/_11ssp"
                         android:textColor="@color/black"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_regular"
                         android:id="@+id/Agenda_tv_midtermEntryStart"
                         />
                 </LinearLayout>
@@ -391,10 +404,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/EndOfMidtermEntry"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_12ssp"
                         android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_bold"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -403,6 +417,7 @@
                         android:textSize="@dimen/_11ssp"
                         android:textColor="@color/black"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_regular"
                         android:id="@+id/Agenda_tv_midtermEntryEnd"
                         />
                 </LinearLayout>
@@ -436,10 +451,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/BeginningOfFinalEntry"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_12ssp"
                         android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_bold"
+
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -448,6 +465,7 @@
                         android:textSize="@dimen/_11ssp"
                         android:textColor="@color/black"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_regular"
                         android:id="@+id/Agenda_tv_finalEntryStart"
                         />
                 </LinearLayout>
@@ -481,10 +499,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/EndOfFinalEntry"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_12ssp"
                         android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_bold"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -494,6 +513,8 @@
                         android:textColor="@color/black"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_finalEntryEnd"
+                        android:fontFamily="@font/cairo_regular"
+
                         />
                 </LinearLayout>
 
@@ -527,10 +548,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/endOfDraw"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_12ssp"
                         android:textColor="@color/primaryDark"
                         android:textStyle="bold"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/cairo_bold"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -540,6 +562,7 @@
                         android:textColor="@color/black"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:id="@+id/Agenda_tv_endOfDraw"
+                        android:fontFamily="@font/cairo_regular"
                         />
                 </LinearLayout>
 

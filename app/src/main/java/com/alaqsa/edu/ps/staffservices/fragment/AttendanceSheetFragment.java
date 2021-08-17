@@ -1,5 +1,6 @@
 package com.alaqsa.edu.ps.staffservices.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,6 +36,23 @@ public class AttendanceSheetFragment extends Fragment implements Serializable {
 
     private ArrayList<Test> testArrayList;
 
+    public interface onAttendanceEventListener {
+        void attendanceEvent();
+    }
+
+    onAttendanceEventListener attendanceEventListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            attendanceEventListener = (onAttendanceEventListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+        }
+    }
+
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -69,10 +87,8 @@ public class AttendanceSheetFragment extends Fragment implements Serializable {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+        attendanceEventListener.attendanceEvent();
     }
 
     @Override

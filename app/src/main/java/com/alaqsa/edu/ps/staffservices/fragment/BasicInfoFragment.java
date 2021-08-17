@@ -1,5 +1,6 @@
 package com.alaqsa.edu.ps.staffservices.fragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -29,6 +30,21 @@ public class BasicInfoFragment extends Fragment  {
 
     private FragmentBasicInfoBinding binding;
 
+    public interface onBasicInfoEventListener {
+        void basicInfoEvent();
+    }
+
+    onBasicInfoEventListener basicInfoEventListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            basicInfoEventListener = (onBasicInfoEventListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+        }
+    }
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -63,10 +79,8 @@ public class BasicInfoFragment extends Fragment  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+        basicInfoEventListener.basicInfoEvent();
     }
 
     @Override

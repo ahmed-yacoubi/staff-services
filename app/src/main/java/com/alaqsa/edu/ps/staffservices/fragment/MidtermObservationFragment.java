@@ -1,5 +1,6 @@
 package com.alaqsa.edu.ps.staffservices.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -37,6 +38,22 @@ public class MidtermObservationFragment extends Fragment  {
 
     private ArrayList<Test> testArrayList;
 
+    public interface onMidTermEventListener {
+        void midTermEvent();
+    }
+
+    onMidTermEventListener midTermEventListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            midTermEventListener = (onMidTermEventListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+        }
+    }
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -71,10 +88,7 @@ public class MidtermObservationFragment extends Fragment  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        midTermEventListener.midTermEvent();
     }
 
     @Override
@@ -106,7 +120,7 @@ public class MidtermObservationFragment extends Fragment  {
     private void addData() {
         for (int i=1; i<=5; i++)
             testArrayList.add(new Test(i, "Mobile Apps", "101", "WH201",
-                    "10:00-12:00", false, "ALAQSA Reg.", "SID: 2301180724, Mobile Apps Development" +
+                    "08/09/2021", false, "ALAQSA Reg.", "SID: 2301180724, Mobile Apps Development" +
                     " 2 = 97"));
     }
 

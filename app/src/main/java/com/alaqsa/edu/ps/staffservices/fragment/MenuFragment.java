@@ -1,5 +1,6 @@
 package com.alaqsa.edu.ps.staffservices.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -33,6 +34,21 @@ public class MenuFragment extends Fragment {
     private ArrayList<SubMenuItem> academicSubMenuItems, administrativeSubMenuItems, settingsSubMenuItems;
 
 
+    public interface onMenuEventListener {
+        void menuEvent();
+    }
+
+    onMenuEventListener menuEventListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            menuEventListener = (onMenuEventListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+        }
+    }
 
     public MenuFragment() {
         // Required empty public constructor
@@ -43,7 +59,7 @@ public class MenuFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        menuEventListener.menuEvent();
     }
 
     @Override

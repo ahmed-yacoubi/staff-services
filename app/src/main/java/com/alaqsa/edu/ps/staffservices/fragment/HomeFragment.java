@@ -1,5 +1,6 @@
 package com.alaqsa.edu.ps.staffservices.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.alaqsa.edu.ps.staffservices.adapter.SchedulesViewPagerAdapter;
 import com.alaqsa.edu.ps.staffservices.databinding.FragmentHomeBinding;
+import com.alaqsa.edu.ps.staffservices.fragment.dialog.DialogFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -28,6 +30,23 @@ public class HomeFragment extends Fragment {
     List<Fragment> fragmentList = new ArrayList<>();
     public SchedulesViewPagerAdapter adapter;
 
+    public interface onHomeEventListener {
+        void homeEvent();
+    }
+
+    HomeFragment.onHomeEventListener homeEventListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            homeEventListener = (HomeFragment.onHomeEventListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+        }
+    }
+
+
 
     public HomeFragment() {
     }
@@ -36,6 +55,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        homeEventListener.homeEvent();
     }
 
     @Override

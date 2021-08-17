@@ -19,10 +19,12 @@
             android:layout_marginTop="@dimen/_16sdp"
             android:text="@string/login"
             android:textColor="@color/primaryDark"
-            android:textSize="@dimen/_22ssp"
+            android:textSize="@dimen/_25ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/cairo_bold"
+            />
 
         <ImageView
             android:id="@+id/loginImageView"
@@ -49,6 +51,7 @@
             android:hint="@string/username"
             android:inputType="number"
             android:paddingStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_regular"
             android:paddingEnd="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +72,7 @@
             android:inputType="numberPassword"
             android:paddingStart="@dimen/_16sdp"
             android:paddingEnd="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginEditTextUsername" />
@@ -85,6 +89,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/cairo_regular"
             app:layout_constraintTop_toBottomOf="@+id/loginEditTextPassword" />
 
 
@@ -111,7 +116,9 @@
                 android:background="@drawable/edit_text_background"
                 android:elevation="@dimen/_10sdp"
                 android:text="@string/login"
-                android:textSize="@dimen/_14ssp" />
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/cairo_bold"
+                />
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

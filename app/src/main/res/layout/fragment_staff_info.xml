@@ -9,28 +9,34 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/_16sdp">
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/_10sdp"
+    >
 
     <ImageView
         android:id="@+id/staffInfoImageViewPerson"
         android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_100sdp"
+        android:layout_marginTop="36dp"
         android:layout_weight="1"
-        android:layout_marginTop="@dimen/_16sdp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_person" />
+        app:srcCompat="@drawable/ic_person"
+
+        />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/_20sdp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:cardElevation="@dimen/_5sdp"
+        android:layout_margin="@dimen/_20sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/staffInfoImageViewPerson">
+        app:layout_constraintTop_toBottomOf="@+id/staffInfoImageViewPerson"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,7 +50,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/name"
                 android:textColor="@color/primaryDark"
-                android:textSize="@dimen/_14ssp" />
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/cairo_bold"
+                />
 
             <TextView
                 android:id="@+id/staffInfoTextViewNameV"
@@ -52,7 +60,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:text="Lecturer"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/cairo_regular"
+                android:textColor="@color/black"
+                />
 
             <TextView
                 android:id="@+id/staffInfoTextViewFac"
@@ -61,7 +72,9 @@
                 android:layout_marginTop="@dimen/_12sdp"
                 android:text="@string/faculty"
                 android:textColor="@color/primaryDark"
-                android:textSize="@dimen/_14ssp" />
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/cairo_bold"
+                />
 
             <TextView
                 android:id="@+id/staffInfoTextViewFacV"
@@ -69,7 +82,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:text="AlAqsa University"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/cairo_regular"
+                android:textColor="@color/black"
+                />
 
             <TextView
                 android:id="@+id/staffInfoTextViewDep"
@@ -78,7 +94,9 @@
                 android:layout_marginTop="@dimen/_12sdp"
                 android:text="@string/department"
                 android:textColor="@color/primaryDark"
-                android:textSize="@dimen/_14ssp" />
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/cairo_bold"
+                />
 
             <TextView
                 android:id="@+id/staffInfoTextViewDepV"
@@ -86,7 +104,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:text="AlAqsa University"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/cairo_regular"
+                android:textColor="@color/black"
+                />
 
             <TextView
                 android:id="@+id/staffInfoTextViewEmail"
@@ -95,7 +116,9 @@
                 android:layout_marginTop="@dimen/_12sdp"
                 android:text="@string/email"
                 android:textColor="@color/primaryDark"
-                android:textSize="@dimen/_14ssp" />
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/cairo_bold"
+                />
 
             <TextView
                 android:id="@+id/staffInfoTextViewEmailV"
@@ -103,7 +126,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:text="AlAqsa University"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/cairo_regular"
+                android:textColor="@color/black"
+                />
 
             <TextView
                 android:id="@+id/staffInfoTextMob"
@@ -112,7 +138,9 @@
                 android:layout_marginTop="@dimen/_12sdp"
                 android:text="@string/mobile_no"
                 android:textColor="@color/primaryDark"
-                android:textSize="@dimen/_14ssp" />
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/cairo_bold"
+                />
 
             <TextView
                 android:id="@+id/staffInfoTextViewMobV"
@@ -120,7 +148,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:text="AlAqsa University"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/cairo_regular"
+                android:textColor="@color/black"
+                />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

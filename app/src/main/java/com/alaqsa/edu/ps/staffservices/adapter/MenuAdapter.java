@@ -64,7 +64,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
             holder.binding.menuRecyclerViewSub.setLayoutManager(layoutManager);
             holder.binding.menuRecyclerViewSub.setAdapter(adapter);
         } else {
-            holder.binding.menuImageViewArrow.setVisibility(View.GONE);
+            holder.binding.menuImageViewArrow.setVisibility(View.INVISIBLE);
             holder.binding.menuRecyclerViewSub.setVisibility(View.GONE);
         }
 
@@ -148,5 +148,6 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
 
             this.binding = binding;
         }
+
     }
 }

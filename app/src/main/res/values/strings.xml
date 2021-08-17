@@ -21,7 +21,7 @@
     <string name="academic_services">Academic Services</string>
     <string name="no_lectures_today">No Lectures Today</string>
     <string name="apologize">Apologize</string>
-    <string name="change_date">change</string>
+    <string name="change_date">Change Date</string>
     <string name="change_hill">Change Hill</string>
     <string name="attendance_sheet">Attendance Sheet</string>
     <string name="administrative_services">Administrative Services</string>
@@ -67,8 +67,8 @@
     <string name="currentPassword">Current password:</string>
     <string name="confirmNewPassword">Confirm new password:</string>
     <string name="newPassword">New password:</string>
-
-
+    
+    
     <string name="court">Court</string>
     <string name="university">University</string>
     <string name="positions">Positions</string>
@@ -97,13 +97,38 @@
     <string name="university_email">University Email</string>
     <string name="personal_email">Personal Email</string>
     <string name="save_edits">Save Edits</string>
-    <string name="course_name">Course Name:</string>
-    <string name="course_no">Course No:</string>
-    <string name="class_no">Class No:</string>
+    <string name="changeLectureTime">Change lecture time</string>
+    <string name="OldTime">Old time:</string>
+    <string name="NewTime">New time:</string>
+    <string name="changeLectureHall">Change lecture hall</string>
+    <string name="OldHall">Old hall:</string>
+    <string name="NewHall">New hall:</string>
+    <string name="Enterhallname">Enter hall name</string>
+    <string name="course_name">Course name:</string>
+    <string name="course_no">Course number:</string>
+    <string name="class_no">Class number:</string>
     <string name="date_">Date:</string>
-    <string name="student_name">Student Name</string>
-    <string name="attend">Attend.</string>
-    <string name="addMeet">add meet</string>
+    <string name="addMeet">Add meet</string>
+    <string name="student_name">Student name</string>
+    <string name="attend">Attend</string>
+
+
+    <string name="AlaqsaUniversity">Alaqsa University</string>
+    //Fragments
+    <string name="HomePage">Home page</string>
+    <string name="SchedulesPage">Schedules Page</string>
+    <string name="Attendance">Attendance</string>
+    <string name="EditBasicInfo">Edit basic info</string>
+    <string name="NotificationPage">Notifications and messages</string>
+    <string name="StaffInfo">Staff info</string>
+    <string name="college">College:</string>
+
+    <array name="testHistory">
+            <item>2020/02/02</item>
+            <item>2020/02/02</item>
+            <item>2020/02/02</item>
+        </array>
+
 
 
     <array name="AgendaType">
@@ -111,13 +136,6 @@
         <item>evening system</item>
         <item>Community College</item>
         <item>Master\'s System</item>
-    </array>
-
-    <array name="testHistory">
-        <item>2020/02/02</item>
-        <item>2020/02/02</item>
-        <item>2020/02/02</item>
-
     </array>
 
 

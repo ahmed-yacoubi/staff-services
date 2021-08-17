@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.databinding.ActivityContainerBinding;
@@ -28,7 +29,19 @@ import com.alaqsa.edu.ps.staffservices.fragment.SettingsFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.StaffInfoFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.ViewStaffFragment;
 
-public class ContainerActivity extends AppCompatActivity {
+public class ContainerActivity extends AppCompatActivity implements AgendaFragment.onAgendaEventListener ,
+        AttendanceSheetFragment.onAttendanceEventListener ,
+        BasicInfoFragment.onBasicInfoEventListener ,
+        ChangePasswordFragment.onChangePasswordEventListener ,
+        EditBasicInfoFragment.onEditBasicInfoEventListener  ,
+        FinalObservationFragment.onFinalObservationEventListener ,
+        JobInfoFragment.onJobInfoEventListener ,
+        MidtermObservationFragment.onMidTermEventListener ,
+        ReportsFragment.onReportsEventListener ,
+        SettingsFragment.onSettingsEventListener ,
+        StaffInfoFragment.onStaffInfoEventListener ,
+        ViewStaffFragment.onViewStaffEventListener ,
+        SchedulesFragment.onSchedulesEventListener{
 
     private ActivityContainerBinding binding;
 
@@ -94,5 +107,90 @@ public class ContainerActivity extends AppCompatActivity {
 
             startActivity(new Intent(getBaseContext(), MainActivity.class));
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        binding.containerImageViewArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
+    @Override
+    public void agendaEvent() {
+        binding.containerTextViewTitle.setText(R.string.agenda);
+    }
+
+    @Override
+    public void attendanceEvent() {
+        binding.containerTextViewTitle.setText(R.string.Attendance);
+
+    }
+
+    @Override
+    public void basicInfoEvent() {
+        binding.containerTextViewTitle.setText(R.string.basic_info);
+
+    }
+
+    @Override
+    public void changePasswordEvent() {
+        binding.containerTextViewTitle.setText(R.string.change_password);
+
+    }
+
+    @Override
+    public void editBasicInfoEvent() {
+        binding.containerTextViewTitle.setText(R.string.EditBasicInfo);
+
+    }
+
+    @Override
+    public void finalObservationEvent() {
+        binding.containerTextViewTitle.setText(R.string.final_observation);
+
+    }
+
+    @Override
+    public void jobInfoEvent() {
+        binding.containerTextViewTitle.setText(R.string.job_info);
+
+    }
+
+    @Override
+    public void midTermEvent() {
+        binding.containerTextViewTitle.setText(R.string.midterm_observation);
+
+    }
+
+    @Override
+    public void reportsEvent() {
+        binding.containerTextViewTitle.setText(R.string.reports);
+    }
+
+    @Override
+    public void settingsEvent() {
+        binding.containerTextViewTitle.setText(R.string.settings);
+    }
+
+    @Override
+    public void staffInfoEvent() {
+        binding.containerTextViewTitle.setText(R.string.StaffInfo);
+    }
+
+    @Override
+    public void viewStaffEvent() {
+        binding.containerTextViewTitle.setText(R.string.view_staff);
+
+    }
+
+    @Override
+    public void schedulesEvent() {
+        binding.containerTextViewTitle.setText(R.string.SchedulesPage);
+
     }
 }

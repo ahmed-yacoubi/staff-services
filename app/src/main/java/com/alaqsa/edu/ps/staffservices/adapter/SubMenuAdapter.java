@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,7 +15,6 @@ import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.activity.ContainerActivity;
 import com.alaqsa.edu.ps.staffservices.databinding.LayoutMenuSubBinding;
 
-import com.alaqsa.edu.ps.staffservices.fragment.SettingsFragment;
 import com.alaqsa.edu.ps.staffservices.model.SubMenuItem;
 
 import org.jetbrains.annotations.NotNull;
@@ -73,11 +71,15 @@ public class SubMenuAdapter extends RecyclerView.Adapter<SubMenuAdapter.SubMenuV
                     case R.drawable.ic_job_info:
                         bundle.putString("fragment", "JobInfoFragment");
                         break;
-                    case R.drawable.ic_settings:
-                        bundle.putString("fragment", "SettingsFragment");
-                        Toast.makeText(context, "done", Toast.LENGTH_SHORT).show();
+                    //case R.drawable.ic_cancel_notifications:
+                    // show dialog
+                    //break;
+                    //case R.drawable.ic_change_language:
+                    // show dialog
+                    //break;
+                    case R.drawable.ic_change_password:
+                        bundle.putString("fragment",  "ChangePasswordFragment");
                         break;
-
                 }
                 context.startActivity(new Intent(context, ContainerActivity.class)
                         .putExtra("bundle", bundle));

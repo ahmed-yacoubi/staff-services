@@ -28,7 +28,10 @@
                     android:gravity="center"
                     android:text="@string/course"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_12ssp" />
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/cairo_bold"
+                    />
 
                 <TextView
                     android:id="@+id/mobsTextViewDate"
@@ -40,7 +43,10 @@
                     android:gravity="center"
                     android:text="@string/date"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_12ssp" />
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/cairo_bold"
+                    />
 
                 <TextView
                     android:id="@+id/mobsTextViewPeriod"
@@ -51,7 +57,10 @@
                     android:layout_marginEnd="@dimen/_4sdp"
                     android:text="@string/period"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_12ssp" />
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/cairo_bold"
+                    />
 
                 <TextView
                     android:id="@+id/mobsTextViewHill"
@@ -61,7 +70,10 @@
                     android:gravity="center"
                     android:text="@string/hill"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_12ssp" />
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/cairo_bold"
+                    />
 
     </LinearLayout>
 

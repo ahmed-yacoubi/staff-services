@@ -36,6 +36,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/cairo_bold"
                 />
 
             <LinearLayout
@@ -59,6 +60,7 @@
                     android:layout_weight="1"
                     android:layout_marginEnd="@dimen/_15sdp"
                     android:id="@+id/settingsFragment_tv_notifications"
+                    android:fontFamily="@font/cairo_regular"
                     />
                 <Switch
                     android:layout_width="wrap_content"
@@ -91,6 +93,7 @@
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:layout_marginEnd="@dimen/_15sdp"
+                    android:fontFamily="@font/cairo_regular"
                     />
 
                 <Switch
@@ -131,6 +134,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/cairo_bold"
                 />
 
             <RadioGroup
@@ -157,6 +161,7 @@
                     android:textStyle="bold"
                     android:paddingEnd="@dimen/_7sdp"
                     android:paddingStart="@dimen/_7sdp"
+                    android:fontFamily="@font/cairo_regular"
                     />
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -174,7 +179,7 @@
                     android:textStyle="bold"
                     android:paddingEnd="@dimen/_7sdp"
                     android:paddingStart="@dimen/_7sdp"
-
+                    android:fontFamily="@font/cairo_regular"
                     />
             </RadioGroup>
 
@@ -271,6 +276,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/cairo_bold"
                 />
 
         </LinearLayout>

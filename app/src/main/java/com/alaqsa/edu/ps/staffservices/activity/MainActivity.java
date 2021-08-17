@@ -11,13 +11,19 @@ import android.view.MenuItem;
 
 import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.databinding.ActivityMainBinding;
+import com.alaqsa.edu.ps.staffservices.fragment.dialog.DialogFragment;
+import com.alaqsa.edu.ps.staffservices.fragment.EditBasicInfoFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.HomeFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.MenuFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.NotificationsFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.SchedulesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DialogFragment.onSomeEventListener,
+        HomeFragment.onHomeEventListener,
+        SchedulesFragment.onSchedulesEventListener,
+        NotificationsFragment.onNotificationEventListener,
+        MenuFragment.onMenuEventListener{
 
     private ActivityMainBinding binding;
 
@@ -69,5 +75,32 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         finishAffinity();
+    }
+
+
+    @Override
+    public void someEvent(boolean state, String fragment) {
+
+    }
+
+    @Override
+    public void homeEvent() {
+        binding.mainTextViewTitle.setText(R.string.HomePage);
+    }
+
+    @Override
+    public void schedulesEvent() {
+        binding.mainTextViewTitle.setText(R.string.SchedulesPage);
+    }
+
+    @Override
+    public void notificationEvent() {
+        binding.mainTextViewTitle.setText(R.string.NotificationPage);
+    }
+
+    @Override
+    public void menuEvent() {
+        if (getBaseContext()==this)
+        binding.mainTextViewTitle.setText(R.string.AlaqsaUniversity);
     }
 }

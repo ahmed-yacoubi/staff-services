@@ -6,7 +6,7 @@
                 <shape>
                     <gradient android:angle="270" android:endColor="@color/primaryDark" android:startColor="@color/primary" />
                     <stroke android:width="2dp" android:color="#BA9C9D" android:dashGap="@dimen/_5sdp" />
-                    <corners android:radius="8dp" />
+                    <corners android:radius="@dimen/_12sdp" />
                 </shape>
             </item>
         </layer-list>

@@ -23,6 +23,13 @@
             android:layout_weight=".2"
             app:srcCompat="@drawable/ic_arrow_back" />
 
+        <ImageView
+            android:id="@+id/mainImageViewLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            app:srcCompat="@drawable/aqsa_logo" />
+
         <TextView
             android:id="@+id/containerTextViewTitle"
             android:layout_width="wrap_content"
@@ -30,8 +37,11 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="@string/app_name"
-            android:textColor="@color/primary"
-            android:textSize="@dimen/_16ssp" />
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            android:fontFamily="@font/cairo_bold"
+            />
     </LinearLayout>
 
     <View
@@ -40,7 +50,7 @@
         android:layout_height="2dp"
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_12sdp"
-        android:background="@color/primary"
+        android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/containerLinearLayoutBar" />

@@ -1,5 +1,6 @@
 package com.alaqsa.edu.ps.staffservices.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -28,6 +29,22 @@ public class NotificationsFragment extends Fragment {
     private List<Fragment> fragmentList;
     public SchedulesViewPagerAdapter adapter;
 
+    public interface onNotificationEventListener {
+        void notificationEvent();
+    }
+
+    onNotificationEventListener notificationEventListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            notificationEventListener = (NotificationsFragment.onNotificationEventListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+        }
+    }
+
     public NotificationsFragment() {
     }
 
@@ -35,6 +52,7 @@ public class NotificationsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        notificationEventListener.notificationEvent();
         fragmentList = new ArrayList<>();
     }
 

@@ -40,7 +40,10 @@
                 android:text="@string/sem"
                 android:textAllCaps="false"
                 android:textColor="@color/primaryDark"
-                android:textSize="@dimen/_13ssp" />
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/cairo_regular"
+                android:paddingStart="@dimen/_15sdp"
+                />
 
             <ImageView
                 android:id="@+id/schImageViewSem"

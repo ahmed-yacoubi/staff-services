@@ -64,7 +64,9 @@
                         android:text="@string/name_and_identification"
                         android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_16ssp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewName"
@@ -73,7 +75,9 @@
                         android:layout_marginTop="@dimen/_16sdp"
                         android:text="@string/name"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewNameV"
@@ -81,7 +85,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:text="Lecturer"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewNameEn"
@@ -90,7 +96,9 @@
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/name_in_english"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewNameEnV"
@@ -98,7 +106,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:text="AlAqsa University"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewGender"
@@ -107,7 +117,9 @@
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/gender"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewGenderV"
@@ -115,7 +127,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:text="AlAqsa University"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewEmail"
@@ -124,7 +138,9 @@
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/citizenship"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewEmailV"
@@ -132,7 +148,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:text="AlAqsa University"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextMob"
@@ -141,7 +159,9 @@
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/mobile_no"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewMobV"
@@ -149,7 +169,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:text="AlAqsa University"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+
+                        />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -177,7 +200,9 @@
                         android:text="@string/address"
                         android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_16ssp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewProvince"
@@ -186,7 +211,9 @@
                         android:layout_marginTop="@dimen/_16sdp"
                         android:text="@string/province"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewProvinceV"
@@ -194,7 +221,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:text="Lecturer"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewCity"
@@ -203,7 +232,9 @@
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/city"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewCityV"
@@ -211,7 +242,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:text="AlAqsa University"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewNeighborhood"
@@ -220,7 +253,9 @@
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/neighborhood"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewGNeighV"
@@ -228,7 +263,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:text="AlAqsa University"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewStreet"
@@ -237,7 +274,9 @@
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/street"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewStreetV"
@@ -245,7 +284,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:text="AlAqsa University"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -274,7 +315,9 @@
                         android:text="@string/contact"
                         android:textColor="@color/primaryDark"
                         android:textSize="@dimen/_16ssp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewUEmail"
@@ -283,7 +326,9 @@
                         android:layout_marginTop="@dimen/_16sdp"
                         android:text="@string/university_email"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewUEmailV"
@@ -291,7 +336,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:text="Lecturer"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewPEmail"
@@ -300,7 +347,9 @@
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/personal_email"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewPEmailV"
@@ -308,7 +357,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:text="AlAqsa University"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewMobile"
@@ -317,7 +368,9 @@
                         android:layout_marginTop="@dimen/_12sdp"
                         android:text="@string/mobile_no"
                         android:textColor="@color/primaryDark"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:fontFamily="@font/cairo_bold"
+                        />
 
                     <TextView
                         android:id="@+id/basicInfoTextViewMobileV"
@@ -325,7 +378,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:text="AlAqsa University"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="@font/cairo_regular"
+                        />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

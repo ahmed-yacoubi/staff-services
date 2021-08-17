@@ -20,7 +20,9 @@
             android:layout_weight="2"
             android:gravity="center_vertical"
             android:text="Mobile Apps Development"
-            android:textSize="@dimen/_10ssp" />
+            android:textSize="@dimen/_10ssp"
+            android:fontFamily="@font/cairo_regular"
+            />
 
         <TextView
             android:id="@+id/schTextViewClass"
@@ -31,7 +33,9 @@
             android:layout_marginEnd="@dimen/_4sdp"
             android:gravity="center_vertical"
             android:text="101"
-            android:textSize="@dimen/_10ssp" />
+            android:textSize="@dimen/_10ssp"
+            android:fontFamily="@font/cairo_regular"
+            />
 
         <TextView
             android:id="@+id/schTextViewHill"
@@ -41,7 +45,9 @@
             android:gravity="center_vertical"
             android:layout_marginEnd="@dimen/_4sdp"
             android:text="GWH 201"
-            android:textSize="@dimen/_10ssp" />
+            android:textSize="@dimen/_10ssp"
+            android:fontFamily="@font/cairo_regular"
+            />
 
         <TextView
             android:id="@+id/schTextViewTime"
@@ -50,7 +56,9 @@
             android:layout_weight="1.3"
             android:gravity="center_vertical"
             android:text="10:00-12:00"
-            android:textSize="@dimen/_10ssp" />
+            android:textSize="@dimen/_10ssp"
+            android:fontFamily="@font/cairo_regular"
+            />
 
     </LinearLayout>
 

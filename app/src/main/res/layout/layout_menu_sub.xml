@@ -26,5 +26,6 @@
         android:lines="1"
         android:text="Agenda"
         android:textColor="@color/primary"
-        android:textSize="@dimen/_14ssp" />
+        android:textSize="@dimen/_12ssp"
+        android:fontFamily="@font/cairo_semi_bold"/>
 </LinearLayout>

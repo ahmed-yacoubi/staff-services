@@ -19,24 +19,24 @@
     <string name="tuesday">الثلاثاء</string>
     <string name="wednesday">الأربعاء</string>
     <string name="thursday">الخميس</string>
-    <string name="sem">الفصل الدراسي ٢٠٢٣-٢٠٢٤</string>
+    <string name="sem">الفصل الأول 2020/2021</string>
     <string name="messages">الرسائل</string>
-    <string name="academic_services">الخدمات الأكادمية</string>
-    <string name="no_lectures_today">لا يوجد محاضرات لهذا اليوم</string>
-    <string name="apologize">أعتذر</string>
-    <string name="change_date">تغيير</string>
+    <string name="academic_services">الخدمات الأكاديمية</string>
+    <string name="no_lectures_today">لا يوجد محاضرات اليوم</string>
+    <string name="apologize">إعتذار</string>
+    <string name="change_date">تغيير التاريخ</string>
     <string name="change_hill">تغيير القاعة</string>
-    <string name="attendance_sheet">كشف الحضور</string>
+    <string name="attendance_sheet">ورقة الحضور</string>
     <string name="administrative_services">الخدمات الإدارية</string>
     <string name="settings">الإعدادات</string>
-    <string name="view_staff">عرض الموظفين</string>
+    <string name="view_staff">عرض الموظف</string>
     <string name="logout">تسجيل الخروج</string>
     <string name="agenda">الأجندة</string>
     <string name="reports">التقارير</string>
     <string name="midterm_observation">جدول المراقبة النصفي</string>
     <string name="final_observation">جدول المراقبة النهائي</string>
-    <string name="basic_info">البيانات الأساسية</string>
-    <string name="job_info">البيانات الوظيفية</string>
+    <string name="basic_info">المعلومات الأساسية</string>
+    <string name="job_info">المعلومات الوظيفية</string>
     <string name="cancel_notifications">الإشعارات</string>
     <string name="change_language">تغيير اللغة</string>
     <string name="change_password">تغيير كلمة المرور</string>
@@ -66,14 +66,20 @@
     <string name="NoSystamicSubjects">لا يوجد مساقات نظامية</string>
     <string name="NoIncompleteSubjects">لا يوجد مساقات غير مكتمل</string>
     <string name="notificationsAndMessages">الاشعارات والرسائل</string>
-    
+    <string name="changeLectureTime">تغيير وقت المحاضرة</string>
+    <string name="OldTime">الوقت القديم:</string>
+    <string name="NewTime">الوقت الجديد:</string>
+    <string name="changeLectureHall">تغيير قاعة المحاضرة</string>
+    <string name="OldHall">القاعة القديمة:</string>
+    <string name="NewHall">القاعة الجديدة:</string>
+    <string name="Enterhallname">أدخل القاعة الجديدة</string>
     <string name="court">الديوان</string>
     <string name="university">الجامعة</string>
     <string name="positions">المناصب</string>
     <string name="job_name_and_place">المسمى الوظيفي والمكان</string>
     <string name="job_name">المسمى الوظيفي:</string>
     <string name="job_place">مكان العمل:</string>
-    <string name="course">المساق</string>
+    <string name="course">إسم المساق</string>
     <string name="date">التاريخ</string>
     <string name="period">الفترة</string>
     <string name="hill">القاعة</string>
@@ -96,17 +102,28 @@
     <string name="university_email">البريد الإلكتروني الجامعي</string>
     <string name="personal_email">البريد اللإلكتروني الشخصي</string>
     <string name="save_edits">حفظ التعديلات</string>
-    <string name="course_name">اسم المساق:</string>
-    <string name="course_no">رقم المساق:</string>
-    <string name="class_no">رقم الشعبة:</string>
-    <string name="date_">التاريخ:</string>
-    <string name="student_name">اسم الطالب</string>
-    <string name="attend">الحضور</string>
-    
     <string name="currentPassword">كلمة المرور الحالية : </string>
     <string name="confirmNewPassword">تأكيد كلمة المرور</string>
     <string name="newPassword">كلمة المرور الجديدة :</string>
-    <string name="addMeet">إضافة لقاء</string>
+
+    <string name="AlaqsaUniversity">جامعة الأقصى</string>
+    //Fragments
+    <string name="HomePage">الصفحة الرئيسية</string>
+    <string name="SchedulesPage">جدول المحاضرات</string>
+    <string name="NotificationPage">الإشعارات و الرسائل</string>
+    <string name="Attendance">الحضور</string>
+    <string name="EditBasicInfo">تعديل المعلومات الأساسية</string>
+
+    <string name="course_name">إسم المساق:</string>
+    <string name="course_no">رقم المساق:</string>
+    <string name="class_no">رقم الشعبة:</string>
+    <string name="date_">التاريخ:</string>
+    <string name="addMeet">Add meet</string>
+    <string name="student_name">إسم الطالب</string>
+    <string name="attend">الحضور</string>
+
+    <string name="StaffInfo">معلومات الموظفين</string>
+    <string name="college">الكلية:</string>
 
 
     <array name="AgendaType">
