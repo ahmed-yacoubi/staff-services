@@ -1,6 +1,7 @@
 package com.alaqsa.edu.ps.staffservices.model;
 
 public class Agenda {
+    String know_semester;
     String name_agenda;
     String beginning_semester;
     String end_semester;
@@ -17,7 +18,7 @@ public class Agenda {
     public Agenda() {
     }
 
-    public Agenda(String name_agenda, String beginning_semester, String end_semester, String start_final_exam, String end_final_exam, String start_midterm, String end_midterm, String entry_start_midterm, String entry_end_midterm, String entry_start_final_exam, String entry_end_final_exam, String end_draw) {
+    public Agenda(String know_semester,  String name_agenda, String beginning_semester, String end_semester, String start_final_exam, String end_final_exam, String start_midterm, String end_midterm, String entry_start_midterm, String entry_end_midterm, String entry_start_final_exam, String entry_end_final_exam, String end_draw) {
         this.name_agenda = name_agenda;
         this.beginning_semester = beginning_semester;
         this.end_semester = end_semester;
@@ -30,6 +31,14 @@ public class Agenda {
         this.entry_start_final_exam = entry_start_final_exam;
         this.entry_end_final_exam = entry_end_final_exam;
         this.end_draw = end_draw;
+    }
+
+    public String getKnow_semester() {
+        return know_semester;
+    }
+
+    public void setKnow_semester(String know_semester) {
+        this.know_semester = know_semester;
     }
 
     public String getName_agenda() {

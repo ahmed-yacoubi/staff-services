@@ -2,18 +2,43 @@ package com.alaqsa.edu.ps.staffservices.temp;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.alaqsa.edu.ps.staffservices.database.Database;
 import com.alaqsa.edu.ps.staffservices.model.Agenda;
 import com.alaqsa.edu.ps.staffservices.model.College;
 import com.alaqsa.edu.ps.staffservices.model.Department;
 import com.alaqsa.edu.ps.staffservices.model.Employee;
+import com.alaqsa.edu.ps.staffservices.model.Massage;
+import com.alaqsa.edu.ps.staffservices.model.Observation;
 import com.alaqsa.edu.ps.staffservices.model.StudentInfo;
+import com.alaqsa.edu.ps.staffservices.model.StudentsInSubject;
 import com.alaqsa.edu.ps.staffservices.model.Subject;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_CITIZENSHIP;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_CITY;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_COLLAGE_NAME;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_COLLEGE_EMAIL;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_COLLEGE_ID;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_DATE_BIRTH;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_DEPARTMENT_ID;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_DEPARTMENT_NAME;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_GENDER;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_GOVERNORATE;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_IMG;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_NAME_ARB;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_NAME_ENG;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_NEIGHBORHOOD;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_PERSONAL_EMAIL;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_PHONE_NO;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.EMPLOYEE_SPECIALIZE;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.MASSAGE_BODY;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.MASSAGE_TITLE;
+import static com.alaqsa.edu.ps.staffservices.util.Utils.Database.MASSAGE_TYPE;
 
 
 public class TemporaryData {
@@ -24,11 +49,9 @@ public class TemporaryData {
     public TemporaryData(Activity activity) {
         this.activity = activity;
         database = Database.getInstance(activity);
-
     }
 
     public void dataGeneration() {
-
         for (College college : setCollages()) {
             database.insert_college(college);
         }
@@ -50,8 +73,18 @@ public class TemporaryData {
         }
         registrationSubjectStudent(database.getSubject(), database.getAllStudents());
 
-        for (Agenda agenda : setAgenda()){
+        setAttendance();
+
+        for (Agenda agenda : setAgenda()) {
             database.insert_agenda(agenda);
+        }
+
+        for (Observation observation : setObservations()) {
+            database.insert_observation(observation);
+        }
+
+        for (Massage massage : setMassages()) {
+            database.insert_massage(massage);
         }
     }
 
@@ -82,34 +115,61 @@ public class TemporaryData {
 
     private Employee setEmployeeData() {
         Employee employee = new Employee();
-        employee.setCity("Gaza");
-        employee.setName("ahmed");
-        employee.setImg(null);
-        employee.setJobTitle("Doctor");
+        employee.setCollegeEmail("Mustafa_Mohammed@aqsa.com");
+        employee.setName_arb("مصطفى محمد الاسطل");
+        employee.setName_eng("Mustafa Mohammed AL_Astal");
         employee.setCollegeId("c2");
         employee.setDepartmentId("dep1");
+        employee.setSpecialization("IT");
+        employee.setImg(null);
+        employee.setCity("Gaza");
+        employee.setPersonalEmail("mustafa_mohamed@gmail.com");
         employee.setPhoneNo("0599967638");
-        employee.setPersonalEmail("ahmeddev1999@gmail.com");
-        employee.setCollegeEmail("ahmed@aqsa.com");
+        employee.setDepartmentName("department " + 1);
+        employee.setCollageName("collage" + 1);
+        employee.setGender("male");
+        employee.setCitizenship("مواطن");
+        employee.setDate_birth("2000/24/10");
+        employee.setGovernorate("KhanYounes");
+        employee.setNeighborhood("EL_Bald");
         employee.setPassword("123123123");
-
         return employee;
     }
 
     private List<Employee> setEmployees() {
         List<Employee> list = new ArrayList<>();
         for (int i = 1; i <= 100; i++) {
+
             Employee employee = new Employee();
-            employee.setCity("Gaza");
-            employee.setName("ahmed");
+            employee.setCollegeEmail("Mustafa_Mohammed" + i + "@aqsa.com");
+            employee.setName_arb("مصطفى محمد الاسطل");
+            employee.setName_eng("Mustafa Mohammed AL_Astal");
+
+            if (i % 2 == 0) {
+                employee.setCollegeId("c1");
+                employee.setDepartmentId("dep1");
+                employee.setDepartmentName("department " + 1);
+                employee.setCollageName("collage" + 1);
+
+            } else {
+                employee.setCollegeId("c2");
+                employee.setDepartmentId("dep2");
+                employee.setDepartmentName("department " + 2);
+                employee.setCollageName("collage" + 2);
+
+            }
+            employee.setSpecialization("IT");
             employee.setImg(null);
-            employee.setJobTitle("Doctor");
-            employee.setCollegeId("c2");
-            employee.setDepartmentId("dep1");
-            employee.setPhoneNo("05999676" + i);
-            employee.setPersonalEmail("ahmeddev1999@gmail.com");
-            employee.setCollegeEmail("ahmed@aqsa.com");
-            employee.setPassword(null);
+            employee.setCity("Gaza");
+            employee.setPersonalEmail("mustafa_mohamed@gmail.com");
+            employee.setPhoneNo("0599967638");
+            employee.setGender("male");
+            employee.setCitizenship("مواطن");
+            employee.setDate_birth("2000/24/10");
+            employee.setGovernorate("KhanYounes");
+            employee.setNeighborhood("EL_Bald");
+            employee.setPassword("123123123");
+
             list.add(employee);
         }
         return list;
@@ -140,25 +200,32 @@ public class TemporaryData {
         List<Subject> list = new ArrayList<>();
         for (int i = 100; i <= 105; i++) {
             Subject subject = new Subject();
+            subject.setSemester("First semester ");
+            subject.setSubject_id("TCIS3" + i);
+            subject.setSubject_name("Java" + i);
             subject.setFinalExamDate("2021/12/29");
             subject.setDivision("Division" + i);
             subject.setCollage("c2");
-            subject.setDivision("dep1");
-            if (i % 2 == 0)
+            subject.setDepartment("dep1");
+            if (i % 2 == 0) {
                 subject.setGender("male");
-            else
+                subject.setTime("10-12PM");
+                subject.setHall("خان يونس البحر - L301");
+            } else {
                 subject.setGender("female");
-
-            //            List<String[]> place = new ArrayList<>();
+                subject.setTime("12-14PM");
+                subject.setHall("غزة-مبنى الوحدة - P230");
+            }
+            subject.setDate("2021/8/17");
+//            List<String[]> place = new ArrayList<>();
 //            place.add(new String[]{"غزة-مبنى الوحدة P230", "12-14PM"});
 //            place.add(new String[]{"خان يونس البحر - L301", "10-12PM"});
-            subject.setPlaceTimeLecture("خان يونس البحر - L301" + "/10-12PM" + "غزة-مبنى الوحدة P230/" + "/12-14PM");
-            subject.setSubjectId("TCIS3" + i);
-            subject.setSubjectName("Java" + i);
+//            subject.setPlaceTimeLecture("خان يونس البحر - L301" + "/" + "غزة-مبنى الوحدة P230/" + "/12-14PM");
             list.add(subject);
         }
         return list;
     }
+
 
     private void registrationSubjectStudent(List<Subject> subjects, List<StudentInfo> students) {
 
@@ -167,10 +234,24 @@ public class TemporaryData {
 
         for (StudentInfo studentInfo : students) {
             int index = randomGenerator.nextInt(subjects.size());
-            database.insert_register_subject(studentInfo.getStudentId(), subjects.get(index).getSubjectId(), subjects.get(index).getDivision());
+            database.insert_register_subject(studentInfo.getStudentId(), subjects.get(index).getSubject_id(), subjects.get(index).getDivision());
         }
     }
 
+    private void setAttendance() {
+        for (int i = 100; i <= 105; i++) {
+            try {                                                                                    //TCIS3100
+//                    public Boolean insert_attendance(int id_attendance, String attendance_date, String attendance_day, int states) {
+                for (StudentsInSubject studentsInSubject : database.getAllStudentsInSubject("TCIS3"+i , "Division102")) {
+                    Log.d("TAGzxzx", "setAttendance: "+ studentsInSubject);
+                    database.insert_attendance(studentsInSubject.getId_attendance(),
+                            "2021/8/1", "sat", 0);
+                }
+            }catch (Exception e){
+
+            }
+        }
+    }
 
     private List<Agenda> setAgenda() {
         List<Agenda> list = new ArrayList<>();
@@ -182,8 +263,8 @@ public class TemporaryData {
             agenda.setEnd_semester("2021/" + m * 2 + "/20");
             agenda.setStart_final_exam("2021/" + m * 2 + "/" + 20 + i);
             agenda.setEnd_final_exam("2021/" + m * 2 + "/" + 20 + i);
-            agenda.setStart_midterm("2020/" + m*2 + "/15");
-            agenda.setEnd_midterm("2020/" + m *2 + "/"+15+i);
+            agenda.setStart_midterm("2020/" + m * 2 + "/15");
+            agenda.setEnd_midterm("2020/" + m * 2 + "/" + 15 + i);
             agenda.setEntry_start_midterm("un enable");
             agenda.setEntry_start_final_exam("un enable");
             agenda.setEntry_end_midterm("un enable");
@@ -192,6 +273,43 @@ public class TemporaryData {
             list.add(agenda);
         }
         return list;
+    }
+
+    private List<Observation> setObservations() {
+        List<Observation> observations = new ArrayList<>();
+        for (int i = 1; i <= 8; i++) {
+            Observation observation = new Observation();
+            observation.setName("Semester" + i);
+            observation.setName_subject("Java" + i);
+            observation.setHall("A821" + i);
+
+            if (i % 2 == 0) {
+                observation.setPeriod("first");
+            } else {
+                observation.setPeriod("second");
+            }
+            observation.setDate("2021/8/" + i);
+            observations.add(observation);
+        }
+        return observations;
+    }
+
+
+    private List<Massage> setMassages() {
+        List<Massage> massages = new ArrayList<>();
+        for (int i = 1; i <= 8; i++) {
+            Massage massage = new Massage();
+            if (i % 2 == 0) {
+                massage.setType_massage("Massages");
+                massage.setBody_massage("رقم الطالب 130011999 برمجة تطبيقات الهواتف =100");
+            }else {
+                massage.setType_massage("Massages");
+                massage.setBody_massage("يوم الخميس زووم الساعه 6:15 id 22231556 الدكتور يوسف حمودة");
+            }
+            massage.setTitle_massage("ALAQSA-REG");
+            massages.add(massage);
+        }
+        return massages;
     }
 
 

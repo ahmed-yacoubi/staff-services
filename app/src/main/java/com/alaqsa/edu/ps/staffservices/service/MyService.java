@@ -25,7 +25,6 @@ public class MyService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
 
-
         Cashing cashing = Cashing.getInstance((Activity) getApplicationContext());
         if (CheckInternet.isConnected()) {
 
@@ -34,7 +33,7 @@ public class MyService extends Service {
             if (!dataStored) {
                 cashing.insertDataNotChange();
                 getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE).edit().putBoolean("dataStored", true).apply();
-             }
+            }
             long currentTime = System.currentTimeMillis() / 1000;// 1628542800
             //90000
             long oldTime = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE).getLong(STORAGE_DAY, currentTime);
@@ -54,6 +53,18 @@ public class MyService extends Service {
             //1628802000        14
             //                 insert Data Change
 //            بدي اعمل هان فحص  يعمل اضافة مرة في اليوم
+
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.add(MINUTE, 30);
+//        System.out.println(System.currentTimeMillis()*2);
+//        System.out.println(System.currentTimeMillis());
+////        System.out.println(calendar.getTimeInMillis());
+//        while (true){
+//            if (calendar.getTimeInMillis() == System.currentTimeMillis()){
+//                System.out.println(System.currentTimeMillis());
+//                break;
+//            }
+//        }
 
         }
         return START_NOT_STICKY;

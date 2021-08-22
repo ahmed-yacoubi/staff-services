@@ -5,49 +5,65 @@ import java.io.Serializable;
 public class Subject implements Serializable {
 
     private String subject_id;
+    private String date;
+    private String time;
+    private String collage;
+    private String department;
     private String subject_name;
     private String gender;
     private String division;
     private String finalExamDate;
-    private String placeTimeLecture;
-    private String collage;
-    private String department;
+    private String hall;
     private int students;
-    private boolean isExpanded;
+    private String semester;
+
     public Subject() {
     }
 
-    public Subject(String subjectId, String subjectName, String gender, String division,
-                   String finalExamDate, String placeTimeLecture, String collage, String department) {
-        this.subject_id = subjectId;
-        this.subject_name = subjectName;
+    public Subject(String subject_id, String date, String time, String collage, String department, String subject_name, String gender, String division, String finalExamDate, String hall, int students, String semester) {
+        this.subject_id = subject_id;
+        this.date = date;
+        this.time = time;
+        this.collage = collage;
+        this.department = department;
+        this.subject_name = subject_name;
         this.gender = gender;
         this.division = division;
         this.finalExamDate = finalExamDate;
-        this.placeTimeLecture = placeTimeLecture;
-        this.collage = collage;
-        this.department = department;
-    }
-    public Subject(String subject_name, String subject_id, String division, String gender, int students, boolean isExpanded) {
-        this.subject_name = subject_name;
-        this.subject_id = subject_id;
-        this.division = division;
-        this.gender = gender;
+        this.hall = hall;
         this.students = students;
-        this.isExpanded = isExpanded;
+        this.semester = semester;
+    }
+    public String getSemester() {
+        return semester;
     }
 
-    public Subject(String subject_id, String subject_name, String gender, String division, String finalExamDate, String placeTimeLecture, String collage, String department, int students, boolean isExpanded) {
+    public void setSemester(String semester) {
+        this.semester = semester;
+    }
+
+    public String getSubject_id() {
+        return subject_id;
+    }
+
+    public void setSubject_id(String subject_id) {
         this.subject_id = subject_id;
-        this.subject_name = subject_name;
-        this.gender = gender;
-        this.division = division;
-        this.finalExamDate = finalExamDate;
-        this.placeTimeLecture = placeTimeLecture;
-        this.collage = collage;
-        this.department = department;
-        this.students = students;
-        this.isExpanded = isExpanded;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String getCollage() {
@@ -66,14 +82,6 @@ public class Subject implements Serializable {
         this.department = department;
     }
 
-    public String getSubject_id() {
-        return subject_id;
-    }
-
-    public void setSubject_id(String subject_id) {
-        this.subject_id = subject_id;
-    }
-
     public String getSubject_name() {
         return subject_name;
     }
@@ -81,39 +89,6 @@ public class Subject implements Serializable {
     public void setSubject_name(String subject_name) {
         this.subject_name = subject_name;
     }
-
-    public int getStudents() {
-        return students;
-    }
-
-    public void setStudents(int students) {
-        this.students = students;
-    }
-
-    public boolean isExpanded() {
-        return isExpanded;
-    }
-
-    public void setExpanded(boolean expanded) {
-        isExpanded = expanded;
-    }
-
-    public String getSubjectId() {
-        return subject_id;
-    }
-
-    public void setSubjectId(String subjectId) {
-        this.subject_id = subjectId;
-    }
-
-    public String getSubjectName() {
-        return subject_name;
-    }
-
-    public void setSubjectName(String subjectName) {
-        this.subject_name = subjectName;
-    }
-
 
     public String getGender() {
         return gender;
@@ -139,11 +114,19 @@ public class Subject implements Serializable {
         this.finalExamDate = finalExamDate;
     }
 
-    public String getPlaceTimeLecture() {
-        return placeTimeLecture;
+    public String getHall() {
+        return hall;
     }
 
-    public void setPlaceTimeLecture(String placeTimeLecture) {
-        this.placeTimeLecture = placeTimeLecture;
+    public void setHall(String hall) {
+        this.hall = hall;
+    }
+
+    public int getStudents() {
+        return students;
+    }
+
+    public void setStudents(int students) {
+        this.students = students;
     }
 }

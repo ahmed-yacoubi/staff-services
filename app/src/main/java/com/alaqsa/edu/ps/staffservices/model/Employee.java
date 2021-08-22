@@ -1,16 +1,24 @@
 package com.alaqsa.edu.ps.staffservices.model;
 
 public class Employee {
+    private String name_arb;
+    private String name_eng;
+    private String gender;
+    private String citizenship;
+    private String date_birth;
+
+    private String governorate;
+    private String city;
+    private String neighborhood;
+
     private String collegeEmail;
-    private String name;
+    private String personalEmail;
+    private String phoneNo;
+
     private String collegeId;
     private String departmentId;
     private String Specialization;
     private String img;
-    private String city;
-    private String personalEmail;
-    private String phoneNo;
-    private String jobTitle;
     private String password;
     private String collageName;
     private String departmentName;
@@ -18,49 +26,133 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String collegeEmail, String name, String collegeId, String departmentId, String specialization, String img, String city, String personalEmail, String phoneNo, String jobTitle) {
+    public Employee(String name_arb, String name_eng, String gender, String citizenship, String date_birth, String governorate, String city, String neighborhood, String collegeEmail, String personalEmail, String phoneNo, String collegeId, String departmentId, String specialization, String img, String collageName, String departmentName) {
+        this.name_arb = name_arb;
+        this.name_eng = name_eng;
+        this.gender = gender;
+        this.citizenship = citizenship;
+        this.date_birth = date_birth;
+        this.governorate = governorate;
+        this.city = city;
+        this.neighborhood = neighborhood;
         this.collegeEmail = collegeEmail;
-        this.name = name;
+        this.personalEmail = personalEmail;
+        this.phoneNo = phoneNo;
         this.collegeId = collegeId;
         this.departmentId = departmentId;
         Specialization = specialization;
         this.img = img;
-        this.city = city;
-        this.personalEmail = personalEmail;
-        this.phoneNo = phoneNo;
-        this.jobTitle = jobTitle;
+        this.collageName = collageName;
+        this.departmentName = departmentName;
     }
 
-    public Employee(String collegeEmail, String name, String collegeId, String departmentId, String specialization, String img, String city, String personalEmail, String phoneNo, String jobTitle, String password, String collageName, String departmentName) {
+    public Employee(String name_arb, String name_eng, String gender, String citizenship, String date_birth, String governorate, String city, String neighborhood, String collegeEmail, String personalEmail, String phoneNo, String collegeId, String departmentId, String specialization, String img, String password, String collageName, String departmentName) {
+        this.name_arb = name_arb;
+        this.name_eng = name_eng;
+        this.gender = gender;
+        this.citizenship = citizenship;
+        this.date_birth = date_birth;
+        this.governorate = governorate;
+        this.city = city;
+        this.neighborhood = neighborhood;
         this.collegeEmail = collegeEmail;
-        this.name = name;
+        this.personalEmail = personalEmail;
+        this.phoneNo = phoneNo;
         this.collegeId = collegeId;
         this.departmentId = departmentId;
         Specialization = specialization;
         this.img = img;
-        this.city = city;
-        this.personalEmail = personalEmail;
-        this.phoneNo = phoneNo;
-        this.jobTitle = jobTitle;
         this.password = password;
         this.collageName = collageName;
         this.departmentName = departmentName;
     }
 
-    public String getCollageName() {
-        return collageName;
+    public String getName_arb() {
+        return name_arb;
     }
 
-    public void setCollageName(String collageName) {
-        this.collageName = collageName;
+    public void setName_arb(String name_arb) {
+        this.name_arb = name_arb;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
+    public String getName_eng() {
+        return name_eng;
     }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
+    public void setName_eng(String name_eng) {
+        this.name_eng = name_eng;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getCitizenship() {
+        return citizenship;
+    }
+
+    public void setCitizenship(String citizenship) {
+        this.citizenship = citizenship;
+    }
+
+    public String getDate_birth() {
+        return date_birth;
+    }
+
+    public void setDate_birth(String date_birth) {
+        this.date_birth = date_birth;
+    }
+
+    public String getGovernorate() {
+        return governorate;
+    }
+
+    public void setGovernorate(String governorate) {
+        this.governorate = governorate;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getNeighborhood() {
+        return neighborhood;
+    }
+
+    public void setNeighborhood(String neighborhood) {
+        this.neighborhood = neighborhood;
+    }
+
+    public String getCollegeEmail() {
+        return collegeEmail;
+    }
+
+    public void setCollegeEmail(String collegeEmail) {
+        this.collegeEmail = collegeEmail;
+    }
+
+    public String getPersonalEmail() {
+        return personalEmail;
+    }
+
+    public void setPersonalEmail(String personalEmail) {
+        this.personalEmail = personalEmail;
+    }
+
+    public String getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
     }
 
     public String getCollegeId() {
@@ -87,12 +179,12 @@ public class Employee {
         Specialization = specialization;
     }
 
-    public String getName() {
-        return name;
+    public String getImg() {
+        return img;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getPassword() {
@@ -103,53 +195,19 @@ public class Employee {
         this.password = password;
     }
 
-    public String getImg() {
-        return img;
+    public String getCollageName() {
+        return collageName;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setCollageName(String collageName) {
+        this.collageName = collageName;
     }
 
-    public String getCity() {
-        return city;
+    public String getDepartmentName() {
+        return departmentName;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
-
-    public String getPersonalEmail() {
-        return personalEmail;
-    }
-
-    public void setPersonalEmail(String personalEmail) {
-        this.personalEmail = personalEmail;
-    }
-
-    public String getCollegeEmail() {
-        return collegeEmail;
-    }
-
-    public void setCollegeEmail(String collegeEmail) {
-        this.collegeEmail = collegeEmail;
-    }
-
-    public String getPhoneNo() {
-        return phoneNo;
-    }
-
-    public void setPhoneNo(String phoneNo) {
-        this.phoneNo = phoneNo;
-    }
-
-    public String getJobTitle() {
-        return jobTitle;
-    }
-
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
-    }
-
-
 }
