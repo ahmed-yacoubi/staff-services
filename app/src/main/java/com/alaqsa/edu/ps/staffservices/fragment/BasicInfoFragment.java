@@ -1,25 +1,35 @@
 package com.alaqsa.edu.ps.staffservices.fragment;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.activity.ContainerActivity;
+import com.alaqsa.edu.ps.staffservices.data.Client;
 import com.alaqsa.edu.ps.staffservices.databinding.FragmentBasicInfoBinding;
 import com.alaqsa.edu.ps.staffservices.databinding.FragmentHomeBinding;
+import com.alaqsa.edu.ps.staffservices.model.Api;
+import com.alaqsa.edu.ps.staffservices.model.basicinfo;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +39,9 @@ import java.io.Serializable;
 public class BasicInfoFragment extends Fragment  {
 
     private FragmentBasicInfoBinding binding;
+    Client client;
+    SharedPreferences sp;
+
 
     public interface onBasicInfoEventListener {
         void basicInfoEvent();
@@ -79,9 +92,53 @@ public class BasicInfoFragment extends Fragment  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        client = Client.getNewInstance();
+        sp=getActivity().getSharedPreferences("login", Context.MODE_PRIVATE);
+
+        getUser(new com.alaqsa.edu.ps.staffservices.Callback() {
+            @Override
+            public void getBasicInfo(com.alaqsa.edu.ps.staffservices.model.basicinfo basicinfo) {
+                Log.d("employee:",basicinfo.getFname_ar());
+                binding.basicInfoTextViewNameV.setText(basicinfo.getFname_ar()+" "+basicinfo.getSname_ar()+" "+basicinfo.getTname_ar()+" "+basicinfo.getLname_ar());
+                binding.basicInfoTextViewNameEnV.setText(basicinfo.getFname_en()+" "+basicinfo.getSname_en()+" "+basicinfo.getTname_en()+" "+basicinfo.getLname_en());
+                binding.basicInfoTextViewCityV.setText(basicinfo.getBirth_city_name_ar());
+                binding.basicInfoTextViewEmailV.setText(basicinfo.getUniversity_email());
+                binding.basicInfoTextViewGenderV.setText(basicinfo.getGender_name());
+                binding.basicInfoTextViewMobileV.setText(basicinfo.getMobile_no());
+                binding.basicInfoTextViewMobileV.setText(basicinfo.getHome_telno());
+                binding.basicInfoTextViewMobV.setText(basicinfo.getMobile_key()+basicinfo.getMobile_no());
+                binding.basicInfoTextViewPEmailV.setText(basicinfo.getPersonal_email());
+
+            }
+        });
+
+
+
+
 
         basicInfoEventListener.basicInfoEvent();
     }
+
+    private void getUser(com.alaqsa.edu.ps.staffservices.Callback callback){
+        Call<Api> apiCall= client.apiCall(sp.getString("AccessToken",null));
+        apiCall.enqueue(new Callback<Api>() {
+            @Override
+            public void onResponse(Call<Api> call, Response<Api> response) {
+                if (response.isSuccessful()){
+                    callback.getBasicInfo(response.body().getBasicinfo()[0]);
+                    Log.d("basicinfo",response.body().getBasicinfo()[0].getFname_ar());
+                }else{
+                    Log.d("basicinfo",response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Api> call, Throwable t) {
+                Log.d("FailedEmployee",t.getMessage());
+            }
+        });
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
