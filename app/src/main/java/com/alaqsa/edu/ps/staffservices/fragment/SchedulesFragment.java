@@ -104,10 +104,11 @@ public class SchedulesFragment extends Fragment  {
                 switch (position) {
                     case 0:
                         tab.setText("الاحد");
-
+                        tab.getCustomView().setElevation(20.00f);
                         break;
                     case 1:
                         tab.setText("الاثنين");
+
                         break;
 
                     case 2:

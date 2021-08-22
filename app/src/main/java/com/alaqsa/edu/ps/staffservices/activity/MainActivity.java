@@ -6,18 +6,28 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.alaqsa.edu.ps.staffservices.R;
+import com.alaqsa.edu.ps.staffservices.data.Client;
 import com.alaqsa.edu.ps.staffservices.databinding.ActivityMainBinding;
 import com.alaqsa.edu.ps.staffservices.fragment.dialog.DialogFragment;
-import com.alaqsa.edu.ps.staffservices.fragment.EditBasicInfoFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.HomeFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.MenuFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.NotificationsFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.SchedulesFragment;
+import com.alaqsa.edu.ps.staffservices.model.Api;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.io.IOException;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements DialogFragment.onSomeEventListener,
         HomeFragment.onHomeEventListener,
@@ -25,16 +35,27 @@ public class MainActivity extends AppCompatActivity implements DialogFragment.on
         NotificationsFragment.onNotificationEventListener,
         MenuFragment.onMenuEventListener{
 
+    Client client;
+
     private ActivityMainBinding binding;
 
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
+
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        client = Client.getNewInstance();
+        sp=getSharedPreferences("login", MODE_PRIVATE);
+
+        getUser();
+
+
+
 
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
@@ -75,6 +96,26 @@ public class MainActivity extends AppCompatActivity implements DialogFragment.on
     public void onBackPressed() {
         super.onBackPressed();
         finishAffinity();
+    }
+
+
+    private void getUser(){
+       Call<Api> apiCall= client.apiCall(sp.getString("AccessToken",null));
+       apiCall.enqueue(new Callback<Api>() {
+           @Override
+           public void onResponse(Call<Api> call, Response<Api> response) {
+               if (response.isSuccessful()){
+                   Log.d("basicinfo",response.body().getBasicinfo()[0].getFname_ar());
+               }else{
+                   Log.d("basicinfo",response.message());
+               }
+           }
+
+           @Override
+           public void onFailure(Call<Api> call, Throwable t) {
+               Log.d("FailedEmployee",t.getMessage());
+           }
+       });
     }
 
 

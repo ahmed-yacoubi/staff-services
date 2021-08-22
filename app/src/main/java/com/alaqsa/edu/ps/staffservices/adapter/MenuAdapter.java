@@ -3,7 +3,9 @@ package com.alaqsa.edu.ps.staffservices.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.activity.ContainerActivity;
+import com.alaqsa.edu.ps.staffservices.activity.LoginActivity;
+import com.alaqsa.edu.ps.staffservices.data.Client;
 import com.alaqsa.edu.ps.staffservices.databinding.LayoutMenuBinding;
 import com.alaqsa.edu.ps.staffservices.fragment.SchedulesFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.ViewStaffFragment;
@@ -23,15 +27,23 @@ import com.alaqsa.edu.ps.staffservices.model.Test;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
 
     private final ArrayList<MenuItem> menuItems;
     private final Context context;
     private List<MenuAdapter.MenuViewHolder> holders;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     public MenuAdapter(ArrayList<MenuItem> menuItems, Context context) {
         this.menuItems = menuItems;
@@ -85,7 +97,26 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
                     context.startActivity(new Intent(context, ContainerActivity.class)
                             .putExtra("bundle", bundle));
                 } else if (position == 4) {
+                    Client client=Client.getNewInstance();
+                    sharedPreferences = context.getSharedPreferences("login", Context.MODE_PRIVATE);
+                    editor = sharedPreferences.edit();
+                    Call<ResponseBody> call= client.logout(sharedPreferences.getString("AccessToken",null));
+
+                    call.enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        }
+                    });
                     Toast.makeText(context, "Logout", Toast.LENGTH_SHORT).show();
+                    sharedPreferences = context.getSharedPreferences("login", Context.MODE_PRIVATE);
+                    editor = sharedPreferences.edit();
+                    editor.clear();
+                    editor.commit();
+                    context.startActivity(new Intent(context, LoginActivity.class));
                 } else {
                     if (holder.binding.menuImageViewArrowUp.getVisibility() == View.VISIBLE) {
 
