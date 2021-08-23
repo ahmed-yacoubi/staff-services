@@ -79,7 +79,7 @@ public class Cashing {
             database.insert_subject(subject);
         }
 
-//        database.insert_register_subject()
+//        database.insert_register_subject();
     }
 
 
@@ -106,3 +106,4 @@ public class Cashing {
 //        return employeeArrayList;
 //    }
 }
+

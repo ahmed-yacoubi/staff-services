@@ -26,17 +26,23 @@ public class Utils {
         public static final String DEPARTMENT_COLLEGE_ID = "department_college_id";
 
         //****************************************  table_employee   *******************************************
+
         public static final String TB_EMPLOYEE = "table_employee";
+        public static final String EMPLOYEE_NAME_ARB = "employee_name_arb";
+        public static final String EMPLOYEE_NAME_ENG = "employee_name_eng";
+        public static final String EMPLOYEE_GENDER = "employee_gender";
+        public static final String EMPLOYEE_CITIZENSHIP = "employee_citizenship";
+        public static final String EMPLOYEE_DATE_BIRTH = "employee_date_birth";
+        public static final String EMPLOYEE_GOVERNORATE = "employee_governorate";
+        public static final String EMPLOYEE_CITY = "employee_city";
+        public static final String EMPLOYEE_NEIGHBORHOOD = "employee_neighborhood";
         public static final String EMPLOYEE_COLLEGE_EMAIL = " employee_college_email";
-        public static final String EMPLOYEE_NAME = "employee_name";
+        public static final String EMPLOYEE_PERSONAL_EMAIL = "employee_personal_email";
+        public static final String EMPLOYEE_PHONE_NO = "employee_phone_no";
         public static final String EMPLOYEE_COLLEGE_ID = "employee_college_id";
         public static final String EMPLOYEE_DEPARTMENT_ID = "employee_department_id";
         public static final String EMPLOYEE_SPECIALIZE = "employee_specialize";
         public static final String EMPLOYEE_IMG = "employee_img";
-        public static final String EMPLOYEE_CITY = "employee_city";
-        public static final String EMPLOYEE_PERSONAL_EMAIL = "employee_personal_email";
-        public static final String EMPLOYEE_PHONE_NO = "employee_phone_no";
-        public static final String EMPLOYEE_JOP_TITLE = "employee_jop_title";
         public static final String EMPLOYEE_PASSWORD = "employee_password";
         public static final String EMPLOYEE_COLLAGE_NAME = "employee_collageName";
         public static final String EMPLOYEE_DEPARTMENT_NAME = "employee_departmentName";
@@ -63,12 +69,16 @@ public class Utils {
         public static final String SUBJECT_GENDER = "subject_gender";
         public static final String SUBJECT_DIVISION = "subject_division";
         public static final String SUBJECT_FINALEXAM_DATE = "subject_final_exam_date";
-        public static final String SUBJECT_PLACE_TIME = "subject_pace_time";
         public static final String SUBJECT_COLLEGE = "subject_college";
         public static final String SUBJECT_DEPARTMENT = "subject_department";
+        public static final String SUBJECT_DATE = "subject_date";
+        public static final String SUBJECT_TIME = "subject_time";
+        public static final String SUBJECT_HALL = "subject_hall";
+        public static final String SUBJECT_SEMESTER = "subject_semester";
 
         //**************************************** subject_register_table    *******************************************
         public static final String TB_SUBJECT_REGISTER = "subject_register_table";
+        public static final String SUB_REGISTER_ID = "subject_register_id";
         public static final String SUB_REGISTER_STUDENT_ID = "subject_register_student_id";
         public static final String SUB_REGISTER_SUBJECT_ID = "subject_register_subject_id";
         public static final String SUB_REGISTER_DIVISION = "subject_register_division";
@@ -80,18 +90,42 @@ public class Utils {
         //**************************************** Agenda_table    *******************************************
         public static final String TB_AGENDA = "agenda_table";
         public static final String AGENDA_NAME = "agenda_name";
+        public static final String AGENDA_KNOW_SEMESTER = "agenda_name";
         public static final String AGENDA_BEG_SEMESTER = "agenda_beginning_semester";
         public static final String AGENDA_END_SEMESTER = "agenda_end_semester";
         public static final String AGENDA_START_MIDTERM = "agenda_start_midterm";
         public static final String AGENDA_END_MIDTERM = "agenda_end_midterm";
         public static final String AGENDA_START_FINAL_EXAM = "agenda_start_final_exam";
         public static final String AGENDA_END_FINAL_EXAM = "agenda_end_final_exam";
-
         public static final String AGENDA_ENTRY_START_MIDTERM = "agenda_entry_start_midterm";
         public static final String AGENDA_ENTRY_END_MIDTERM = "agenda_entry_end_midterm";
         public static final String AGENDA_ENTRY_START_FINAL_EXAM = "agenda_entry_start_final_exam";
         public static final String AGENDA_ENTRY_END_FINAL_EXAM = "agenda_entry_end_final_exam";
         public static final String AGENDA_END_DRAW = "agenda_end_draw";
+
+        //**************************************** Observation_table    *******************************************
+        public static final String TB_OBSERVATION = "observation_table";
+        public static final String OBSERVATION_NAME_TABLE = "observation_name";
+        public static final String OBSERVATION_NAME_SUBJECT = "observation_name_subject";
+        public static final String OBSERVATION_DATE = "observation_date";
+        public static final String OBSERVATION_PERIOD = "observation_period";
+        public static final String OBSERVATION_HALL = "observation_hall";
+
+        //**************************************** Attendance_Absence_table    *******************************************
+        public static final String  TB_ATTENDANCE_ABSENCE= "attendance_absence_table";
+        public static final String  ATTENDANCE_ABSENCE_ID= "attendance_absence_id";
+        public static final String  ATTENDANCE_ABSENCE_DATE= "attendance_absence_date";
+        public static final String  ATTENDANCE_ABSENCE_DAY= "attendance_absence_day";
+        public static final String  ATTENDANCE_ABSENCE_STATES= "attendance_absence_states";
+
+        public static final String TB_MASSAGE = "table_massage";
+        public static final String MASSAGE_ID = "massage_id";
+        public static final String  MASSAGE_TYPE= "massage_type";
+        public static final String  MASSAGE_TITLE= "massage_title";
+        public static final String MASSAGE_BODY= "massage_body";
+
+
+
 
 
     }

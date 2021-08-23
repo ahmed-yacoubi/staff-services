@@ -179,10 +179,10 @@ public class ContainerTabFragment extends Fragment implements Serializable {
 
     private void addReportData() {
         subjects = new ArrayList<>();
-        subjects.add(new Subject("Computer Architecture", "ITCS548", "105", "male", 20, false));
-        subjects.add(new Subject("Computer Architecture", "ITCS548", "105", "male", 20, false));
-        subjects.add(new Subject("Computer Architecture", "ITCS548", "105", "male", 20, false));
-        subjects.add(new Subject("Computer Architecture", "ITCS548", "105", "male", 20, false));
+//        subjects.add(new Subject("Computer Architecture", "ITCS548", "105", "male", 20, false));
+//        subjects.add(new Subject("Computer Architecture", "ITCS548", "105", "male", 20, false));
+//        subjects.add(new Subject("Computer Architecture", "ITCS548", "105", "male", 20, false));
+//        subjects.add(new Subject("Computer Architecture", "ITCS548", "105", "male", 20, false));
 
 
     }

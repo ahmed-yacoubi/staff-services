@@ -32,8 +32,8 @@ public class SplashActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
 
 
-      //  Intent serviceIntent = new Intent(getBaseContext(), MyService.class);
-      //  startService(serviceIntent);
+        Intent serviceIntent = new Intent(getBaseContext(), MyService.class);
+        startService(serviceIntent);
 
         // Declare an imageView to show the animation.
         anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);

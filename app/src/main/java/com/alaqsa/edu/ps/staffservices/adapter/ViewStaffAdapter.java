@@ -42,7 +42,7 @@ public class ViewStaffAdapter extends RecyclerView.Adapter<ViewStaffAdapter.Staf
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull ViewStaffAdapter.StaffViewHolder holder, int position) {
-        holder.binding.vstaffTextViewName.setText(list.get(position).getName());
+        holder.binding.vstaffTextViewName.setText(list.get(position).getName_eng());
         holder.binding.vstaffTextViewFaculty.setText(list.get(position).getCollageName());
         holder.binding.tvDepartment.setText(list.get(position).getDepartmentName());
 
