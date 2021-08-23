@@ -22,6 +22,7 @@ import com.alaqsa.edu.ps.staffservices.data.Client;
 import com.alaqsa.edu.ps.staffservices.databinding.LayoutMenuBinding;
 import com.alaqsa.edu.ps.staffservices.fragment.SchedulesFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.ViewStaffFragment;
+import com.alaqsa.edu.ps.staffservices.interfaces.LoginCallback;
 import com.alaqsa.edu.ps.staffservices.model.MenuItem;
 import com.alaqsa.edu.ps.staffservices.model.Test;
 
@@ -44,6 +45,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
     private List<MenuAdapter.MenuViewHolder> holders;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+    com.alaqsa.edu.ps.staffservices.Response response;
 
     public MenuAdapter(ArrayList<MenuItem> menuItems, Context context) {
         this.menuItems = menuItems;
@@ -100,23 +102,30 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
                     Client client=Client.getNewInstance();
                     sharedPreferences = context.getSharedPreferences("login", Context.MODE_PRIVATE);
                     editor = sharedPreferences.edit();
-                    Call<ResponseBody> call= client.logout(sharedPreferences.getString("AccessToken",null));
-
-                    call.enqueue(new Callback<ResponseBody>() {
+                    response= com.alaqsa.edu.ps.staffservices.Response.newInstance();
+                    new Thread(new Runnable() {
                         @Override
-                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        }
+                        public void run() {
+                            response.logout(sharedPreferences.getString("AccessToken", null), new LoginCallback() {
+                                @Override
+                                public void login(boolean status, String accessTocken) {
 
-                        @Override
-                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+                                }
+
+                                @Override
+                                public void logout(boolean status) {
+                                    if (status){
+                                        Toast.makeText(context, "Logout", Toast.LENGTH_SHORT).show();
+                                        sharedPreferences = context.getSharedPreferences("login", Context.MODE_PRIVATE);
+                                        editor = sharedPreferences.edit();
+                                        editor.clear();
+                                        editor.commit();
+                                        context.startActivity(new Intent(context, LoginActivity.class));
+                                    }
+                                }
+                            });
                         }
-                    });
-                    Toast.makeText(context, "Logout", Toast.LENGTH_SHORT).show();
-                    sharedPreferences = context.getSharedPreferences("login", Context.MODE_PRIVATE);
-                    editor = sharedPreferences.edit();
-                    editor.clear();
-                    editor.commit();
-                    context.startActivity(new Intent(context, LoginActivity.class));
+                    }).start();
                 } else {
                     if (holder.binding.menuImageViewArrowUp.getVisibility() == View.VISIBLE) {
 

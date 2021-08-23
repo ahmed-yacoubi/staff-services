@@ -23,6 +23,16 @@ import retrofit2.Callback;
 
 public class Response {
     Client client = Client.getNewInstance();
+    
+    private static Response response;
+
+
+    public static Response newInstance(){
+        if (response==null){
+            response=new Response();
+        }
+        return response;
+    }
 
     public void login(LoginData data, LoginCallback callback) {
         Call<Login> call = client.isSuccess(data);
@@ -51,8 +61,22 @@ public class Response {
         });
     }
 
-    public void logout(String accessToken) {
-        client.logout(accessToken);
+    public void logout(String accessToken,LoginCallback callback) {
+        client.logout(accessToken).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
+                if (response.isSuccessful()){
+                    callback.logout(true);
+                }else{
+                    callback.logout(false);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                callback.logout(false);
+            }
+        });
     }
 
     public void getBaseInfo(String accessToken, BasicInfoCallback callback) {

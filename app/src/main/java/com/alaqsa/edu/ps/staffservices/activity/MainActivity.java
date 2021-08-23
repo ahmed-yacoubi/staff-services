@@ -52,11 +52,6 @@ public class MainActivity extends AppCompatActivity implements DialogFragment.on
         client = Client.getNewInstance();
         sp=getSharedPreferences("login", MODE_PRIVATE);
 
-        getUser();
-
-
-
-
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -99,24 +94,6 @@ public class MainActivity extends AppCompatActivity implements DialogFragment.on
     }
 
 
-    private void getUser(){
-       Call<Api> apiCall= client.apiCall(sp.getString("AccessToken",null));
-       apiCall.enqueue(new Callback<Api>() {
-           @Override
-           public void onResponse(Call<Api> call, Response<Api> response) {
-               if (response.isSuccessful()){
-                   Log.d("basicinfo",response.body().getBasicinfo()[0].getFname_ar());
-               }else{
-                   Log.d("basicinfo",response.message());
-               }
-           }
-
-           @Override
-           public void onFailure(Call<Api> call, Throwable t) {
-               Log.d("FailedEmployee",t.getMessage());
-           }
-       });
-    }
 
 
     @Override

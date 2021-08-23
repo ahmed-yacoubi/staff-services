@@ -7,9 +7,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.alaqsa.edu.ps.staffservices.data.Client;
 import com.alaqsa.edu.ps.staffservices.databinding.ActivityLoginBinding;
+import com.alaqsa.edu.ps.staffservices.interfaces.LoginCallback;
 import com.alaqsa.edu.ps.staffservices.model.Login;
 import com.alaqsa.edu.ps.staffservices.model.LoginData;
 
@@ -24,14 +26,15 @@ public class LoginActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
-    Client client;
 
+    Client client;
+    com.alaqsa.edu.ps.staffservices.Response response;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        response= com.alaqsa.edu.ps.staffservices.Response.newInstance();
     }
 
     @Override
@@ -48,7 +51,34 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         LoginData data = new LoginData(binding.loginEditTextUsername.getText().toString(), binding.loginEditTextPassword.getText().toString());
-                        login(data);
+
+                       new Thread(new Runnable() {
+                           @Override
+                           public void run() {
+                               response.login(data, new LoginCallback() {
+                                   @Override
+                                   public void login(boolean status, String accessTocken) {
+                                       if (status){
+                                           Log.d("isSuccess", accessTocken);
+                                           editor.putBoolean("isLogin", true);
+                                           editor.putString("AccessToken", accessTocken);
+                                           editor.apply();
+                                           editor.commit();
+                                           startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                           finish();
+                                           Toast.makeText(getBaseContext(), "Login Successfully.", Toast.LENGTH_SHORT).show();
+                                       }else{
+                                           Log.d("isSuccess", false+"\n"+accessTocken);
+                                       }
+                                   }
+
+                                   @Override
+                                   public void logout(boolean status) {
+
+                                   }
+                               });
+                           }
+                       }).start();
                     }
                 });
             }
@@ -59,6 +89,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), RetrievePasswordActivity.class));
+                finish();
             }
         });
     }
@@ -77,33 +108,4 @@ public class LoginActivity extends AppCompatActivity {
         finishAffinity();
     }
 
-    private void login(LoginData data) {
-
-        Call<Login> call = client.isSuccess(data);
-
-        call.enqueue(new Callback<Login>() {
-            @Override
-            public void onResponse(Call<Login> call, Response<Login> response) {
-
-
-                if (response.isSuccessful()) {
-                    Log.d("isSuccess", response.body().getAccessToken());
-                    editor.putBoolean("isLogin", true);
-                    editor.putString("AccessToken", response.body().getAccessToken());
-                    editor.apply();
-                    editor.commit();
-
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                } else {
-                    Log.d("isSuccess", "false  "+response.message());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Login> call, Throwable t) {
-                Log.d("LoginFailed", "Login Failed." + t.getMessage());
-
-            }
-        });
-    }
 }
