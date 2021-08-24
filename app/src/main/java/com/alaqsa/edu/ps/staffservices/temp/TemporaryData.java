@@ -72,9 +72,10 @@ public class TemporaryData {
             database.insert_student_info(studentInfo);
         }
 
-        registrationSubjectStudent(database.getSubject(""), database.getAllStudents());
+        registrationSubjectStudent(database.getSubject("First semester "), database.getAllStudents());
 
-        setAttendance();
+
+        setAttendance();  // insert Attendance
 
         for (Agenda agenda : setAgenda()) {
             database.insert_agenda(agenda);
@@ -258,7 +259,23 @@ public class TemporaryData {
         List<Agenda> list = new ArrayList<>();
         for (int i = 1; i <= 4; i++) {
             Agenda agenda = new Agenda();
+
+//             String know_semester;
+//    String name_agenda;
+//    String beginning_semester;
+//    String end_semester;
+//    String start_final_exam;
+//    String end_final_exam;
+//    String start_midterm;
+//    String end_midterm;
+//    String entry_start_midterm;
+//    String entry_end_midterm;
+//    String entry_start_final_exam;
+//    String entry_end_final_exam;
+//    String end_draw;
+
             agenda.setName_agenda("System\t" + i);
+            agenda.setKnow_semester("2021-2022");
             int m = i;
             agenda.setBeginning_semester("2020/" + m + "/15");
             agenda.setEnd_semester("2021/" + m * 2 + "/20");

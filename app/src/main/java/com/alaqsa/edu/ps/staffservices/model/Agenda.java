@@ -31,6 +31,7 @@ public class Agenda {
         this.entry_start_final_exam = entry_start_final_exam;
         this.entry_end_final_exam = entry_end_final_exam;
         this.end_draw = end_draw;
+        this.know_semester=know_semester;
     }
 
     public String getKnow_semester() {

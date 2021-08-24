@@ -12,7 +12,7 @@ public class Utils {
 
     public static class Database {
         public static final String DB_NAME = "dbname";
-        public static final int VERSION = 1;
+        public static final int VERSION = 2;
 
         //****************************************  table_college   *******************************************
         public static final String TB_COLLEGE = "table_college";
@@ -90,7 +90,7 @@ public class Utils {
         //**************************************** Agenda_table    *******************************************
         public static final String TB_AGENDA = "agenda_table";
         public static final String AGENDA_NAME = "agenda_name";
-        public static final String AGENDA_KNOW_SEMESTER = "agenda_name";
+        public static final String AGENDA_KNOW_SEMESTER = "agenda_knowSemester";
         public static final String AGENDA_BEG_SEMESTER = "agenda_beginning_semester";
         public static final String AGENDA_END_SEMESTER = "agenda_end_semester";
         public static final String AGENDA_START_MIDTERM = "agenda_start_midterm";

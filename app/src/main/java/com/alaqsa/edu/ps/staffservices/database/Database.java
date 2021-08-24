@@ -63,6 +63,7 @@ public class Database extends SQLiteOpenHelper {
                 + STUDENT_SCHOOL_RATE + " REAL )";
 
 
+
         String createSubjectTable = "create table  " + TB_SUBJECT + "  ( " + SUBJECT_ID + " TEXT , "
                 + SUBJECT_NAME + " TEXT , " + SUBJECT_GENDER + " TEXT , "
                 + SUBJECT_DIVISION + " TEXT , " + SUBJECT_FINALEXAM_DATE + " TEXT , "
@@ -91,12 +92,15 @@ public class Database extends SQLiteOpenHelper {
 
 
         String createAgendaTable = "create table  " + TB_AGENDA + "  ( " +
+
                 AGENDA_BEG_SEMESTER + " TEXT , " + AGENDA_END_SEMESTER + " TEXT , " +
                 AGENDA_START_FINAL_EXAM + " TEXT ," + AGENDA_END_FINAL_EXAM + " TEXT ," +
                 AGENDA_START_MIDTERM + " TEXT ," + AGENDA_END_MIDTERM + " TEXT ," +
                 AGENDA_ENTRY_START_MIDTERM + " TEXT ," + AGENDA_ENTRY_END_MIDTERM + " TEXT ," +
                 AGENDA_ENTRY_START_FINAL_EXAM + " TEXT ," + AGENDA_ENTRY_END_FINAL_EXAM + " TEXT ," +
-                AGENDA_END_DRAW + " TEXT, " + AGENDA_NAME + " TEXT , " + AGENDA_KNOW_SEMESTER + " TEXT  )";
+                AGENDA_END_DRAW + " TEXT, " + AGENDA_NAME + " TEXT , " + AGENDA_KNOW_SEMESTER + " TEXT , " +
+                "  PRIMARY KEY( " + AGENDA_KNOW_SEMESTER + " , " +  AGENDA_NAME +   ")" + ")";
+
 
         String createObservationTable = "create table  " + TB_OBSERVATION + "  ( " +
                 OBSERVATION_NAME_TABLE + " TEXT PRIMARY KEY  , "
@@ -654,11 +658,11 @@ public class Database extends SQLiteOpenHelper {
         return studentsInSubjects;
     }
 
-    public ArrayList<Agenda> getAgenda(String type_system) {
+    public ArrayList<Agenda> getAgenda(String type_system ,String knowSemester) {
         ArrayList<Agenda> agendaArrayList = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TB_AGENDA + " where "+ AGENDA_NAME + "=?" ,
-                 new String[]{type_system});
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TB_AGENDA + " where "+ AGENDA_NAME + "=? and " + AGENDA_KNOW_SEMESTER + "=?" ,
+                 new String[]{type_system  , knowSemester});
 
         if (cursor.moveToFirst()) {
             do {
