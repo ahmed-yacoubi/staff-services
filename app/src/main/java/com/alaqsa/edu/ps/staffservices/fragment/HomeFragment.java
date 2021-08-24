@@ -41,6 +41,8 @@ public class HomeFragment extends Fragment {
         super.onAttach(activity);
         try {
             homeEventListener = (HomeFragment.onHomeEventListener) activity;
+
+
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
         }
@@ -121,7 +123,8 @@ public class HomeFragment extends Fragment {
         fragmentList.add(ContainerTabFragment.newInstance("home", "tuesday"));
         fragmentList.add(ContainerTabFragment.newInstance("home", "wednesday"));
         fragmentList.add(ContainerTabFragment.newInstance("home", "thursday"));
-        adapter = new SchedulesViewPagerAdapter(getActivity(), fragmentList);
+        adapter = new SchedulesViewPagerAdapter(getActivity(), fragmentList
+        );
         binding.homeViewPager.setAdapter(adapter);
 
     }

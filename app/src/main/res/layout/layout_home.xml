@@ -183,7 +183,6 @@
         app:cardElevation="@dimen/_11sdp"
         app:cardCornerRadius="@dimen/_12sdp"
         android:layout_gravity="center"
-        android:visibility="gone"
         >
         <TextView
             android:id="@+id/homeTextViewAttendance"
@@ -199,6 +198,7 @@
             android:textColor="@color/primaryDark"
             android:textSize="@dimen/_12ssp"
             android:fontFamily="@font/cairo_regular"
+            android:visibility="gone"
 
             />
     </androidx.cardview.widget.CardView>

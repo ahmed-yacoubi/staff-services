@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ViewStaffFragment extends Fragment  {
+public class ViewStaffFragment extends Fragment {
 
     private FragmentViewStaffBinding binding;
 
@@ -68,7 +68,9 @@ public class ViewStaffFragment extends Fragment  {
 
         database = Database.getInstance(getActivity());
         if (CheckInternet.isConnected()) {
-            list = database.getLastEmployees();
+//            list = database.get();
+
+            list = new ArrayList<>();
         } else {
 
             // list = GETAPIDATA();

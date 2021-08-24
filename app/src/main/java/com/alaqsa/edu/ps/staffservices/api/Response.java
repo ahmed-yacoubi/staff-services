@@ -1,9 +1,7 @@
-package com.alaqsa.edu.ps.staffservices;
+package com.alaqsa.edu.ps.staffservices.api;
 
-import android.content.Intent;
 import android.util.Log;
 
-import com.alaqsa.edu.ps.staffservices.activity.MainActivity;
 import com.alaqsa.edu.ps.staffservices.data.Client;
 import com.alaqsa.edu.ps.staffservices.interfaces.BasicInfoCallback;
 import com.alaqsa.edu.ps.staffservices.interfaces.DiwanAppoimentsCallback;

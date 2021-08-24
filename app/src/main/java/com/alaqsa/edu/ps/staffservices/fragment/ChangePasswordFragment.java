@@ -4,19 +4,23 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.alaqsa.edu.ps.staffservices.R;
+import com.alaqsa.edu.ps.staffservices.databinding.FragmentChangePasswordBinding;
+import com.alaqsa.edu.ps.staffservices.databinding.FragmentHomeBinding;
+import com.alaqsa.edu.ps.staffservices.fragment.dialog.DialogFragment;
 
 import java.io.Serializable;
 
 
 public class ChangePasswordFragment extends Fragment implements Serializable {
     private static ChangePasswordFragment changePasswordFragment;
-
+    private FragmentChangePasswordBinding binding;
 
     public interface onChangePasswordEventListener {
         void changePasswordEvent();
@@ -46,6 +50,9 @@ public class ChangePasswordFragment extends Fragment implements Serializable {
         return changePasswordFragment;
     }
 
+    private void shoe(){
+
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +62,19 @@ public class ChangePasswordFragment extends Fragment implements Serializable {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_change_password, container, false);
+        binding = FragmentChangePasswordBinding.inflate(inflater, container, false);
+
+        binding.changePasswordFragmentBtnChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogFragment dialogFragment= DialogFragment.newInstance("هل تريد",null,"yes","no","logout");
+                dialogFragment.show(getFragmentManager(),"");
+            }
+        });
+
+
+        return binding.getRoot();
+
+
     }
 }

@@ -25,25 +25,25 @@ public class MyService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
 
-        Cashing cashing = Cashing.getInstance((Activity) getApplicationContext());
-        if (CheckInternet.isConnected()) {
-
-//                       insert Data NotChange
-            boolean dataStored = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE).getBoolean("dataStored", false);
-            if (!dataStored) {
-                cashing.insertDataNotChange();
-                getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE).edit().putBoolean("dataStored", true).apply();
-            }
-            long currentTime = System.currentTimeMillis() / 1000;// 1628542800
-            //90000
-            long oldTime = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE).getLong(STORAGE_DAY, currentTime);
-            //                          1628542800      -       1628512800
-            //20000
-            //111521516 - 0 =5156161
-            if (currentTime - oldTime >= 86400) {
-                getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE).edit().putLong(STORAGE_DAY, currentTime).apply();
-                cashing.insertDataChange();
-            }
+//        Cashing cashing = Cashing.getInstance((Activity) getApplicationContext());
+//        if (CheckInternet.isConnected()) {
+//
+////                       insert Data NotChange
+//            boolean dataStored = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE).getBoolean("dataStored", false);
+//            if (!dataStored) {
+//                cashing.insertDataNotChange();
+//                getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE).edit().putBoolean("dataStored", true).apply();
+//            }
+//            long currentTime = System.currentTimeMillis() / 1000;// 1628542800
+//            //90000
+//            long oldTime = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE).getLong(STORAGE_DAY, currentTime);
+//            //                          1628542800      -       1628512800
+//            //20000
+//            //111521516 - 0 =5156161
+//            if (currentTime - oldTime >= 86400) {
+//                getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE).edit().putLong(STORAGE_DAY, currentTime).apply();
+//                cashing.insertDataChange();
+//            }
             //86400
             //86400
             //20000
@@ -65,8 +65,8 @@ public class MyService extends Service {
 //                break;
 //            }
 //        }
-
-        }
+//
+//        }
         return START_NOT_STICKY;
     }
 

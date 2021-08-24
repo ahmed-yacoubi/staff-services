@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,25 +7,31 @@
     android:paddingStart="@dimen/_16sdp"
     android:paddingTop="@dimen/_8sdp"
     android:paddingEnd="@dimen/_16sdp"
-    android:orientation="vertical"
     tools:context=".fragment.NotificationsFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/homeCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_16sdp"
+        app:cardCornerRadius="@dimen/_16sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/homeTapLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/_16sdp"
+                android:layout_weight="9"
                 app:tabGravity="fill"
                 app:tabIndicatorGravity="stretch"
                 app:tabIndicator="@drawable/tabindicator_msg"
                 app:tabMode="fixed"
                 app:tabSelectedTextColor="@color/white"
-                app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
-                app:tabTextColor="@color/primary"
-                app:tabPaddingBottom="@dimen/_7sdp"
-                app:tabPaddingEnd="@dimen/_20sdp"
-                app:tabPaddingStart="@dimen/_20sdp"
-                app:tabPaddingTop="@dimen/_7sdp"
                 android:background="@drawable/tabindicator_msg_backround"
                 />
 
@@ -35,4 +41,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
-</LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

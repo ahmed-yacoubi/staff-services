@@ -6,7 +6,7 @@ public class Utils {
         public static final String SHARED_PREF_NAME = "main";
         public static final String TEMP_DATA = "tempData";
         public static final String STORAGE_DAY = "day_story";
-
+        public static final String CHANGE_LANG="change_lang";
 
     }
 

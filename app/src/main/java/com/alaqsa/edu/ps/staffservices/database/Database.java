@@ -528,7 +528,7 @@ public class Database extends SQLiteOpenHelper {
         List<String> idSubjects = new ArrayList<>();
 
         Cursor cursor = db.rawQuery("select * from " + TB_SUBJECT + " where " + SUBJECT_SEMESTER + " =? ", new String[]{semester});
-
+//     Caused by: android.database.sqlite.SQLiteException: no such column: subject_semester (code 1 SQLITE_ERROR[1]): , while compiling: select * from subject_table where subject_semester =?
         if (cursor.moveToFirst()) {
             do {
                 String subject_id = cursor.getString(cursor.getColumnIndex(SUBJECT_ID));

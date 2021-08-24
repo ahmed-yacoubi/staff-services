@@ -15,6 +15,7 @@ import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.activity.ContainerActivity;
 import com.alaqsa.edu.ps.staffservices.databinding.LayoutHomeBinding;
 import com.alaqsa.edu.ps.staffservices.model.Test;
+import com.alaqsa.edu.ps.staffservices.interfaces.OnClick;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -26,11 +27,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     private ArrayList<Test> list;
     private Context context;
     private List<HomeAdapter.HomeViewHolder> holders;
+    OnClick click;
 
-    public HomeAdapter(ArrayList<Test> list, Context context) {
+    public HomeAdapter(ArrayList<Test> list, Context context, OnClick click)  {
         this.list = list;
         this.context = context;
         this.holders = new ArrayList<>();
+        this.click=click;
     }
 
     @NonNull
@@ -74,6 +77,20 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
                 bundle.putSerializable("fragment", "AttendanceSheetFragment");
                 context.startActivity(new Intent(context, ContainerActivity.class)
                         .putExtra("bundle", bundle));
+            }
+        });
+        holder.binding.homeTextViewChDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                click.onChangeDate();
+
+            }
+        });
+
+        holder.binding.homeTextViewApologize.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                click.onApologize();
             }
         });
     }

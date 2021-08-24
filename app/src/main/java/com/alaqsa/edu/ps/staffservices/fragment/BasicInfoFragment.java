@@ -15,17 +15,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.activity.ContainerActivity;
 import com.alaqsa.edu.ps.staffservices.data.Client;
 import com.alaqsa.edu.ps.staffservices.databinding.FragmentBasicInfoBinding;
-import com.alaqsa.edu.ps.staffservices.databinding.FragmentHomeBinding;
 import com.alaqsa.edu.ps.staffservices.model.Api;
-import com.alaqsa.edu.ps.staffservices.model.basicinfo;
 
 import org.jetbrains.annotations.NotNull;
-
-import java.io.Serializable;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -95,7 +90,7 @@ public class BasicInfoFragment extends Fragment  {
         client = Client.getNewInstance();
         sp=getActivity().getSharedPreferences("login", Context.MODE_PRIVATE);
 
-        getUser(new com.alaqsa.edu.ps.staffservices.Callback() {
+        getUser(new com.alaqsa.edu.ps.staffservices.interfaces.Callback() {
             @Override
             public void getBasicInfo(com.alaqsa.edu.ps.staffservices.model.basicinfo basicinfo) {
                 Log.d("employee:",basicinfo.getFname_ar());
@@ -119,7 +114,7 @@ public class BasicInfoFragment extends Fragment  {
         basicInfoEventListener.basicInfoEvent();
     }
 
-    private void getUser(com.alaqsa.edu.ps.staffservices.Callback callback){
+    private void getUser(com.alaqsa.edu.ps.staffservices.interfaces.Callback callback){
         Call<Api> apiCall= client.apiCall(sp.getString("AccessToken",null));
         apiCall.enqueue(new Callback<Api>() {
             @Override

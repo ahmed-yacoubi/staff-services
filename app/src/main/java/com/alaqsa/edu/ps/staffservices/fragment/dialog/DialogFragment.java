@@ -1,6 +1,7 @@
 package com.alaqsa.edu.ps.staffservices.fragment.dialog;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,11 +16,15 @@ import androidx.annotation.Nullable;
 
 import com.alaqsa.edu.ps.staffservices.R;
 
+import java.util.HashSet;
+
 public class DialogFragment extends androidx.fragment.app.DialogFragment {
     TextView tv_title1, tv_title2;
     Button btn1, btn2;
     String fragment;
-    LinearLayout layout,layout2;
+    LinearLayout layout,layout2,layoutcontent,layotcontent2;
+
+
 
     public interface onSomeEventListener {
         void someEvent(boolean state,String fragment);
@@ -72,6 +77,13 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
         bind(root);
         Bundle bundle = getArguments();
 
+        fragment=getArguments().getString("fragment");
+
+        if (fragment.equals("changeDate")){
+            layoutcontent.setVisibility(View.GONE);
+            layotcontent2.setVisibility(View.VISIBLE);
+        }
+
         String title1 = bundle.getString("title1");
         String title2 = bundle.getString("title2");
         String txtbtn1 = bundle.getString("btn1");
@@ -109,7 +121,6 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
     @Override
     public void onStart() {
         super.onStart();
-        fragment=getArguments().getString("fragment");
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,5 +157,22 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
         btn2 = root.findViewById(R.id.dialog_btn2);
         layout=root.findViewById(R.id.dialog_layout);
         layout2=root.findViewById(R.id.dialog_layout2);
+        layoutcontent=root.findViewById(R.id.dialog_contentLayout);
+        layotcontent2=root.findViewById(R.id.dialog_contentLayout2);
+    }
+
+
+    private void filter()
+    {
+        HashSet<String> h = new HashSet<String>();
+
+        // Adding elements into HashSet usind add()
+        h.add("India");
+        h.add("Australia");
+        h.add("South Africa");
+        h.add("India"); // adding duplicate elements
+
+
+
     }
 }

@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.adapter.HomeAdapter;
@@ -20,8 +18,10 @@ import com.alaqsa.edu.ps.staffservices.adapter.NotificationsAdapter;
 import com.alaqsa.edu.ps.staffservices.adapter.SchedulesAdapter;
 import com.alaqsa.edu.ps.staffservices.adapter.SubjectAdapter;
 import com.alaqsa.edu.ps.staffservices.databinding.FragmentTabContainerBinding;
+import com.alaqsa.edu.ps.staffservices.fragment.dialog.DialogFragment;
 import com.alaqsa.edu.ps.staffservices.model.Subject;
 import com.alaqsa.edu.ps.staffservices.model.Test;
+import com.alaqsa.edu.ps.staffservices.interfaces.OnClick;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -197,7 +197,21 @@ public class ContainerTabFragment extends Fragment implements Serializable {
 
     private void initHome() {
 
-        adapter = new HomeAdapter(testArrayList, getContext());
+        adapter = new HomeAdapter(testArrayList, getContext(), new OnClick() {
+            @Override
+            public void onApologize() {
+                DialogFragment dialogFragment = DialogFragment.newInstance("تأكيد الاعتدار عن محاضرة مساق برمجة تطبيقات الهواتف النقالة ٢ شعبة ١٠٩ الساعة ١٢-٢", null, "yes", "no", "Apologize");
+
+
+                dialogFragment.show(getFragmentManager(), "");
+            }
+
+            @Override
+            public void onChangeDate() {
+                DialogFragment dialogFragment = DialogFragment.newInstance("هل تريد", null, "yes", "no", "changeDate");
+                dialogFragment.show(getFragmentManager(), "");
+            }
+        });
 
 
         binding.schRecyclerView.setHasFixedSize(true);

@@ -9,15 +9,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.alaqsa.edu.ps.staffservices.api.Response;
 import com.alaqsa.edu.ps.staffservices.data.Client;
 import com.alaqsa.edu.ps.staffservices.databinding.ActivityLoginBinding;
 import com.alaqsa.edu.ps.staffservices.interfaces.LoginCallback;
-import com.alaqsa.edu.ps.staffservices.model.Login;
 import com.alaqsa.edu.ps.staffservices.model.LoginData;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -28,13 +24,13 @@ public class LoginActivity extends AppCompatActivity {
 
 
     Client client;
-    com.alaqsa.edu.ps.staffservices.Response response;
+    Response response;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        response= com.alaqsa.edu.ps.staffservices.Response.newInstance();
+        response= Response.newInstance();
     }
 
     @Override
