@@ -76,7 +76,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
 
                 if (position == 2) {
                     Bundle bundle = new Bundle();
-                    bundle.putString("fragment", "ViewStaffFragment");
+                    bundle.putString("fragment", "ViewCollegesFragment");
                     context.startActivity(new Intent(context, ContainerActivity.class)
                             .putExtra("bundle", bundle));
                 } else if (position == 3) {

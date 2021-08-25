@@ -67,8 +67,8 @@
     <string name="currentPassword">Current password:</string>
     <string name="confirmNewPassword">Confirm new password:</string>
     <string name="newPassword">New password:</string>
-    
-    
+
+
     <string name="court">Court</string>
     <string name="university">University</string>
     <string name="positions">Positions</string>
@@ -124,11 +124,10 @@
     <string name="college">College:</string>
 
     <array name="testHistory">
-            <item>2020/02/02</item>
-            <item>2020/02/02</item>
-            <item>2020/02/02</item>
-        </array>
-
+        <item>2020/02/02</item>
+        <item>2020/02/02</item>
+        <item>2020/02/02</item>
+    </array>
 
 
     <array name="AgendaType">

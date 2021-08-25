@@ -27,6 +27,7 @@ import com.alaqsa.edu.ps.staffservices.fragment.ReportsFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.SchedulesFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.SettingsFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.StaffInfoFragment;
+import com.alaqsa.edu.ps.staffservices.fragment.ViewCollegesFragment;
 import com.alaqsa.edu.ps.staffservices.fragment.ViewStaffFragment;
 
 public class ContainerActivity extends AppCompatActivity implements AgendaFragment.onAgendaEventListener ,
@@ -99,6 +100,10 @@ public class ContainerActivity extends AppCompatActivity implements AgendaFragme
                 case "SettingsFragment":
                     fragment = new SettingsFragment();
                     break;
+                case "ViewCollegesFragment":
+                    fragment = new ViewCollegesFragment();
+                    break;
+
             }
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

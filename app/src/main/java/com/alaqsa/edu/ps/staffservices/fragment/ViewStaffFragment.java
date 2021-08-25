@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.adapter.NotificationsAdapter;
@@ -89,6 +90,7 @@ public class ViewStaffFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         list = new ArrayList<>();
+        Toast.makeText(getActivity(), "View Staff", Toast.LENGTH_SHORT).show();
 
 
         adapter = new ViewStaffAdapter(list, getContext());
