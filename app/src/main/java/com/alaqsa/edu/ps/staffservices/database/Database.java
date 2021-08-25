@@ -63,15 +63,7 @@ public class Database extends SQLiteOpenHelper {
                 + STUDENT_SCHOOL_RATE + " REAL )";
 
 
-
-        String createSubjectTable = "create table  " + TB_SUBJECT + "  ( " + SUBJECT_ID + " TEXT , "
-                + SUBJECT_NAME + " TEXT , " + SUBJECT_GENDER + " TEXT , "
-                + SUBJECT_DIVISION + " TEXT , " + SUBJECT_FINALEXAM_DATE + " TEXT , "
-                + SUBJECT_COLLEGE + " TEXT , " + SUBJECT_DEPARTMENT + " TEXT  ,"
-                + SUBJECT_SEMESTER + " text , "
-                + SUBJECT_DATE + " TEXT , " + SUBJECT_TIME + " TEXT , "
-                + SUBJECT_HALL + "  TEXT "
-                + " , PRIMARY KEY( " + SUBJECT_SEMESTER + "," + SUBJECT_ID + " , " + SUBJECT_DIVISION + " , " + SUBJECT_TIME + ")" + ")";
+        String createSubjectTable = "create table  subject_table  ( subject_id TEXT , subject_name TEXT , subject_gender TEXT , subject_division TEXT , subject_final_exam_date TEXT , subject_college TEXT , subject_department TEXT  , subject_semester TEXT , subject_date TEXT , subject_time TEXT , subject_hall  TEXT  , PRIMARY KEY( subject_semester,subject_id , subject_division , subject_time))\n";
 
 
         String createRegisterSubjectTable = "create table  " + TB_SUBJECT_REGISTER + "  ( "
@@ -99,7 +91,7 @@ public class Database extends SQLiteOpenHelper {
                 AGENDA_ENTRY_START_MIDTERM + " TEXT ," + AGENDA_ENTRY_END_MIDTERM + " TEXT ," +
                 AGENDA_ENTRY_START_FINAL_EXAM + " TEXT ," + AGENDA_ENTRY_END_FINAL_EXAM + " TEXT ," +
                 AGENDA_END_DRAW + " TEXT, " + AGENDA_NAME + " TEXT , " + AGENDA_KNOW_SEMESTER + " TEXT , " +
-                "  PRIMARY KEY( " + AGENDA_KNOW_SEMESTER + " , " +  AGENDA_NAME +   ")" + ")";
+                "  PRIMARY KEY( " + AGENDA_KNOW_SEMESTER + " , " + AGENDA_NAME + ")" + ")";
 
 
         String createObservationTable = "create table  " + TB_OBSERVATION + "  ( " +
@@ -112,12 +104,11 @@ public class Database extends SQLiteOpenHelper {
                 + MASSAGE_TYPE + " TEXT , " + MASSAGE_TITLE + " TEXT , "
                 + MASSAGE_BODY + " TEXT  )";
 
-
+        sqLiteDatabase.execSQL(createSubjectTable);
         sqLiteDatabase.execSQL(createCollegeTable);
         sqLiteDatabase.execSQL(createDepartmentTable);
         sqLiteDatabase.execSQL(createEmployeeTable);
         sqLiteDatabase.execSQL(createStudent_infoTable);
-        sqLiteDatabase.execSQL(createSubjectTable);
         sqLiteDatabase.execSQL(createRegisterSubjectTable);
         sqLiteDatabase.execSQL(createAgendaTable);
         sqLiteDatabase.execSQL(createObservationTable);
@@ -273,7 +264,7 @@ public class Database extends SQLiteOpenHelper {
             return true;
     }
 
-//know
+    //know
     public Boolean insert_agenda(Agenda agenda) {
         SQLiteDatabase query = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -496,7 +487,7 @@ public class Database extends SQLiteOpenHelper {
 //        return infoArrayList;
 //    }
 
-//   to   Temporary
+    //   to   Temporary
     public List<StudentInfo> getAllStudents() {
         ArrayList<StudentInfo> infoArrayList = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
@@ -531,7 +522,7 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         List<String> idSubjects = new ArrayList<>();
 
-        Cursor cursor = db.rawQuery("select * from " + TB_SUBJECT + " where " + SUBJECT_SEMESTER + " =? ", new String[]{semester});
+        Cursor cursor = db.rawQuery("select * from  subject_table  where subject_semester =? ", new String[]{semester});
 //     Caused by: android.database.sqlite.SQLiteException: no such column: subject_semester (code 1 SQLITE_ERROR[1]): , while compiling: select * from subject_table where subject_semester =?
         if (cursor.moveToFirst()) {
             do {
@@ -571,7 +562,7 @@ public class Database extends SQLiteOpenHelper {
         return subjectArrayList;
     }
 
-    public ArrayList<StudentsInSubject> getAllStudentsInSubjectWithoutAttendance(String id_subject , String subjectDivision) { //String division
+    public ArrayList<StudentsInSubject> getAllStudentsInSubjectWithoutAttendance(String id_subject, String subjectDivision) { //String division
         ArrayList<StudentsInSubject> studentsInSubjects = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
 //SELECT  table_student.student_name , table_student.student_id , subject_table.subject_name FROM
@@ -615,7 +606,7 @@ public class Database extends SQLiteOpenHelper {
     }
 
 
-    public ArrayList<StudentsInSubject> getAllStudentsInSubjectWithAttendance(String id_subject , String subjectDivision) { //String division
+    public ArrayList<StudentsInSubject> getAllStudentsInSubjectWithAttendance(String id_subject, String subjectDivision) { //String division
         ArrayList<StudentsInSubject> studentsInSubjects = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
 //SELECT  table_student.student_name , table_student.student_id , subject_table.subject_name FROM
@@ -658,11 +649,11 @@ public class Database extends SQLiteOpenHelper {
         return studentsInSubjects;
     }
 
-    public ArrayList<Agenda> getAgenda(String type_system ,String knowSemester) {
+    public ArrayList<Agenda> getAgenda(String type_system, String knowSemester) {
         ArrayList<Agenda> agendaArrayList = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TB_AGENDA + " where "+ AGENDA_NAME + "=? and " + AGENDA_KNOW_SEMESTER + "=?" ,
-                 new String[]{type_system  , knowSemester});
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TB_AGENDA + " where " + AGENDA_NAME + "=? and " + AGENDA_KNOW_SEMESTER + "=?",
+                new String[]{type_system, knowSemester});
 
         if (cursor.moveToFirst()) {
             do {
@@ -680,7 +671,7 @@ public class Database extends SQLiteOpenHelper {
                 String entry_end_final_exam = cursor.getString(cursor.getColumnIndex(AGENDA_ENTRY_END_FINAL_EXAM));
                 String end_draw = cursor.getString(cursor.getColumnIndex(AGENDA_END_DRAW));
 
-                Agenda agenda = new Agenda(know_semester ,name_agenda,
+                Agenda agenda = new Agenda(know_semester, name_agenda,
                         beginning_semester, end_semester, start_final_exam, end_final_exam, start_midterm,
                         end_midterm, entry_start_midterm, entry_end_midterm,
                         entry_start_final_exam, entry_end_final_exam, end_draw);

@@ -21,11 +21,11 @@ import java.util.List;
 
 public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder> {
 
-    private ArrayList<Subject> subjects;
+    private List<Subject> subjects;
     private int res;
     private List<SubjectViewHolder> holders;
 
-    public SubjectAdapter(ArrayList<Subject> subjects, int res) {
+    public SubjectAdapter(List<Subject> subjects, int res) {
         this.subjects = subjects;
         this.res = res;
         holders = new ArrayList<>();

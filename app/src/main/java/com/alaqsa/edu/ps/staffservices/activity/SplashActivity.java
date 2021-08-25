@@ -14,6 +14,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
@@ -43,6 +44,14 @@ public class SplashActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
 
         currentLang = sharedPreferences.getString(CHANGE_LANG, "ar");
+        if (!sharedPreferences.getBoolean(TEMP_DATA, false)) {
+            Log.d("qqqq", "onCreate: ");
+            sharedPreferences.edit().putBoolean(TEMP_DATA, true).apply();
+            TemporaryData temporaryData = new TemporaryData(this);
+            temporaryData.dataGeneration();
+
+
+        }
 
         if (currentLang.equals("ar")) {
             setLocale("ar");
@@ -54,16 +63,11 @@ public class SplashActivity extends AppCompatActivity {
         }
 
 
-        Intent serviceIntent = new Intent(getBaseContext(), MyService.class);
-        startService(serviceIntent);
+//        Intent serviceIntent = new Intent(getBaseContext(), MyService.class);
+//        startService(serviceIntent);
 
         // Declare an imageView to show the animation.
         anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
-        if (!sharedPreferences.getBoolean(TEMP_DATA, false)||true) {
-            sharedPreferences.edit().putBoolean(TEMP_DATA, true).apply();
-            TemporaryData temporaryData = new TemporaryData(this);
-            temporaryData.dataGeneration();
-        }
 
 
         // Create the animation.

@@ -11,8 +11,8 @@ public class Utils {
     }
 
     public static class Database {
-        public static final String DB_NAME = "dbname";
-        public static final int VERSION = 2;
+        public static final String DB_NAME = "servesDB";
+        public static final int VERSION = 5;
 
         //****************************************  table_college   *******************************************
         public static final String TB_COLLEGE = "table_college";

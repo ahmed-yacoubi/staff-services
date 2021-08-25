@@ -10,18 +10,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alaqsa.edu.ps.staffservices.R;
 import com.alaqsa.edu.ps.staffservices.databinding.LayoutHomeBinding;
 import com.alaqsa.edu.ps.staffservices.databinding.LayoutScheduleBinding;
+import com.alaqsa.edu.ps.staffservices.model.Subject;
 import com.alaqsa.edu.ps.staffservices.model.Test;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SchedulesAdapter extends RecyclerView.Adapter<SchedulesAdapter.SchedulesViewHolder> {
 
-    private ArrayList<Test> testArrayList;
+    private List<Subject> list;
 
-    public SchedulesAdapter(ArrayList<Test> testArrayList) {
-        this.testArrayList = testArrayList;
+    public SchedulesAdapter(List<Subject> testArrayList) {
+        this.list = testArrayList;
     }
 
     @NonNull
@@ -33,20 +35,21 @@ public class SchedulesAdapter extends RecyclerView.Adapter<SchedulesAdapter.Sche
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull SchedulesAdapter.SchedulesViewHolder holder, int position) {
-        Test test = testArrayList.get(position);
-        holder.binding.schTextViewCourse.setText(test.getCourse());
-        holder.binding.schTextViewClass.setText(test.getClasss());
-        holder.binding.schTextViewHill.setText(test.getHill());
-        holder.binding.schTextViewTime.setText(test.getTime());
+
+
+        holder.binding.schTextViewCourse.setText(list.get(position).getSubject_name());
+        holder.binding.schTextViewClass.setText(list.get(position).getDivision());
+        holder.binding.schTextViewHill.setText(list.get(position).getHall());
+        holder.binding.schTextViewTime.setText(list.get(position).getTime());
         holder.getOldPosition();
-        if (position == testArrayList.size() - 1)
+        if (position == list.size() - 1)
             holder.binding.schView.setVisibility(View.GONE);
         else holder.binding.schView.setVisibility(View.VISIBLE);
     }
 
     @Override
     public int getItemCount() {
-        return testArrayList.size();
+        return list.size();
     }
 
     class SchedulesViewHolder extends RecyclerView.ViewHolder {

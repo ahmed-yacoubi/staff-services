@@ -52,17 +52,17 @@ public class TemporaryData {
 
     public void dataGeneration() {
         for (College college : setCollages()) {
+            Log.e("myError", "dataGeneration: " + college.getCollageId());
             database.insert_college(college);
         }
         for (Department department : setDepartments()) {
             database.insert_department(department);
         }
 
-//        insert employee user
-
         for (Subject subject : setSubjects()) {
             database.insert_subject(subject);
         }
+
         database.insert_employee(setEmployeeData());
 
         for (Employee employee : setEmployees()) {
@@ -123,7 +123,7 @@ public class TemporaryData {
         employee.setCollegeId("c2");
         employee.setDepartmentId("dep1");
         employee.setSpecialization("IT");
-        employee.setImg(null);
+        employee.setImg("");
         employee.setCity("Gaza");
         employee.setPersonalEmail("Ahmed@gmail.com");
         employee.setPhoneNo("0599967638");
@@ -161,7 +161,7 @@ public class TemporaryData {
 
             }
             employee.setSpecialization("IT");
-            employee.setImg(null);
+            employee.setImg("");
             employee.setCity("Gaza");
             employee.setPersonalEmail("ahemd@gmail.com");
             employee.setPhoneNo("0599967638");
@@ -206,17 +206,17 @@ public class TemporaryData {
             subject.setSubject_id("TCIS3" + i);
             subject.setSubject_name("Java" + i);
             subject.setFinalExamDate("2021/12/29");
-            subject.setDivision("Division" + i);
+            subject.setDivision("10" + i);
             subject.setCollage("c2");
             subject.setDepartment("dep1");
             if (i % 2 == 0) {
                 subject.setGender("male");
                 subject.setTime("10-12PM");
-                subject.setHall("خان يونس البحر - L301");
+                subject.setHall("L301");
             } else {
                 subject.setGender("female");
                 subject.setTime("12-14PM");
-                subject.setHall("غزة-مبنى الوحدة - P230");
+                subject.setHall("P230");
             }
             subject.setDate("2021/8/17");
 //            List<String[]> place = new ArrayList<>();
@@ -321,7 +321,7 @@ public class TemporaryData {
                 massage.setType_massage("Massages");
                 massage.setBody_massage("رقم الطالب 130011999 برمجة تطبيقات الهواتف =100");
             } else {
-                massage.setType_massage("Massages");
+                massage.setType_massage("notification");
                 massage.setBody_massage("يوم الخميس زووم الساعه 6:15 id 22231556 الدكتور يوسف حمودة");
             }
             massage.setTitle_massage("ALAQSA-REG");
