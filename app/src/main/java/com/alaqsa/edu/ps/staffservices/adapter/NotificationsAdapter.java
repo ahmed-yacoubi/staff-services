@@ -1,5 +1,6 @@
 package com.alaqsa.edu.ps.staffservices.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,8 +23,10 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
 
     private List<Massage> list;
 
-    public NotificationsAdapter(List<Massage> testArrayList) {
-        this.list = testArrayList;
+    public NotificationsAdapter(List<Massage> list) {
+
+        Log.d("eeeeeee", "NotificationsAdapter: "+list.size());
+        this.list = list;
     }
 
     @NonNull

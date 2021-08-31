@@ -45,7 +45,6 @@
             android:padding="@dimen/_12sdp">
 
             <TextView
-                android:id="@+id/staffInfoTextViewName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/name"
@@ -55,7 +54,7 @@
                 />
 
             <TextView
-                android:id="@+id/staffInfoTextViewNameV"
+                android:id="@+id/staffInfoTextViewName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
@@ -66,7 +65,6 @@
                 />
 
             <TextView
-                android:id="@+id/staffInfoTextViewFac"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12sdp"
@@ -77,7 +75,7 @@
                 />
 
             <TextView
-                android:id="@+id/staffInfoTextViewFacV"
+                android:id="@+id/staffInfoTextViewCollage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
@@ -88,7 +86,6 @@
                 />
 
             <TextView
-                android:id="@+id/staffInfoTextViewDep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12sdp"
@@ -99,7 +96,7 @@
                 />
 
             <TextView
-                android:id="@+id/staffInfoTextViewDepV"
+                android:id="@+id/staffInfoTextViewDep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
@@ -110,7 +107,6 @@
                 />
 
             <TextView
-                android:id="@+id/staffInfoTextViewEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12sdp"
@@ -121,7 +117,7 @@
                 />
 
             <TextView
-                android:id="@+id/staffInfoTextViewEmailV"
+                android:id="@+id/staffInfoTextViewEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
@@ -132,7 +128,6 @@
                 />
 
             <TextView
-                android:id="@+id/staffInfoTextMob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12sdp"
@@ -143,7 +138,7 @@
                 />
 
             <TextView
-                android:id="@+id/staffInfoTextViewMobV"
+                android:id="@+id/staffInfoTextMob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"

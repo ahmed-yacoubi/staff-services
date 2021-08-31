@@ -6,7 +6,7 @@ public class Utils {
         public static final String SHARED_PREF_NAME = "main";
         public static final String TEMP_DATA = "tempData";
         public static final String STORAGE_DAY = "day_story";
-        public static final String CHANGE_LANG="change_lang";
+        public static final String CHANGE_LANG = "change_lang";
 
     }
 
@@ -28,6 +28,7 @@ public class Utils {
         //****************************************  table_employee   *******************************************
 
         public static final String TB_EMPLOYEE = "table_employee";
+        public static final String EMPLOYEE_ID = "employee_id";
         public static final String EMPLOYEE_NAME_ARB = "employee_name_arb";
         public static final String EMPLOYEE_NAME_ENG = "employee_name_eng";
         public static final String EMPLOYEE_GENDER = "employee_gender";
@@ -112,20 +113,17 @@ public class Utils {
         public static final String OBSERVATION_HALL = "observation_hall";
 
         //**************************************** Attendance_Absence_table    *******************************************
-        public static final String  TB_ATTENDANCE_ABSENCE= "attendance_absence_table";
-        public static final String  ATTENDANCE_ABSENCE_ID= "attendance_absence_id";
-        public static final String  ATTENDANCE_ABSENCE_DATE= "attendance_absence_date";
-        public static final String  ATTENDANCE_ABSENCE_DAY= "attendance_absence_day";
-        public static final String  ATTENDANCE_ABSENCE_STATES= "attendance_absence_states";
+        public static final String TB_ATTENDANCE_ABSENCE = "attendance_absence_table";
+        public static final String ATTENDANCE_ABSENCE_ID = "attendance_absence_id";
+        public static final String ATTENDANCE_ABSENCE_DATE = "attendance_absence_date";
+        public static final String ATTENDANCE_ABSENCE_DAY = "attendance_absence_day";
+        public static final String ATTENDANCE_ABSENCE_STATES = "attendance_absence_states";
 
         public static final String TB_MASSAGE = "table_massage";
         public static final String MASSAGE_ID = "massage_id";
-        public static final String  MASSAGE_TYPE= "massage_type";
-        public static final String  MASSAGE_TITLE= "massage_title";
-        public static final String MASSAGE_BODY= "massage_body";
-
-
-
+        public static final String MASSAGE_TYPE = "massage_type";
+        public static final String MASSAGE_TITLE = "massage_title";
+        public static final String MASSAGE_BODY = "massage_body";
 
 
     }

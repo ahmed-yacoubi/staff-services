@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 
 import com.alaqsa.edu.ps.staffservices.util.Utils;
@@ -44,13 +45,13 @@ public class Database extends SQLiteOpenHelper {
                 + DEPARTMENT_NAME + " TEXT , " + DEPARTMENT_COLLEGE_ID + " TEXT " +
                 " , PRIMARY KEY (" + DEPARTMENT_ID + " , " + DEPARTMENT_COLLEGE_ID + ")" + ")";
 
-
-        String createEmployeeTable = "create table  " + TB_EMPLOYEE + "  ( " + EMPLOYEE_COLLEGE_EMAIL + " TEXT PRIMARY KEY  , "
+//EMPLOYEE_COLLEGE_EMAIL
+        String createEmployeeTable = "create table  " + TB_EMPLOYEE + "  ( " + EMPLOYEE_ID + "  INTEGER PRIMARY KEY  , "
                 + EMPLOYEE_COLLEGE_ID + " TEXT , " + EMPLOYEE_DEPARTMENT_ID + " TEXT , "
                 + EMPLOYEE_SPECIALIZE + " TEXT , " + EMPLOYEE_IMG + " TEXT , " + EMPLOYEE_CITY + " TEXT ,"
                 + EMPLOYEE_PERSONAL_EMAIL + "  TEXT , " + EMPLOYEE_COLLAGE_NAME + "  TEXT , "
                 + EMPLOYEE_DEPARTMENT_NAME + "  TEXT , " + EMPLOYEE_PHONE_NO + " TEXT , " + EMPLOYEE_NAME_ARB + " TEXT ,"
-                + EMPLOYEE_NAME_ENG + "  TEXT , " + EMPLOYEE_GENDER + " TEXT , " + EMPLOYEE_CITIZENSHIP + " TEXT ,"
+                + EMPLOYEE_NAME_ENG + "  TEXT , " + EMPLOYEE_GENDER + " TEXT , " + EMPLOYEE_COLLEGE_EMAIL + " TEXT , " + EMPLOYEE_CITIZENSHIP + " TEXT ,"
                 + EMPLOYEE_DATE_BIRTH + "  TEXT , " + EMPLOYEE_GOVERNORATE + " TEXT , " + EMPLOYEE_NEIGHBORHOOD + " TEXT ,"
                 + EMPLOYEE_PASSWORD + " TEXT )";
 
@@ -153,7 +154,7 @@ public class Database extends SQLiteOpenHelper {
     public Boolean insert_employee(Employee employee) {
         SQLiteDatabase query = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-
+        contentValues.put(EMPLOYEE_ID, employee.getId());
         contentValues.put(EMPLOYEE_COLLEGE_EMAIL, employee.getCollegeEmail());
         contentValues.put(EMPLOYEE_COLLEGE_ID, employee.getCollegeId());
         contentValues.put(EMPLOYEE_COLLAGE_NAME, employee.getCollageName());
@@ -369,41 +370,43 @@ public class Database extends SQLiteOpenHelper {
         return departments;
     }
 
-//    public List<Employee> getLastEmployees() {
-//        ArrayList<Employee> employees = new ArrayList<>();
-//        SQLiteDatabase db = getReadableDatabase();
-//        Cursor cursor = db.rawQuery("select * from " + TB_EMPLOYEE, null);
-//
-//        if (cursor.moveToFirst()) {
-//            do {
-//                String college_email = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLEGE_EMAIL));
-//                String name_arb = cursor.getString(cursor.getColumnIndex(EMPLOYEE_NAME_ARB));
-//                String name_eng = cursor.getString(cursor.getColumnIndex(EMPLOYEE_NAME_ENG));
-//                String employee_college_id = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLEGE_ID));
-//                String department_id = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DEPARTMENT_ID));
-//                String specialize = cursor.getString(cursor.getColumnIndex(EMPLOYEE_SPECIALIZE));
-//                String img = cursor.getString(cursor.getColumnIndex(EMPLOYEE_IMG));
-//                String city = cursor.getString(cursor.getColumnIndex(EMPLOYEE_CITY));
-//                String personal_email = cursor.getString(cursor.getColumnIndex(EMPLOYEE_PERSONAL_EMAIL));
-//                String phone = cursor.getString(cursor.getColumnIndex(EMPLOYEE_PHONE_NO));
-//                String departmentName = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLAGE_NAME));
-//                String collageName = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DEPARTMENT_NAME));
-//                String gender = cursor.getString(cursor.getColumnIndex(EMPLOYEE_GENDER));
-//                String citizenship = cursor.getString(cursor.getColumnIndex(EMPLOYEE_CITIZENSHIP));
-//                String date_birth = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DATE_BIRTH));
-//                String governorate = cursor.getString(cursor.getColumnIndex(EMPLOYEE_GOVERNORATE));
-//                String neighborhood = cursor.getString(cursor.getColumnIndex(EMPLOYEE_NEIGHBORHOOD));
-//
-//                Employee employee = new Employee(name_arb, name_eng, gender, citizenship, date_birth,
-//                        governorate, city, neighborhood, college_email, personal_email,
-//                        phone, employee_college_id, department_id, specialize, img,
-//                        collageName, departmentName);
-//                employees.add(employee);
-//            } while (cursor.moveToNext());
-//            cursor.close();
-//        }
-//        return employees;
-//    }
+    public List<Employee> getLastEmployees() {
+
+        ArrayList<Employee> employees = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from " + TB_EMPLOYEE, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(cursor.getColumnIndex(EMPLOYEE_ID));
+                String college_email = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLEGE_EMAIL));
+                String name_arb = cursor.getString(cursor.getColumnIndex(EMPLOYEE_NAME_ARB));
+                String name_eng = cursor.getString(cursor.getColumnIndex(EMPLOYEE_NAME_ENG));
+                String employee_college_id = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLEGE_ID));
+                String department_id = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DEPARTMENT_ID));
+                String specialize = cursor.getString(cursor.getColumnIndex(EMPLOYEE_SPECIALIZE));
+                String img = cursor.getString(cursor.getColumnIndex(EMPLOYEE_IMG));
+                String city = cursor.getString(cursor.getColumnIndex(EMPLOYEE_CITY));
+                String personal_email = cursor.getString(cursor.getColumnIndex(EMPLOYEE_PERSONAL_EMAIL));
+                String phone = cursor.getString(cursor.getColumnIndex(EMPLOYEE_PHONE_NO));
+                String departmentName = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLAGE_NAME));
+                String collageName = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DEPARTMENT_NAME));
+                String gender = cursor.getString(cursor.getColumnIndex(EMPLOYEE_GENDER));
+                String citizenship = cursor.getString(cursor.getColumnIndex(EMPLOYEE_CITIZENSHIP));
+                String date_birth = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DATE_BIRTH));
+                String governorate = cursor.getString(cursor.getColumnIndex(EMPLOYEE_GOVERNORATE));
+                String neighborhood = cursor.getString(cursor.getColumnIndex(EMPLOYEE_NEIGHBORHOOD));
+
+                Employee employee = new Employee(id, name_arb, name_eng, gender, citizenship, date_birth,
+                        governorate, city, neighborhood, college_email, personal_email,
+                        phone, employee_college_id, department_id, specialize, img,
+                        collageName, departmentName);
+                employees.add(employee);
+            } while (cursor.moveToNext());
+            cursor.close();
+        }
+        return employees;
+    }
 
     public StudentInfo getStudentById(int id) {
         StudentInfo studentInfo = new StudentInfo();
@@ -486,6 +489,7 @@ public class Database extends SQLiteOpenHelper {
 //        }
 //        return infoArrayList;
 //    }
+
 
     //   to   Temporary
     public List<StudentInfo> getAllStudents() {
@@ -683,6 +687,44 @@ public class Database extends SQLiteOpenHelper {
         return agendaArrayList;
     }
 
+    public Employee getOneEmplooey(int empId) {
+
+
+        Employee employee = new Employee();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from " + TB_EMPLOYEE + " where " + EMPLOYEE_ID + " =? ", new String[]{empId + ""});
+
+        if (cursor.moveToFirst()) {
+            int id = cursor.getInt(cursor.getColumnIndex(EMPLOYEE_ID));
+            String college_email = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLEGE_EMAIL));
+            String name_arb = cursor.getString(cursor.getColumnIndex(EMPLOYEE_NAME_ARB));
+            String name_eng = cursor.getString(cursor.getColumnIndex(EMPLOYEE_NAME_ENG));
+            String employee_college_id = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLEGE_ID));
+            String department_id = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DEPARTMENT_ID));
+            String specialize = cursor.getString(cursor.getColumnIndex(EMPLOYEE_SPECIALIZE));
+            String img = cursor.getString(cursor.getColumnIndex(EMPLOYEE_IMG));
+            String city = cursor.getString(cursor.getColumnIndex(EMPLOYEE_CITY));
+            String personal_email = cursor.getString(cursor.getColumnIndex(EMPLOYEE_PERSONAL_EMAIL));
+            String phone = cursor.getString(cursor.getColumnIndex(EMPLOYEE_PHONE_NO));
+            String departmentName = cursor.getString(cursor.getColumnIndex(EMPLOYEE_COLLAGE_NAME));
+            String collageName = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DEPARTMENT_NAME));
+            String gender = cursor.getString(cursor.getColumnIndex(EMPLOYEE_GENDER));
+            String citizenship = cursor.getString(cursor.getColumnIndex(EMPLOYEE_CITIZENSHIP));
+            String date_birth = cursor.getString(cursor.getColumnIndex(EMPLOYEE_DATE_BIRTH));
+            String governorate = cursor.getString(cursor.getColumnIndex(EMPLOYEE_GOVERNORATE));
+            String neighborhood = cursor.getString(cursor.getColumnIndex(EMPLOYEE_NEIGHBORHOOD));
+
+            employee = new Employee(id, name_arb, name_eng, gender, citizenship, date_birth,
+                    governorate, city, neighborhood, college_email, personal_email,
+                    phone, employee_college_id, department_id, specialize, img,
+                    collageName, departmentName);
+            cursor.close();
+
+
+        }
+        return employee;
+    }
+
     //    احضار جدول المراقبة من خلال اددخال اسم المراقبة (نصفي او ,نهائي)
     public ArrayList<Observation> getObservation(String name_observation) {
         ArrayList<Observation> observations = new ArrayList<>();
@@ -711,16 +753,17 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         String[] arg = {type_massage};
         Cursor cursor = db.rawQuery
-                ("select * from " + TB_OBSERVATION + " where " + OBSERVATION_NAME_TABLE + " = ?", arg);
+                ("select * from " + TB_MASSAGE + " where " + MASSAGE_TYPE + " = ?", arg);
 
         if (cursor.moveToFirst()) {
             do {
+
                 int id = cursor.getInt(cursor.getColumnIndex(MASSAGE_ID));
                 String type = cursor.getString(cursor.getColumnIndex(MASSAGE_TYPE));
                 String title = cursor.getString(cursor.getColumnIndex(MASSAGE_TITLE));
                 String body = cursor.getString(cursor.getColumnIndex(MASSAGE_BODY));
                 Massage massage = new Massage(id, type, title, body);
-
+                Log.d("kkkk", "getMassage: " + massage.getBody_massage());
                 massageArrayList.add(massage);
             } while (cursor.moveToNext());
             cursor.close();
@@ -746,4 +789,5 @@ public class Database extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("drop Table if exists " + TB_SUBJECT_REGISTER);
 //        sqLiteDatabase.execSQL("delete from " + TB_SUBJECT_REGISTER);
     }
+
 }

@@ -66,12 +66,12 @@ public class ViewStaffFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         viewStaffEventListener.viewStaffEvent();
-
+        database = Database.getInstance(getActivity());
+        list = database.getLastEmployees();
         database = Database.getInstance(getActivity());
         if (CheckInternet.isConnected()) {
-//            list = database.get();
 
-            list = new ArrayList<>();
+            list = database.getLastEmployees();
         } else {
 
             // list = GETAPIDATA();

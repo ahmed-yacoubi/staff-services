@@ -73,7 +73,7 @@ public class ContainerTabFragment extends Fragment implements Serializable {
             layoutManager = new LinearLayoutManager(getContext());
             database = Database.getInstance(getActivity());
             subjects = database.getSubject("First semester ");
-            messages = database.getMassage("Massages");
+            messages = database.getMassage("notification");
             notification = database.getMassage("notification");
 
 //    android.database.sqlite.SQLiteException: no such column: subject_semester (code 1 SQLITE_ERROR[1]): , while compiling: select * from subject_table where  =?

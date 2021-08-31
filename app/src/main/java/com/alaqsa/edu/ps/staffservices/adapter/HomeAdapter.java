@@ -34,8 +34,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
 
     public HomeAdapter(List<Subject> list, Context context, OnClick click) {
         this.list = list;
-        this.list.remove(list.size()-1);
-        this.list.remove(list.size()-2);
         this.context = context;
         this.holders = new ArrayList<>();
         this.click = click;
@@ -54,10 +52,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
         holder.binding.homeTextViewClass.setText(list.get(position).getDivision());
         holder.binding.homeTextViewHill.setText(list.get(position).getHall());
         holder.binding.homeTextViewTime.setText(list.get(position).getTime());
-        if (holders.size() != list.size()) {
-            Log.d("qqqqqqq", "onBindViewHolder: ");
+        if (holders.size() < list.size()) {
+//            Log.d("qqqqqqq", "onBindViewHolder: ");
             holders.add(holder);
         }
+        Log.d("aaaaaa", "onBindViewHolder: " + holders.size() + " , " + list.size());
 
         if (position == list.size() - 1)
             holder.binding.homeView.setVisibility(View.GONE);
@@ -69,11 +68,19 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
                 if (holder.binding.homeImageViewArrowUp.getVisibility() == View.VISIBLE) {
                     Toast.makeText(context, "DONE", Toast.LENGTH_SHORT).show();
                     closeTabs();
+                    holder.binding.homeLinearLayoutOpe.setVisibility(View.GONE);
+                    holder.binding.homeTextViewAttendance.setVisibility(View.GONE);
+                    holder.binding.homeImageViewArrow.setVisibility(View.VISIBLE);
+                    holder.binding.homeImageViewArrowUp.setVisibility(View.GONE);
                 } else {
-                    openOneTab(position);
+                    closeTabs();
+                    holder.binding.homeLinearLayoutOpe.setVisibility(View.VISIBLE);
+                    holder.binding.homeTextViewAttendance.setVisibility(View.VISIBLE);
+                    holder.binding.homeImageViewArrow.setVisibility(View.GONE);
+                    holder.binding.homeImageViewArrowUp.setVisibility(View.VISIBLE);
 
                 }
-                notifyDataSetChanged();
+
 
             }
         });
@@ -108,27 +115,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
         return list.size();
     }
 
-    private void openOneTab(int currentTab) {
-
-
-        for (int i = 0; i < holders.size(); i++) {
-            if (currentTab != i) {
-                holders.get(i).binding.homeLinearLayoutOpe.setVisibility(View.GONE);
-                holders.get(i).binding.homeTextViewAttendance.setVisibility(View.GONE);
-                holders.get(i).binding.homeImageViewArrowUp.setVisibility(View.GONE);
-                holders.get(i).binding.homeImageViewArrow.setVisibility(View.VISIBLE);
-
-            } else {
-                holders.get(i).binding.homeTextViewAttendance.setText("TAB : " + i);
-                holders.get(i).binding.homeLinearLayoutOpe.setVisibility(View.VISIBLE);
-                holders.get(i).binding.homeTextViewAttendance.setVisibility(View.VISIBLE);
-                holders.get(i).binding.homeImageViewArrow.setVisibility(View.GONE);
-                holders.get(i).binding.homeImageViewArrowUp.setVisibility(View.VISIBLE);
-            }
-        }
-
-    }
-
+ 
     public void closeTabs() {
         if (list != null)
             for (int i = 0; i < holders.size(); i++) {

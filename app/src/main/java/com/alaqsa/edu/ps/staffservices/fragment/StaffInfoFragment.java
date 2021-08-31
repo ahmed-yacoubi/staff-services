@@ -10,16 +10,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.alaqsa.edu.ps.staffservices.R;
+import com.alaqsa.edu.ps.staffservices.database.Database;
+import com.alaqsa.edu.ps.staffservices.databinding.FragmentStaffInfoBinding;
+import com.alaqsa.edu.ps.staffservices.model.Basicinfo;
+import com.alaqsa.edu.ps.staffservices.model.Employee;
 
 import java.io.Serializable;
+import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link StaffInfoFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class StaffInfoFragment extends Fragment  {
 
+public class StaffInfoFragment extends Fragment {
+
+    private Database database;
+    private Employee employee;
+    private FragmentStaffInfoBinding binding;
 
     public interface onStaffInfoEventListener {
         void staffInfoEvent();
@@ -36,49 +40,45 @@ public class StaffInfoFragment extends Fragment  {
             throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
         }
     }
+    //3*30=120
+    //3*30=250
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public StaffInfoFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment StaffInfoFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static StaffInfoFragment newInstance(String param1, String param2) {
+    public static StaffInfoFragment newInstance() {
         StaffInfoFragment fragment = new StaffInfoFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        database = Database.getInstance(getActivity());
+        employee = database.getOneEmplooey(1);
         staffInfoEventListener.staffInfoEvent();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_staff_info, container, false);
+        binding = FragmentStaffInfoBinding.inflate(inflater, container, false);
+        initData();
+
+        return binding.getRoot();
+
+    }
+
+    private void initData() {
+
+        binding.staffInfoTextMob.setText(employee.getPhoneNo());
+        binding.staffInfoTextViewDep.setText(employee.getDepartmentName());
+        binding.staffInfoTextViewCollage.setText(employee.getCollageName());
+        binding.staffInfoTextViewEmail.setText(employee.getPersonalEmail());
+        binding.staffInfoTextViewName.setText(employee.getName_arb());
+
     }
 }
